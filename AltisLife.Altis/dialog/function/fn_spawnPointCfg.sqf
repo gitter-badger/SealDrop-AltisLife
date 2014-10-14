@@ -37,12 +37,7 @@ switch (_side) do
 			["reb_spawn_1","Rebellen HQ","\a3\ui_f\data\map\MapControl\watertower_ca.paa"],
 			["civ_spawn_training","Schießplatz","\a3\ui_f\data\map\MapControl\watertower_ca.paa"],
 			["so_spawn_1","Söldner HQ","\a3\ui_f\data\map\MapControl\watertower_ca.paa"],
-			["don_spawn_1","Donator HQ","\a3\ui_f\data\map\MapControl\watertower_ca.paa"],
-			["spawn_base_tf","TF Base","\a3\ui_f\data\map\MapControl\watertower_ca.paa"],
-			["spawn_base_df","DF Base","\a3\ui_f\data\map\MapControl\watertower_ca.paa"],
-			["spawn_base_rock","ROCK Base","\a3\ui_f\data\map\MapControl\watertower_ca.paa"],
-			["spawn_base_faa","FAA Base","\a3\ui_f\data\map\MapControl\watertower_ca.paa"],
-			["spawn_base_jte","JTE Base","\a3\ui_f\data\map\MapControl\watertower_ca.paa"]
+			["don_spawn_1","Donator HQ","\a3\ui_f\data\map\MapControl\watertower_ca.paa"]
 		];
 		
 		if(count life_houses > 0) then {
