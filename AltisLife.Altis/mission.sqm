@@ -4560,14 +4560,14 @@ class Mission
 				class Item0
 				{
 					position[]={22142.814,3.3995554,14471.143};
-					azimut=88.100113;
+					azimut=88.100098;
 					special="NONE";
 					id=251;
 					side="CIV";
 					vehicle="C_scientist_F";
 					leader=1;
 					skill=0.60000002;
-					init="this allowDamage false; this addAction[""Dissolution Uranium"",life_fnc_processActionDual,""uranium2"",0,false,false,"""""""",' life_inv_uranium2 > 0 && !life_is_processing'];this addAction[""Dissolution Illegal Uranium"",life_fnc_processActionDual,""uranium2b"",0,false,false,"""""""",' life_inv_uranium2 > 0 && life_inv_ipuranium > 0 && !life_is_processing'];this setVariable[""realname"",""Dissolution Uranium""];";
+					init="this allowDamage false; this addAction[""Dissolution Uranium"",life_fnc_processActionDual,""uranium2"",0,false,false,"""""""",' life_inv_uranium2 > 0 && !life_is_processing'];this addAction[""Dissolution Illegal Uranium"",life_fnc_processActionDual,""uranium2b"",0,false,false,"""""""",' life_inv_uranium2 > 0 && life_inv_ipuranium > 0 && !life_is_processing'];";
 				};
 			};
 		};
