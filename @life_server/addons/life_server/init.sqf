@@ -72,7 +72,7 @@ serv_sv_use = [];
 fed_bank setVariable["safe",(count playableUnits),true];
 
 //General cleanup for clients disconnecting.
-_onDisconnect = addMissionEventHandler ["HandleDisconnect",{[_uid,_id,_name,_unit] call TON_fnc_clientDisconnect}];
+addMissionEventHandler ["HandleDisconnect",{_this call TON_fnc_clientDisconnect; false;}]; //Do not second guess this, this can be stacked this way.
 
 [] spawn TON_fnc_cleanup;
 life_gang_list = [];
