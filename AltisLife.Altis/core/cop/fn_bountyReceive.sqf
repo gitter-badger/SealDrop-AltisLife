@@ -11,9 +11,11 @@ _total = [_this,1,"",["",0]] call BIS_fnc_param;
 
 if(_val == _total) then
 {
-	titleText[format["Der Staat hat %1€ an die Polizeizentrale geschenkt, dafür das Du einen Räuber gefasst hast.",[_val] call life_fnc_numberText],"PLAIN"];
+	titleText[format[localize "STR_Cop_BountyRecieve",[_val] call life_fnc_numberText],"PLAIN"];
 }
 	else
 {
-	titleText[format["Der Staat hat €%1 für die Eliminierung des Räubers gezahlt, für die Inhaftierung hätte es %2€ gegeben.",[_val] call life_fnc_numberText,[_total] call life_fnc_numberText],"PLAIN"];
+	titleText[format[localize "STR_Cop_BountyKill",[_val] call life_fnc_numberText,[_total] call life_fnc_numberText],"PLAIN"];
 };
+
+life_atmcash = life_atmcash + _val;
