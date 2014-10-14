@@ -12,7 +12,7 @@ waitUntil {scriptDone _handle};
 
 //Fügt die Uniform und die Textur zu.
 player addUniform "U_Rangemaster";
-player setObjectTextureGlobal [0,"skins\human\cop\police_shirt.paa"];
+player setObjectTextureGlobal [0,"skins\human\cop\polizei_uniform.jpg"];
 
 /* ITEMS */
 player addItem "ItemMap";
