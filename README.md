@@ -6,12 +6,13 @@ Official SealDrop AltisLife
 
 in der "Datenbank.sql" 
 
-Alle *DB_NAME* durch eueren Datenbank namen ersetzen.
+Alle *DB_NAME* durch euren Datenbank Namen ersetzen.
+
 
 Bei Fragen in den Nitrado Post
 
 
-Level Verteilung:
+Level Verteilung in der Datenbank:
 
 
 
@@ -47,4 +48,4 @@ Donator Ränge:
 3 = Donator 3 (Söldner)
 
 
-Entwickler von AltisLife: https://github.com/TAWTonic/Altis-Life
+Entwickler von Altis Life: https://github.com/TAWTonic/Altis-Life
