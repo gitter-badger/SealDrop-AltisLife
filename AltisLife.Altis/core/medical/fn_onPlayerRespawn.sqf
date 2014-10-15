@@ -26,11 +26,13 @@ _unit setVariable["hasOrgan",FALSE,TRUE];
 //Load CopGear
 if(playerSide == west) then {
 	[] spawn life_fnc_setupActions;
+	[] spawn life_fnc_copLoadout;
 };
 
 //Load CivGear
 if(playerSide == civilian) then {
 	[] spawn life_fnc_setupActions;
+	[] spawn life_fnc_civLoadout;
 };
 
 //Load MedicGear
