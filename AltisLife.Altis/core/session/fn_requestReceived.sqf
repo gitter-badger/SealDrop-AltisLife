@@ -48,8 +48,6 @@ life_gear = _this select 8;
 switch(playerSide) do {
 	case west: {
 		__CONST__(life_coplevel, parseNumber(_this select 7));
-		cop_gear = _this select 8;
-		[] spawn life_fnc_loadGear;
 		__CONST__(life_medicLevel,0);
 		life_blacklisted = _this select 9;
 	};
@@ -73,7 +71,7 @@ switch(playerSide) do {
 	
 	case independent: {
 		__CONST__(life_medicLevel, parseNumber(_this select 7));
-		__CONST__(life_copLevel,0);
+		__CONST__(life_coplevel,0);
 	};
 };
 
