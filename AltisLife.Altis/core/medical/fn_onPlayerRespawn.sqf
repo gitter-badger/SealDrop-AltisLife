@@ -23,24 +23,6 @@ _unit setVariable["transporting",FALSE,TRUE];
 _unit setVariable["missingOrgan",FALSE,TRUE];
 _unit setVariable["hasOrgan",FALSE,TRUE]; 
 
-//Load CopGear
-if(playerSide == west) then {
-	[] spawn life_fnc_setupActions;
-	[] spawn life_fnc_copLoadout;
-};
-
-//Load CivGear
-if(playerSide == civilian) then {
-	[] spawn life_fnc_setupActions;
-	[] spawn life_fnc_civLoadout;
-};
-
-//Load MedicGear
-if(playerSide == independent) then {
-	[] spawn life_fnc_medicLoadout;
-	[] spawn life_fnc_setupActions;
-};
-
 _unit addRating 9999999999999999; //Set our rating to a high value, this is for a ARMA engine thing.
 player playMoveNow "amovppnemstpsraswrfldnon";
 [[_unit,life_sidechat,playerSide],"TON_fnc_managesc",false,false] spawn life_fnc_MP;

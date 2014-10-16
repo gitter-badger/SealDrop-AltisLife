@@ -5,8 +5,7 @@
 	Description:
 	Sets the player up if he/she used the respawn option.
 */
-private["_handle","_unit","_ui"];
-_unit = [_this,0,ObjNull,[ObjNull]] call BIS_fnc_param;
+private["_ui"];
 
 //Reset our weight and other stuff
 life_use_atm = TRUE;
@@ -25,7 +24,6 @@ life_corpse setVariable["Reviving",nil,TRUE];
 player setVariable["Revive",nil,TRUE];
 player setVariable["name",nil,TRUE];
 player setVariable["Reviving",nil,TRUE];
-_unit enableFatigue false;
 
 //Load gear for a 'new life'
 switch(playerSide) do
