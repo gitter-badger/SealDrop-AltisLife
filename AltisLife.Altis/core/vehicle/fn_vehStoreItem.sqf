@@ -7,7 +7,7 @@
 	Used in the vehicle trunk menu, stores the selected item and puts it in the vehicles virtual inventory
 	if the vehicle has room for the item.
 */
-private["_ctrl","_num","_totalWeight","_itemWeight","_veh_data","_inv","_index","_val","_Truck","_FuelTrucks","_FuelStuff"];
+private["_ctrl","_num","_totalWeight","_itemWeight","_veh_data","_inv","_index","_val"];
 disableSerialization;
 
 _ctrl = ctrlSelData(3503);
@@ -28,23 +28,6 @@ _veh_data = life_trunk_vehicle getVariable ["Trunk",[[],0]];
 _inv = _veh_data select 0;
 
 if(_ctrl == "goldbar" && {!(life_trunk_vehicle isKindOf "LandVehicle" OR life_trunk_vehicle isKindOf "House_F")}) exitWith {hint "You cannot store that in anything but a land vehicle!"};
-if(_ctrl == "uranium1" && {!(life_trunk_vehicle isKindOf "LandVehicle" OR life_trunk_vehicle isKindOf "House_F")}) exitWith {hint "You cannot store that in anything but a land vehicle!"}; // Add This
-
-_Truck = TypeOf life_trunk_vehicle;
-_FuelStuff = ["oilu","oilp"]; //Wich Items can be stored in?
-_FuelTrucks = ["C_Van_01_fuel_F","B_Truck_01_fuel_F","O_Truck_02_fuel_F","O_Truck_03_fuel_F"]; //Fuel Trucks, who are allowed to carry fuel
-
-
-switch (true) do
-{
-case ((_ctrl in _FuelStuff) && (_Truck in _FuelTrucks)): {life_TankLaster = 1}; //Fuel in FuelTruck -> Allowed
-case (!(_ctrl in _FuelStuff) && !(_Truck in _FuelTrucks)): {life_TankLaster = 2}; //NonFuel in NonFuelTruck -> Allowed
-case (!(_ctrl in _FuelStuff) && (_Truck in _FuelTrucks)): {life_TankLaster = 3}; //NonFuel in FuelTruck -> Nope
-case ((_ctrl in _FuelStuff) && !(_Truck in _FuelTrucks)): {life_TankLaster = 4}; //Fuel in NonFuelTruck -> Nope!
-};
-
-if (life_TankLaster == 3) exitWith {hint "Ey Jung! Das passt nicht durch den Stutzen! Du kannst nur Öl oder Kerosin in einen Tanklaster füllen!)"};
-if (life_TankLaster == 4) exitWith {hint "BISSU IRRE? Dat Zeusch würd überall auslaufe! (Du kannst Öl oder Kerosin NUR in einen Tanklaster füllen!)";};
 
 if(_ctrl == "money") then
 {
@@ -52,7 +35,7 @@ if(_ctrl == "money") then
 	if(life_cash < _num) exitWith {hint "You don't have that much cash on you to store in the vehicle!"};
 	if(_index == -1) then
 	{
-		_inv set[count _inv,[_ctrl,_num]];
+		_inv pushBack [_ctrl,_num];
 	}
 		else
 	{
@@ -72,7 +55,7 @@ if(_ctrl == "money") then
 	_index = [_ctrl,_inv] call TON_fnc_index;
 	if(_index == -1) then
 	{
-		_inv set[count _inv,[_ctrl,_num]];
+		_inv pushBack [_ctrl,_num];
 	}
 		else
 	{
