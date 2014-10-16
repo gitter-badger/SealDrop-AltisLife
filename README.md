@@ -50,7 +50,7 @@ Donator Ränge:
 
 //Steuerung Ingame
 
-Z: Spieler Menü
+Z: Spieler Menü<br/>
 U: Fahrzeuge auf/zuschließen
 U: Häuser Öffnen/Schließen
 F: Polizei Sirene
