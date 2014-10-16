@@ -51,26 +51,26 @@ Donator Ränge:
 //Steuerung Ingame
 
 Z: Spieler Menü<br/>
-U: Fahrzeuge auf/zuschließen
-U: Häuser Öffnen/Schließen
-F: Polizei Sirene
-T: Vehicle Trunk
-Ö: Polizei Warnung
-Ä: Cop Schranken öffnen
-O: Cops Nagelbänder legen
-^: Spitzhacke
-Left Shift + 1: Telefon
-Left Shift + 2: WantedList
-Left Shift + 3: Anzeige erstatten
-Left Shift + R: Festnehmen
-Left Shift + G: Ergeben
-Left Shift + V: Knockout
-Left Shift + O: Civ Restrain
-Left Shift + Space: Springen
-Left Shift + H: Waffe Holstern
-Left Windows: Housing option
-Left Windows: Farmen an Feldern
-Left Windows: Spieler Interaktionsmenü
+U: Fahrzeuge auf/zuschließen<br/>
+U: Häuser Öffnen/Schließen<br/>
+F: Polizei Sirene<br/>
+T: Vehicle Trunk<br/>
+Ö: Polizei Warnung<br/>
+Ä: Cop Schranken öffnen<br/>
+O: Cops Nagelbänder legen<br/>
+^: Spitzhacke<br/>
+Left Shift + 1: Telefon<br/>
+Left Shift + 2: WantedList<br/>
+Left Shift + 3: Anzeige erstatten<br/>
+Left Shift + R: Festnehmen<br/>
+Left Shift + G: Ergeben<br/>
+Left Shift + V: Knockout<br/>
+Left Shift + O: Civ Restrain<br/>
+Left Shift + Space: Springen<br/>
+Left Shift + H: Waffe Holstern<br/>
+Left Windows: Housing option<br/>
+Left Windows: Farmen an Feldern<br/>
+Left Windows: Spieler Interaktionsmenü<br/>
 
 
 Entwickler von Altis Life: https://github.com/TAWTonic/Altis-Life
