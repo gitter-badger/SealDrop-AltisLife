@@ -1,12 +1,3 @@
--- phpMyAdmin SQL Dump
--- version 4.2.1
--- http://www.phpmyadmin.net
---
--- Host: localhost
--- Erstellungszeit: 10. Okt 2014 um 21:17
--- Server Version: 5.1.73
--- PHP-Version: 5.3.3
-
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
 
@@ -138,14 +129,16 @@ CREATE TABLE IF NOT EXISTS `economy` (
 --
 
 CREATE TABLE IF NOT EXISTS `gangs` (
-`id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `owner` varchar(32) DEFAULT NULL,
   `name` varchar(32) DEFAULT NULL,
   `members` text,
   `maxmembers` int(2) DEFAULT '8',
   `bank` int(100) DEFAULT '0',
-  `active` tinyint(4) DEFAULT '1'
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=11 ;
+  `active` tinyint(4) DEFAULT '1',
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `name_UNIQUE` (`name`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -154,13 +147,14 @@ CREATE TABLE IF NOT EXISTS `gangs` (
 --
 
 CREATE TABLE IF NOT EXISTS `houses` (
-`id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `pid` varchar(32) NOT NULL,
   `pos` varchar(64) DEFAULT NULL,
   `inventory` text,
   `containers` text,
-  `owned` tinyint(4) DEFAULT '0'
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
+  `owned` tinyint(4) DEFAULT '0',
+  PRIMARY KEY (`id`,`pid`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
 
 -- --------------------------------------------------------
 
@@ -185,7 +179,7 @@ CREATE TABLE IF NOT EXISTS `messages` (
 --
 
 CREATE TABLE IF NOT EXISTS `players` (
-`uid` int(12) NOT NULL,
+  `uid` int(12) NOT NULL AUTO_INCREMENT,
   `name` varchar(32) NOT NULL,
   `playerid` varchar(50) NOT NULL,
   `cash` int(100) NOT NULL DEFAULT '0',
@@ -196,14 +190,18 @@ CREATE TABLE IF NOT EXISTS `players` (
   `med_licenses` text,
   `cop_gear` text NOT NULL,
   `med_gear` text NOT NULL,
-  `mediclevel` enum('0','1','2') NOT NULL DEFAULT '0',
+  `mediclevel` enum('0','1','2','3','4','5') NOT NULL DEFAULT '0',
   `arrested` tinyint(1) NOT NULL DEFAULT '0',
   `aliases` text NOT NULL,
   `adminlevel` enum('0','1','2','3') NOT NULL DEFAULT '0',
-  `donatorlvl` enum('0','1','2','3') NOT NULL DEFAULT '0',
+  `donatorlvl` enum('0','1','2','3','4','5') NOT NULL DEFAULT '0',
   `civ_gear` text NOT NULL,
-  `blacklist` tinyint(1) NOT NULL DEFAULT '0'
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=10283 ;
+  `blacklist` tinyint(1) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`uid`),
+  UNIQUE KEY `playerid` (`playerid`),
+  KEY `name` (`name`),
+  KEY `blacklist` (`blacklist`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=12 ;
 
 -- --------------------------------------------------------
 
@@ -212,7 +210,7 @@ CREATE TABLE IF NOT EXISTS `players` (
 --
 
 CREATE TABLE IF NOT EXISTS `vehicles` (
-`id` int(12) NOT NULL,
+  `id` int(12) NOT NULL AUTO_INCREMENT,
   `side` varchar(15) NOT NULL,
   `classname` varchar(32) NOT NULL,
   `type` varchar(12) NOT NULL,
@@ -221,8 +219,12 @@ CREATE TABLE IF NOT EXISTS `vehicles` (
   `active` tinyint(1) NOT NULL DEFAULT '0',
   `plate` int(20) NOT NULL,
   `color` int(20) NOT NULL,
-  `inventory` varchar(500) NOT NULL
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1132 ;
+  `inventory` varchar(500) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `side` (`side`),
+  KEY `pid` (`pid`),
+  KEY `type` (`type`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
 
 --
 -- Indexes for dumped tables
