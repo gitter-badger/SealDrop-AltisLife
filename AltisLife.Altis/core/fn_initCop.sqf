@@ -31,7 +31,7 @@ waitUntil{isNull (findDisplay 38500)}; //Wait for the spawn selection to be done
 //Introcam
 [] spawn life_fnc_IntroCam;
 
-/Geld für Cops
+//Geld für Cops
 switch(__GETC__(life_coplevel)) do
 {
 	case 1: {life_paycheck = life_paycheck + 1000;};
