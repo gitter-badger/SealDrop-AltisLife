@@ -20,7 +20,6 @@ life_versionInfo = "SealDrop Life RPG";
 [] execVM "script\fn_statusBar.sqf"; //Load the Statusbar
 StartProgress = true;
 
-"BIS_fnc_MP_packet" addPublicVariableEventHandler {_this call life_fnc_MPexec};
 
 //Disable the FOG
 [] spawn {

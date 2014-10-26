@@ -363,9 +363,6 @@ class Life_Client_Core
 		class copSiren2 {};
 		class ticketPaid {};
 		class copEnter {};
-		class sekLoadout {};
-		class gsgLoadout {};
-		class polizeiLoadout {};
 		class copOpener {};
 		class radarCam {};
 	};
