@@ -15,10 +15,6 @@ DELIMITER $$
 --
 -- Prozeduren
 --
-CREATE DEFINER=`*DB_NAME*`@`localhost` PROCEDURE `deleteDeadVehicles`()
-    NO SQL
-DELETE FROM `vehicles` WHERE `alive` = 0$$
-
 CREATE DEFINER=`*DB_NAME*`@`localhost` PROCEDURE `deleteEconomyPrices`()
     NO SQL
 TRUNCATE `economy`$$
@@ -31,10 +27,6 @@ TRUNCATE TABLE `messages`$$
 
 CREATE DEFINER=`*DB_NAME*`@`localhost` PROCEDURE `deleteSelledHouses`()
 DELETE FROM `houses` WHERE `owned` = 0$$
-
-CREATE DEFINER=`*DB_NAME*`@`localhost` PROCEDURE `resetLifeVehicles`()
-    NO SQL
-UPDATE vehicles SET `active`= 0$$
 
 CREATE DEFINER=`*DB_NAME*`@`localhost` PROCEDURE `setEconomyPrices`()
     NO SQL
