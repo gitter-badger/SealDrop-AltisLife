@@ -6,7 +6,7 @@ Official SealDrop AltisLife
 
 in der "Datenbank.sql" 
 
-Alle *DB_NAME* durch euren Datenbank Namen ersetzen.
+Alle "DB_NAME" durch euren Datenbank Namen ersetzen.
 
 
 Bei Fragen in den Nitrado Post

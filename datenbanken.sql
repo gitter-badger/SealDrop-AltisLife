@@ -8,27 +8,27 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8 */;
 
 --
--- Datenbank: `*DB_NAME*`
+-- Datenbank: `DB_NAME`
 --
 
 DELIMITER $$
 --
 -- Prozeduren
 --
-CREATE DEFINER=`*DB_NAME*`@`localhost` PROCEDURE `deleteEconomyPrices`()
+CREATE DEFINER=`DB_NAME`@`localhost` PROCEDURE `deleteEconomyPrices`()
     NO SQL
 TRUNCATE `economy`$$
 
-CREATE DEFINER=`*DB_NAME*`@`localhost` PROCEDURE `deleteOldGangs`()
+CREATE DEFINER=`DB_NAME`@`localhost` PROCEDURE `deleteOldGangs`()
 DELETE FROM `gangs` WHERE `active` = 0$$
 
-CREATE DEFINER=`*DB_NAME*`@`localhost` PROCEDURE `deleteOldMessages`()
+CREATE DEFINER=`DB_NAME`@`localhost` PROCEDURE `deleteOldMessages`()
 TRUNCATE TABLE `messages`$$
 
-CREATE DEFINER=`*DB_NAME*`@`localhost` PROCEDURE `deleteSelledHouses`()
+CREATE DEFINER=`DB_NAME`@`localhost` PROCEDURE `deleteSelledHouses`()
 DELETE FROM `houses` WHERE `owned` = 0$$
 
-CREATE DEFINER=`*DB_NAME*`@`localhost` PROCEDURE `setEconomyPrices`()
+CREATE DEFINER=`DB_NAME`@`localhost` PROCEDURE `setEconomyPrices`()
     NO SQL
 INSERT INTO `economy` (`numero`, `ressource`, `sellprice`, `buyprice`, `varprice`, `minprice`, `maxprice`, `factor`, `shoptype`) VALUES
 (1, 'apple', 50, 65, 1, 1, 60, '1', 'market'),
