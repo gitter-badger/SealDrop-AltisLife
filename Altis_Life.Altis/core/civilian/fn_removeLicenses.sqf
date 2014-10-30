@@ -18,7 +18,6 @@ switch (_state) do
 		license_civ_heroin = false;
 		license_civ_marijuana = false;
 		license_civ_coke = false;
-		license_civ_meth = false;
 	};
 	
 	//Jail licenses
@@ -34,30 +33,19 @@ switch (_state) do
 	{
 		if(license_civ_driver OR license_civ_air OR license_civ_truck OR license_civ_boat) then {
 			license_civ_driver = false;
+			license_civ_air = false;
 			license_civ_truck = false;
-			hint "Du hast deinen LKW/Autoführerschein verloren, da Du jemand getötet hast.";
+			license_civ_boat = false;
+			hint localize "STR_Civ_LicenseRemove_1";
 		};
 	};
-	
-	
 	
 	//Killing someone while owning a gun license
 	case 3:
 	{
 		if(license_civ_gun) then {
 			license_civ_gun = false;
-			hint "Du hast Deinen Waffenschein verloren, da du jemand getötet hast.";
-		};
-	};
-	
-	//ADDED by grimm, for removing licenses on radar script
-	case 4:
-	{
-		if(license_civ_driver OR license_civ_air OR license_civ_truck) then {
-			license_civ_driver = false;
-			license_civ_air = false;
-			license_civ_truck = false;
-			systemChat localize "STR_Civ_LicenseRemove_1a";
+			hint localize "STR_Civ_LicenseRemove_2";
 		};
 	};
 };

@@ -5,13 +5,14 @@
 	Description:
 	THANK YOU JESUS I WAS SAVED!
 */
-private["_medic","_dir","_ui"];
+private["_medic","_dir"];
 _medic = [_this,0,"Unknown Medic",[""]] call BIS_fnc_param;
 _oldGear = [life_corpse] call life_fnc_fetchDeadGear;
 [_oldGear] spawn life_fnc_loadDeadGear;
+life_corpse setVariable["realname",nil,true]; //Should correct the double name sinking into the ground.
 [[life_corpse],"life_fnc_corpse",nil,FALSE] spawn life_fnc_MP;
 _dir = getDir life_corpse;
-hint format["%1 hat Dich wiederbelebt das hat Dich %2€ gekostet.",_medic,[(call life_revive_fee)] call life_fnc_numberText];
+hint format[localize "STR_Medic_RevivePay",_medic,[(call life_revive_fee)] call life_fnc_numberText];
 
 closeDialog 0;
 life_deathCamera cameraEffect ["TERMINATE","BACK"];
@@ -22,21 +23,6 @@ if(life_atmcash > (call life_revive_fee)) then {
 	life_atmcash = life_atmcash - (call life_revive_fee);
 } else {
 	life_atmcash = 0;
-};
-
-//Civ SetupActions
-if(playerSide == civilian) then {
-	[] spawn life_fnc_setupActions;
-};
-
-//Cop Load Gear
-if(playerSide == west) then {
-	[] spawn life_fnc_setupActions;
-};
-
-//medic SetupActions
-if(playerSide == independent) then {
-	[] spawn life_fnc_setupActions;
 };
 
 //Bring me back to life.
@@ -51,4 +37,3 @@ player setVariable["Revive",nil,TRUE];
 player setVariable["name",nil,TRUE];
 player setVariable["Reviving",nil,TRUE];
 [] call life_fnc_hudUpdate; //Request update of hud.
-_ui = "osefStatusBar" call BIS_fnc_rscLayer;_ui cutRsc["osefStatusBar","PLAIN"];

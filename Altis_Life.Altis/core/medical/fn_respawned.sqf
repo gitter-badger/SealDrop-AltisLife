@@ -5,8 +5,7 @@
 	Description:
 	Sets the player up if he/she used the respawn option.
 */
-private["_ui"];
-
+private["_handle"];
 //Reset our weight and other stuff
 life_use_atm = TRUE;
 life_hunger = 100;
@@ -74,4 +73,3 @@ if(life_removeWanted) then {
 
 [] call SOCK_fnc_updateRequest;
 [] call life_fnc_hudUpdate; //Request update of hud.
-_ui = "osefStatusBar" call BIS_fnc_rscLayer;_ui cutRsc["osefStatusBar","PLAIN"];

@@ -16,7 +16,7 @@ if(player distance _target > 2) exitWith {_ui = "osefStatusBar" call BIS_fnc_rsc
 
 //Fetch their name so we can shout it.
 _targetName = _target getVariable["name","Unknown"];
-_title = format["Wiederbelebt %1",_targetName];
+_title = format[localize "STR_Medic_Progress",_targetName];
 life_action_inUse = true; //Lockout the controls.
 
 _target setVariable["Reviving",player,TRUE];
