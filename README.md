@@ -8,6 +8,7 @@ in der "Datenbank.sql"
 
 Alle "DB_NAME" durch euren Datenbank Namen ersetzen.
 
+!!!!!!!!  NACH DEM IMPORT DIE PROZEDUR "SetEconomyPrices" MANUELL AUSFÜHREN !!!!!!!!!!!!
 
 Bei Fragen in den Nitrado Post
 
