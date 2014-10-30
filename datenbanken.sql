@@ -8,12 +8,14 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8 */;
 
 --
--- Datenbank: `DB_NAME`
+-- Database: `DB_NAME`
+-- Default Schema
 --
 
 DELIMITER $$
 --
--- Prozeduren
+-- Procedures
+-- Edit arma3 and root to match a user in MySQL
 --
 CREATE DEFINER=`DB_NAME`@`localhost` PROCEDURE `deleteEconomyPrices`()
     NO SQL
@@ -99,75 +101,7 @@ DELIMITER ;
 -- --------------------------------------------------------
 
 --
--- Tabellenstruktur für Tabelle `economy`
---
-
-CREATE TABLE IF NOT EXISTS `economy` (
-`numero` int(12) NOT NULL,
-  `ressource` varchar(32) NOT NULL,
-  `sellprice` int(100) NOT NULL DEFAULT '0',
-  `buyprice` int(100) NOT NULL DEFAULT '0',
-  `varprice` int(100) NOT NULL,
-  `minprice` int(100) NOT NULL,
-  `maxprice` int(100) NOT NULL,
-  `factor` enum('0','1','2','3','4','5','6','7') NOT NULL DEFAULT '0',
-  `shoptype` text NOT NULL
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=63 ;
-
--- --------------------------------------------------------
-
---
--- Tabellenstruktur für Tabelle `gangs`
---
-
-CREATE TABLE IF NOT EXISTS `gangs` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `owner` varchar(32) DEFAULT NULL,
-  `name` varchar(32) DEFAULT NULL,
-  `members` text,
-  `maxmembers` int(2) DEFAULT '8',
-  `bank` int(100) DEFAULT '0',
-  `active` tinyint(4) DEFAULT '1',
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `name_UNIQUE` (`name`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
--- --------------------------------------------------------
-
---
--- Tabellenstruktur für Tabelle `houses`
---
-
-CREATE TABLE IF NOT EXISTS `houses` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `pid` varchar(32) NOT NULL,
-  `pos` varchar(64) DEFAULT NULL,
-  `inventory` text,
-  `containers` text,
-  `owned` tinyint(4) DEFAULT '0',
-  PRIMARY KEY (`id`,`pid`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
-
--- --------------------------------------------------------
-
---
--- Tabellenstruktur für Tabelle `messages`
---
-
-CREATE TABLE IF NOT EXISTS `messages` (
-`uid` int(12) NOT NULL,
-  `fromID` varchar(50) NOT NULL,
-  `toID` varchar(50) NOT NULL,
-  `message` text,
-  `fromName` varchar(32) NOT NULL,
-  `toName` varchar(32) NOT NULL,
-  `time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
-
--- --------------------------------------------------------
-
---
--- Tabellenstruktur für Tabelle `players`
+-- Table structure for table `players`
 --
 
 CREATE TABLE IF NOT EXISTS `players` (
@@ -198,7 +132,7 @@ CREATE TABLE IF NOT EXISTS `players` (
 -- --------------------------------------------------------
 
 --
--- Tabellenstruktur für Tabelle `vehicles`
+-- Table structure for table `vehicles`
 --
 
 CREATE TABLE IF NOT EXISTS `vehicles` (
@@ -218,80 +152,64 @@ CREATE TABLE IF NOT EXISTS `vehicles` (
   KEY `type` (`type`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
 
---
--- Indexes for dumped tables
---
+-- --------------------------------------------------------
 
 --
--- Indexes for table `economy`
---
-ALTER TABLE `economy`
- ADD PRIMARY KEY (`numero`), ADD UNIQUE KEY `ressource` (`ressource`);
-
---
--- Indexes for table `gangs`
---
-ALTER TABLE `gangs`
- ADD PRIMARY KEY (`id`), ADD UNIQUE KEY `name_UNIQUE` (`name`);
-
---
--- Indexes for table `houses`
---
-ALTER TABLE `houses`
- ADD PRIMARY KEY (`id`,`pid`);
-
---
--- Indexes for table `messages`
---
-ALTER TABLE `messages`
- ADD PRIMARY KEY (`uid`);
-
---
--- Indexes for table `players`
---
-ALTER TABLE `players`
- ADD PRIMARY KEY (`uid`), ADD UNIQUE KEY `playerid` (`playerid`), ADD KEY `name` (`name`), ADD KEY `blacklist` (`blacklist`);
-
---
--- Indexes for table `vehicles`
---
-ALTER TABLE `vehicles`
- ADD PRIMARY KEY (`id`), ADD KEY `side` (`side`), ADD KEY `pid` (`pid`), ADD KEY `type` (`type`);
-
---
--- AUTO_INCREMENT for dumped tables
+-- Table structure for table `economy`
 --
 
+
+CREATE TABLE IF NOT EXISTS `economy` (
+`numero` int(12) NOT NULL,
+  `ressource` varchar(32) NOT NULL,
+  `sellprice` int(100) NOT NULL DEFAULT '0',
+  `buyprice` int(100) NOT NULL DEFAULT '0',
+  `varprice` int(100) NOT NULL,
+  `minprice` int(100) NOT NULL,
+  `maxprice` int(100) NOT NULL,
+  `factor` enum('0','1','2','3','4','5','6','7') NOT NULL DEFAULT '0',
+  `shoptype` text NOT NULL
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=63 ;
+
+
+-- --------------------------------------------------------
+
+
 --
--- AUTO_INCREMENT for table `economy`
+-- Table structure for table `houses`
+-- Needed for extDB latest update on git
 --
-ALTER TABLE `economy`
-MODIFY `numero` int(12) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=63;
+
+CREATE TABLE IF NOT EXISTS `houses` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `pid` varchar(32) NOT NULL,
+  `pos` varchar(64) DEFAULT NULL,
+  `inventory` text,
+  `containers` text,
+  `owned` tinyint(4) DEFAULT '0',
+  PRIMARY KEY (`id`,`pid`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
+
+-- --------------------------------------------------------
+
 --
--- AUTO_INCREMENT for table `gangs`
+-- Table structure for table `gangs`
+-- Needed for extDB latest update on git
 --
-ALTER TABLE `gangs`
-MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=11;
---
--- AUTO_INCREMENT for table `houses`
---
-ALTER TABLE `houses`
-MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
---
--- AUTO_INCREMENT for table `messages`
---
-ALTER TABLE `messages`
-MODIFY `uid` int(12) NOT NULL AUTO_INCREMENT;
---
--- AUTO_INCREMENT for table `players`
---
-ALTER TABLE `players`
-MODIFY `uid` int(12) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=10283;
---
--- AUTO_INCREMENT for table `vehicles`
---
-ALTER TABLE `vehicles`
-MODIFY `id` int(12) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=1132;
+
+CREATE TABLE IF NOT EXISTS `gangs` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `owner` varchar(32) DEFAULT NULL,
+  `name` varchar(32) DEFAULT NULL,
+  `members` text,
+  `maxmembers` int(2) DEFAULT '8',
+  `bank` int(100) DEFAULT '0',
+  `active` tinyint(4) DEFAULT '1',
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `name_UNIQUE` (`name`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
