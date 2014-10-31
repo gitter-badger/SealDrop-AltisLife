@@ -16,7 +16,7 @@ if(life_blacklisted) exitWith
 	sleep 30;
 };
 
-if(!(str(player) in ["ff_1"])) then {
+if(!(str(player) in ["cop_1"])) then {
 	if((__GETC__(life_coplevel) == 0) && (__GETC__(life_adminlevel) == 0)) then {
 		["NotWhitelisted",false,true] call BIS_fnc_endMission;
 		sleep 35;
@@ -30,21 +30,6 @@ waitUntil{isNull (findDisplay 38500)}; //Wait for the spawn selection to be done
 
 //Introcam
 [] spawn life_fnc_IntroCam;
-
-//Geld für Cops
-switch(__GETC__(life_coplevel)) do
-{
-	case 1: {life_paycheck = life_paycheck + 1000;};
-	case 2: {life_paycheck = life_paycheck + 2000;};
-	case 3: {life_paycheck = life_paycheck + 3000;};
-	case 4: {life_paycheck = life_paycheck + 4000;};
-	case 5: {life_paycheck = life_paycheck + 5000;};
-	case 6: {life_paycheck = life_paycheck + 6000;};
-	case 7: {life_paycheck = life_paycheck + 7000;};
-	default {life_paycheck = life_paycheck };
-};
-//Ende von den Polizei Geldern
-
 
 //Skins und Backpacks für Cops
 [] spawn
