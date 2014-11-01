@@ -25,13 +25,12 @@ if(isNil {uiNamespace getVariable "life_sql_id"}) then {
 
 	//Initialize the database
 	_result = "extDB" callExtension "9:DATABASE:Database2";
-	if(_result != "[1]") exitWith {"extDB: Error with Database Connection"};
+	if(_result != "[1]") exitWith {diag_log "extDB: Error with Database Connection";};
 	_result = "extDB" callExtension format["9:ADD:DB_RAW_V2:%1",(call life_sql_id)];
-	if(_result != "[1]") exitWith {"extDB: Error with Database Connection"};
-	diag_log "extDB: Connected to Database";
-
+	if(_result != "[1]") exitWith {diag_log "extDB: Error with Database Connection";};
 	"extDB" callExtension "9:LOCK";
 	_extDB = true;
+	diag_log "extDB: Connected to Database";
 } else {
 	life_sql_id = uiNamespace getVariable "life_sql_id";
 	__CONST__(life_sql_id,life_sql_id);
@@ -63,9 +62,9 @@ __CONST__(JxMxE_PublishVehicle,"No");
 
 //[] execVM "\life_server\fn_initHC.sqf";
 
-life_radio_west = radioChannelCreate [[0, 0.95, 1, 0.8], "Funkdurchsage", "%UNIT_NAME", []];
-life_radio_civ = radioChannelCreate [[0, 0.95, 1, 0.8], "Alle Chat", "%UNIT_NAME", []];
-life_radio_indep = radioChannelCreate [[0, 0.95, 1, 0.8], "Funkdurchsage", "%UNIT_NAME", []];
+life_radio_west = radioChannelCreate [[0, 0.95, 1, 0.8], "Side Channel", "%UNIT_NAME", []];
+life_radio_civ = radioChannelCreate [[0, 0.95, 1, 0.8], "Side Channel", "%UNIT_NAME", []];
+life_radio_indep = radioChannelCreate [[0, 0.95, 1, 0.8], "Side Channel", "%UNIT_NAME", []];
 
 serv_sv_use = [];
 
