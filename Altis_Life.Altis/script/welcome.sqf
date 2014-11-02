@@ -16,13 +16,13 @@ _onScreenTime = 2;
 _role1 = "Willkommen bei";
 _role1names = ["S E A L D R O P"];
 _role2 = "Server Inhaber";
-_role2names = ["TheTotenkopf,Repa24"];
+_role2names = ["ADMIN_NAMEN"];
 _role3 = "Map Edit by";
-_role3names = ["TheTotenkopf,Toni,Repa24"];
+_role3names = ["TheTotenkopf"];
 _role4 = "Offizieller TeamSpeak";
-_role4names = ["SealDrop.de"];
+_role4names = ["TS_NAME"];
 _role8 = "Offizielles Forum";
-_role8names = ["SealDrop.de"];
+_role8names = ["FORUM_NAME"];
  _role9 = "Server Restarts";
 _role9names = ["0,6,9,12,15,18,21"];
 
