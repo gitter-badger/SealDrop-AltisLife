@@ -52,7 +52,7 @@ if(_curTarget isKindOf "House_F") exitWith {
 		closeDialog 0;
 	};
 };
-		
+
 if(!isPlayer _curTarget && side _curTarget == civilian) exitWith {closeDialog 0;}; //Bad side check?
 _display = findDisplay 37400;
 _Btn1 = _display displayCtrl Btn1;
@@ -109,4 +109,3 @@ if(!((player distance (getMarkerPos "cop_spawn_1") < 50) OR  (player distance (g
 {
 	_Btn6 ctrlEnable false;
 };
-		

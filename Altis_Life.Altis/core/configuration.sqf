@@ -25,7 +25,6 @@ life_impound_inuse = false;
 life_action_inUse = false;
 life_spikestrip = ObjNull;
 life_respawn_timer = 2; //Scaled in minutes
-life_has_insurance = false;
 life_knockout = false;
 life_interrupted = false;
 life_respawned = false;
@@ -47,7 +46,7 @@ life_firstSpawn = false;
 
 //Persistent Saving
 __CONST__(life_save_civ,TRUE); //Save weapons for civs?
-__CONST__(life_save_yinv,TRUE); //Save Y-Inventory for civs and cops? (Medics excluded for now)
+__CONST__(life_save_yinv,TRUE); //Save Y-Inventory for civs and cops?
 
 //Revive constant variables.
 __CONST__(life_revive_cops,FALSE); //Set to false if you don't want cops to be able to revive downed players.
@@ -73,22 +72,6 @@ life_clothing_purchase = [-1,-1,-1,-1,-1];
 life_maxWeight = 50; //Identifies the max carrying weight (gets adjusted throughout game when wearing different types of clothing).
 life_maxWeightT = 100; //Static variable representing the players max carrying weight on start.
 life_carryWeight = 0; //Represents the players current inventory weight (MUST START AT 0).
-
-/*
-*****************************
-****** Food Variables *******
-*****************************
-*/
-life_eat_Salema = 40;
-life_eat_Ornate = 20;
-life_eat_Mackerel = 20;
-life_eat_Tuna = 100;
-life_eat_Mullet = 30;
-life_eat_CatShark = 60;
-life_eat_Rabbit = 20;
-life_eat_Apple = 5;
-life_eat_turtlesoup = 80;
-life_eat_donuts = 100;
 
 /*
 *****************************

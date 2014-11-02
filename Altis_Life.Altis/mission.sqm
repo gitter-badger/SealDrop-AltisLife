@@ -243,9 +243,10 @@ class Mission
 					side="WEST";
 					vehicle="B_medic_F";
 					player="PLAY CDG";
+					leader=1;
 					skill=0.60000002;
 					text="cop_16";
-					init="removeBackpack this; removeAllWeapons this; removeHeadgear this; removeVest this; removeGoggles this; removeUniform this; removeAllItems this;";
+					init="removeBackpack this; removeAllWeapons this;";
 					description="[WHITELIST] Polizist 16";
 				};
 				class Item1
@@ -258,7 +259,7 @@ class Mission
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="cop_13";
-					init="removeBackpack this; removeAllWeapons this; removeHeadgear this; removeVest this; removeGoggles this; removeUniform this; removeAllItems this;";
+					init="removeBackpack this; removeAllWeapons this;";
 					description="[WHITELIST] Polizist 13";
 				};
 				class Item2
@@ -271,7 +272,7 @@ class Mission
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="cop_6";
-					init="removeBackpack this; removeAllWeapons this; removeHeadgear this; removeVest this; removeGoggles this; removeUniform this; removeAllItems this;";
+					init="removeBackpack this; removeAllWeapons this;";
 					description="[WHITELIST] Polizist 6";
 				};
 				class Item3
@@ -284,7 +285,7 @@ class Mission
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="cop_11";
-					init="removeBackpack this; removeAllWeapons this; removeHeadgear this; removeVest this; removeGoggles this; removeUniform this; removeAllItems this;";
+					init="removeBackpack this; removeAllWeapons this;";
 					description="[WHITELIST] Polizist 11";
 				};
 				class Item4
@@ -297,7 +298,7 @@ class Mission
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="cop_7";
-					init="removeBackpack this; removeAllWeapons this; removeHeadgear this; removeVest this; removeGoggles this; removeUniform this; removeAllItems this;";
+					init="removeBackpack this; removeAllWeapons this;";
 					description="[WHITELIST] Polizist 7";
 				};
 				class Item5
@@ -310,7 +311,7 @@ class Mission
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="cop_12";
-					init="removeBackpack this; removeAllWeapons this; removeHeadgear this; removeVest this; removeGoggles this; removeUniform this; removeAllItems this;";
+					init="removeBackpack this; removeAllWeapons this;";
 					description="[WHITELIST] Polizist 12";
 				};
 				class Item6
@@ -323,7 +324,7 @@ class Mission
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="cop_14";
-					init="removeBackpack this; removeAllWeapons this; removeHeadgear this; removeVest this; removeGoggles this; removeUniform this; removeAllItems this;";
+					init="removeBackpack this; removeAllWeapons this;";
 					description="[WHITELIST] Polizist 14";
 				};
 				class Item7
@@ -336,7 +337,7 @@ class Mission
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="cop_15";
-					init="removeBackpack this; removeAllWeapons this; removeHeadgear this; removeVest this; removeGoggles this; removeUniform this; removeAllItems this;";
+					init="removeBackpack this; removeAllWeapons this;";
 					description="[WHITELIST] Polizist 15";
 				};
 				class Item8
@@ -349,7 +350,7 @@ class Mission
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="cop_9";
-					init="removeBackpack this; removeAllWeapons this; removeHeadgear this; removeVest this; removeGoggles this; removeUniform this; removeAllItems this;";
+					init="removeBackpack this; removeAllWeapons this;";
 					description="[WHITELIST] Polizist 9";
 				};
 				class Item9
@@ -362,7 +363,7 @@ class Mission
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="cop_8";
-					init="removeBackpack this; removeAllWeapons this; removeHeadgear this; removeVest this; removeGoggles this; removeUniform this; removeAllItems this;";
+					init="removeBackpack this; removeAllWeapons this;";
 					description="[WHITELIST] Polizist 8";
 				};
 				class Item10
@@ -375,7 +376,7 @@ class Mission
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="cop_4";
-					init="removeBackpack this; removeAllWeapons this; removeHeadgear this; removeVest this; removeGoggles this; removeUniform this; removeAllItems this;";
+					init="removeBackpack this; removeAllWeapons this;";
 					description="[WHITELIST] Polizist 4";
 				};
 				class Item11
@@ -388,7 +389,7 @@ class Mission
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="cop_2";
-					init="removeBackpack this; removeAllWeapons this; removeHeadgear this; removeVest this; removeGoggles this; removeUniform this; removeAllItems this;";
+					init="removeBackpack this; removeAllWeapons this;";
 					description="[WHITELIST] Polizist 2";
 				};
 				class Item12
@@ -401,7 +402,7 @@ class Mission
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="cop_3";
-					init="removeBackpack this; removeAllWeapons this; removeHeadgear this; removeVest this; removeGoggles this; removeUniform this; removeAllItems this;";
+					init="removeBackpack this; removeAllWeapons this;";
 					description="[WHITELIST] Polizist 3";
 				};
 				class Item13
@@ -414,7 +415,7 @@ class Mission
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="cop_5";
-					init="removeBackpack this; removeAllWeapons this; removeHeadgear this; removeVest this; removeGoggles this; removeUniform this; removeAllItems this;";
+					init="removeBackpack this; removeAllWeapons this;";
 					description="[WHITELIST] Polizist 5";
 				};
 				class Item14
@@ -427,7 +428,7 @@ class Mission
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="cop_10";
-					init="removeBackpack this; removeAllWeapons this; removeHeadgear this; removeVest this; removeGoggles this; removeUniform this; removeAllItems this;";
+					init="removeBackpack this; removeAllWeapons this;";
 					description="[WHITELIST] Polizist 10";
 				};
 				class Item15
@@ -439,11 +440,9 @@ class Mission
 					side="WEST";
 					vehicle="B_medic_F";
 					player="PLAY CDG";
-					leader=1;
-					rank="COLONEL";
 					skill=0.60000002;
 					text="cop_1";
-					init="removeBackpack this; removeAllWeapons this; removeHeadgear this; removeVest this; removeGoggles this; removeUniform this; removeAllItems this;";
+					init="removeBackpack this; removeAllWeapons this;";
 					description="[ZENTRALE] LEITSTELLE";
 				};
 				class Item16
@@ -457,7 +456,7 @@ class Mission
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="cop_17";
-					init="removeBackpack this; removeAllWeapons this; removeHeadgear this; removeVest this; removeGoggles this; removeUniform this; removeAllItems this;";
+					init="removeBackpack this; removeAllWeapons this;";
 					description="[WHITELIST] Polizist 17";
 				};
 				class Item17
@@ -471,7 +470,7 @@ class Mission
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="cop_18";
-					init="removeBackpack this; removeAllWeapons this; removeHeadgear this; removeVest this; removeGoggles this; removeUniform this; removeAllItems this;";
+					init="removeBackpack this; removeAllWeapons this;";
 					description="[WHITELIST] Polizist 18";
 				};
 				class Item18
@@ -485,7 +484,7 @@ class Mission
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="cop_19";
-					init="removeBackpack this; removeAllWeapons this; removeHeadgear this; removeVest this; removeGoggles this; removeUniform this; removeAllItems this;";
+					init="removeBackpack this; removeAllWeapons this;";
 					description="[WHITELIST] Polizist 19";
 				};
 				class Item19
@@ -499,7 +498,7 @@ class Mission
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="cop_20";
-					init="removeBackpack this; removeAllWeapons this; removeHeadgear this; removeVest this; removeGoggles this; removeUniform this; removeAllItems this;";
+					init="removeBackpack this; removeAllWeapons this;";
 					description="[WHITELIST] Polizist 20";
 				};
 				class Item20
@@ -511,7 +510,7 @@ class Mission
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="cop_21";
-					init="removeBackpack this; removeAllWeapons this; removeHeadgear this; removeVest this; removeGoggles this; removeUniform this; removeAllItems this;";
+					init="removeBackpack this; removeAllWeapons this;";
 					description="[WHITELIST] Polizist 21";
 				};
 			};
@@ -2704,6 +2703,7 @@ class Mission
 					rank="COLONEL";
 					skill=0.60000002;
 					text="medic_1";
+					init="removeBackpack this; removeAllWeapons this;";
 					description="[WHITELIST] Sanitäter/ADAC 1";
 				};
 				class Item1
