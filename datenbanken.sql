@@ -24,6 +24,12 @@ TRUNCATE `economy`$$
 CREATE DEFINER=`DB_NAME`@`localhost` PROCEDURE `deleteOldGangs`()
 DELETE FROM `gangs` WHERE `active` = 0$$
 
+CREATE DEFINER=`DB_NAME`@`localhost` PROCEDURE `resetLifeVehicles`()
+UPDATE vehicles SET `active`= 0;$$
+
+CREATE DEFINER=`DB_NAME`@`localhost` PROCEDURE `deleteDeadVehicles`()
+DELETE FROM `vehicles` WHERE `alive` = 0;$$
+
 CREATE DEFINER=`DB_NAME`@`localhost` PROCEDURE `deleteOldMessages`()
 TRUNCATE TABLE `messages`$$
 
