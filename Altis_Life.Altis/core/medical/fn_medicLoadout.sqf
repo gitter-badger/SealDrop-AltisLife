@@ -5,15 +5,12 @@
 	Description:
 	Loads the medic out with the default gear.
 */
-
 private["_handle"];
 _handle = [] spawn life_fnc_stripDownPlayer;
 waitUntil {scriptDone _handle};
 
 //Gear+Items
 player addItemToBackpack "Medikit";
-player addItemToBackpack "ToolKit";
-player addHeadgear "H_Cap_marshal";
 player addItemToBackpack "ToolKit";
 player addItem "ItemMap";
 player assignItem "ItemMap";
@@ -33,6 +30,3 @@ player addItemToUniform "Chemlight_yellow";
 player addItemToUniform "Chemlight_yellow";
 player addItemToUniform "Chemlight_yellow";
 player addItemToUniform "Chemlight_yellow";
-
-
-[] call life_fnc_saveGear;

@@ -1,4 +1,4 @@
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!DIESE DATEI NICHT AUF DEN SERVER LADEN!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!DIESE DATEI NICHT AUF DEN SERVER LADEN!!!!!!!!!!!!!!!!!
 
 Diese paar Zeilen Code müssen in die BEServer.cfg / BEServer_active_xxxx.cfg
 

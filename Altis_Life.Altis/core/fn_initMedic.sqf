@@ -71,7 +71,7 @@ if((__GETC__(life_medicLevel)) == 1) exitWith {
 	RemoveGoggles player;
 	RemoveAllItems player;
 	player forceAddUniform "U_O_OfficerUniform_ocamo";
-	player addBackpack "B_Kitbag_sgg";
+	player addBackpackGlobal "B_Kitbag_sgg";
 	[] call life_fnc_medicLoadout;
 };
 
@@ -85,7 +85,7 @@ if((__GETC__(life_medicLevel)) == 2) exitWith {
 	RemoveAllItems player;
 	player forceAddUniform "U_B_HeliPilotCoveralls";
 	player addHeadgear "H_Cap_marshal";
-	player addBackpack "B_Kitbag_cbr";
+	player addBackpackGlobal "B_Kitbag_cbr";
 	[] call life_fnc_medicLoadout;
 	_igiload = execVM "IgiLoad\IgiLoadInit.sqf";
 };
