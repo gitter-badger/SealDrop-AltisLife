@@ -19,6 +19,9 @@ if((__GETC__(life_medicLevel)) < 1) exitWith {
 waitUntil{!isNull (findDisplay 38500)}; //Wait for the spawn selection to be open.
 waitUntil{isNull (findDisplay 38500)}; //Wait for the spawn selection to be done.
 
+//Introcam
+[] spawn life_fnc_IntroCam;
+
 //UniformGlobal
 [] spawn
 {
@@ -58,9 +61,6 @@ while {true} do
         waitUntil {backpack player != "B_Kitbag_sgg"};
     };
 };
-//UniformGlobal End
-
-//Initialize Medic and ADAC Clothes for each Level
 
 //Medic Gear + Setup
 if((__GETC__(life_medicLevel)) == 1) exitWith {
@@ -89,7 +89,3 @@ if((__GETC__(life_medicLevel)) == 2) exitWith {
 	[] call life_fnc_medicLoadout;
 	_igiload = execVM "IgiLoad\IgiLoadInit.sqf";
 };
-//Initialize End
-
-//Introcam
-[] spawn life_fnc_IntroCam;
