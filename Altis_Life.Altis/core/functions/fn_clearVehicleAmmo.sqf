@@ -14,6 +14,16 @@ _classname = typeOf _veh;
 
 switch (_classname) do
 {	
+	//Jet A-10
+	case "O_Plane_CAS_02_F":
+	{
+		//Remove ammo and Flaires
+		_veh setVehicleAmmo 0;
+		_veh setDamage 0;
+		_veh allowDamage true;
+        systemChat "Waffen entfernt und Repariert";
+    };
+	
 	//GhostHawk (Black)
     case "B_Heli_Transport_01_F":
     {
