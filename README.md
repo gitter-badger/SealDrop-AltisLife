@@ -3,21 +3,13 @@ SealDrop-AltisLife
 
 Official SealDrop AltisLife
 
-
-in der "Datenbank.sql" 
-
-Alle "DB_NAME" durch euren Datenbank Namen ersetzen.
-
-!!!!!!!!  NACH DEM IMPORT DIE PROZEDUR "SetEconomyPrices" MANUELL AUSFÜHREN !!!!!!!!!!!!
-
-Bei Fragen in den Nitrado Post
-
+Hier könnt ihr euch meine Mission des ehemals beliebten AltisLife-SealDrop Servers runterladen.
 
 Level Verteilung in der Datenbank:
 
 
 
-//Medic / ADAC:
+// Medic / ADAC:
 
 MedicLevel 1 = MEDIC
 
@@ -25,7 +17,7 @@ MedicLevel 2 = ADAC
 
 
 
-//AdminTool / Support Tool:
+// AdminTool / Support Tool:
 
 
 
@@ -37,7 +29,7 @@ AdminLevel 3 = HeadAdmin Tool Ingame
 
 
 
-//Zivilisten:
+// Zivilisten:
 
 
 Donator Ränge:

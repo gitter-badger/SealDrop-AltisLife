@@ -1,6 +1,6 @@
-author = "Tonic | Edit by SealDrop DevTeam";
+author = "Tonic | Edit by SealDrop (TheTotenkopf)";
 onLoadName = "٠٠•● S E A L D R O P ●•٠";
-onLoadMission = "A RPG by SealDrop •";
+onLoadMission = "• A RPG by SealDrop •";
 joinUnassigned = 1;
 respawn = BASE;
 respawndelay = 1;

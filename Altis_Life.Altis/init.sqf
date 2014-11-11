@@ -21,7 +21,7 @@ life_versionInfo = "SealDrop Life RPG";
 StartProgress = true;
 
 
-//Disable the FOG
+//Scheiß Nebel hau ab
 [] spawn {
 	while{true} do {
 		sleep 10;

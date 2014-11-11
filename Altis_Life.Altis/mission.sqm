@@ -449,7 +449,6 @@ class Mission
 				{
 					position[]={8575.6191,96.149063,25168.727};
 					azimut=29.242399;
-					special="NONE";
 					id=16;
 					side="WEST";
 					vehicle="B_medic_F";
@@ -463,7 +462,6 @@ class Mission
 				{
 					position[]={8580.9854,95.062103,25171.24};
 					azimut=29.242399;
-					special="NONE";
 					id=17;
 					side="WEST";
 					vehicle="B_medic_F";
@@ -477,7 +475,6 @@ class Mission
 				{
 					position[]={8580.2637,95.45742,25173.217};
 					azimut=29.242399;
-					special="NONE";
 					id=18;
 					side="WEST";
 					vehicle="B_medic_F";
@@ -491,7 +488,6 @@ class Mission
 				{
 					position[]={8582.8984,95.207298,25174.518};
 					azimut=29.242399;
-					special="NONE";
 					id=19;
 					side="WEST";
 					vehicle="B_medic_F";
