@@ -13,7 +13,7 @@ private["_veh","_ret"];
 _veh = _this select 0;
 _ret = false;
 
-if(_veh == "B_Quadbike_01_F") exitWith {true}; //ATV's don't need to require a license anymore.
+if(_veh == "B_Quadbike_01_F") exitWith {true};
 
 switch (life_veh_shop select 0) do
 {
@@ -30,6 +30,7 @@ switch (life_veh_shop select 0) do
 	case "fed_car": {_ret = true;};
 	case "fed_air": {_ret = true;};
 	case "soldner_1": {_ret = true;};
+	case "donator_car": {_ret = license_civ_air";};
 	case "cop_ship_1": 
 	{
 		if(_veh == "B_Boat_Armed_01_minigun_F") then

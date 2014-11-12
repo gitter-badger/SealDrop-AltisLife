@@ -5,9 +5,6 @@
 	Description:
 	Loads the medic out with the default gear.
 */
-private["_handle"];
-_handle = [] spawn life_fnc_stripDownPlayer;
-waitUntil {scriptDone _handle};
 
 //Gear+Items
 player addItemToBackpack "Medikit";

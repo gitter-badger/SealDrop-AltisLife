@@ -82,7 +82,6 @@ if((__GETC__(life_medicLevel)) == 2) exitWith {
 	RemoveAllWeapons player;
 	RemoveVest player;
 	RemoveGoggles player;
-	RemoveAllItems player;
 	player forceAddUniform "U_B_HeliPilotCoveralls";
 	player addHeadgear "H_Cap_marshal";
 	player addBackpackGlobal "B_Kitbag_cbr";
