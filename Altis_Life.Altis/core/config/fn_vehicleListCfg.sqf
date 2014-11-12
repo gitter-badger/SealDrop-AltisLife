@@ -210,8 +210,8 @@ switch (_shop) do
 	
 	case "donator_car":
 	{
-		_return =
-		[
+		if(__GETC__(life_donator) > 1) then
+		{
 			["B_Quadbike_01_F",500],
 			["C_Offroad_01_F",2500],
 			["C_Hatchback_01_sport_F",10000],
@@ -220,7 +220,7 @@ switch (_shop) do
 			["B_Heli_Light_01_F",100000],
 			["O_Heli_Light_02_unarmed_F",175000],
 			["I_Heli_Transport_02_F",650000]
-		];
+		};
 	};
 	
 	case "soldner_1":
