@@ -1,7 +1,7 @@
 #include <macro.h>
 /*
 	File: fn_cellphone.sqf
-	Author: TheTotenkopf
+	Author: Alan
 	
 	Description:
 	Opens the cellphone menu?

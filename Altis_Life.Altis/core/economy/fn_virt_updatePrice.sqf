@@ -1,8 +1,8 @@
 #include <macro.h>
 /*
 	File: fn_virt_update.sqf
-	Author: TheTotenkopf
-
+	Author: Worldtrade1101
+	Base on Tonic script
 	Description:
 	Update and fill the virtual shop menu.
 */
