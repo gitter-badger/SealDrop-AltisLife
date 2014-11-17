@@ -418,5 +418,67 @@ switch (_code) do
 
 		};
 	};
+	
+	case 59: // F1
+	{
+		closeDialog 0;
+		hintc "Diese Taste wurde vom System blockiert";
+		_handled = false;
+	};
+
+	case 60: // F2
+	{
+		closeDialog 0;
+		hintc "Diese Taste wurde vom System blockiert";
+		_handled = false;
+	};
+			
+	case 61: // F3
+	{
+		closeDialog 0;
+		_handled = false;
+	};
+
+	case 62: // F4 
+	{
+		closeDialog 0;
+		_handled = false;
+	};
+
+	case 63: // F5
+	{
+		closeDialog 0;
+		_handled = false;
+	};
+
+	case 64: //F6 key 
+	{
+		closeDialog 0;
+		_handled = false;
+	};
+
+	case 65: // F7 Key
+	{
+		closeDialog 0;
+		_handled = false;
+	};
+
+	case 66: //F8 key 
+	{
+		closeDialog 0;
+		_handled = false;
+	};
+	
+	case 67: //F9 key 
+	{
+		closeDialog 0;
+		_handled = false;
+	};
+
+	case 68: //10 key 
+	{
+		closeDialog 0;
+		_handled = false;
+	};
 };
 _handled;
