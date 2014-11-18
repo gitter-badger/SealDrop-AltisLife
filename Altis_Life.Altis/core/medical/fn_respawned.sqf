@@ -34,7 +34,7 @@ switch(playerSide) do
 		_handle = [] spawn life_fnc_civLoadout;
 	};
 	case independent: {
-		_handle = [] spawn life_fnc_medicLoadout;
+		_handle = [] spawn life_fnc_resetMedic;
 	};
 	waitUntil {scriptDone _handle};
 };

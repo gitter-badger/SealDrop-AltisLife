@@ -94,6 +94,7 @@ class Life_Client_Core
 		class medicLoadout {};
 		class medicLights {};
 		class medicSiren {};
+		class resetMedic {};
 	};
 	
 	class Actions
