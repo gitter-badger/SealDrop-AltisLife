@@ -25,14 +25,14 @@ if(_zone == "") exitWith {
 switch(true) do {
 	case (_zone in ["apple_1","apple_2","apple_3","apple_4"]): {_gather = "apple"; _val = 3;};
 	case (_zone in ["peaches_1","peaches_2","peaches_3","peaches_4"]): {_gather = "peach"; _val = 3;};
-	case (_zone in ["heroin_1"]): {_gather = "heroinu"; _val = 1;};
+	case (_zone in ["heroin_1"]): {_gather = "heroinu"; _val = 1 + (round random 3);};
 	case (_zone in ["cocaine_1","cocaine_2"]): {_gather = "cocaine"; _val = 1;};
-	case (_zone in ["weed_1"]): {_gather = "cannabis"; _val = 1;};
-	case (_zone in ["meth_1"]): {_gather = "methu"; _val = 1;};
-	case (_zone in ["grape_1"]): {_gather = "grapes"; _val = 3;};
-	case (_zone in ["rye_1"]): {_gather = "rye"; _val = 1;};
-	case (_zone in ["yeast_1"]): {_gather = "yeast"; _val = 1;};
-	case (_zone in ["hops_1"]): {_gather = "hops"; _val = 1;};
+	case (_zone in ["weed_1"]): {_gather = "cannabis"; _val = 1 + (round random 3);};
+	case (_zone in ["meth_1"]): {_gather = "methu"; _val = 1 + (round random 3);};
+	case (_zone in ["grape_1"]): {_gather = "grapes"; _val = 3 + (round random 6);};
+	case (_zone in ["rye_1"]): {_gather = "rye"; _val = 1 + (round random 4);};
+	case (_zone in ["yeast_1"]): {_gather = "yeast"; _val = 1 + (round random 5);};
+	case (_zone in ["hops_1"]): {_gather = "hops"; _val = 1 + (round random 6);};
 	default {""};
 };
 //gather check??
