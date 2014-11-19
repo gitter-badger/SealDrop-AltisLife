@@ -1,9 +1,6 @@
 /*
 	File: fn_medicLoadout.sqf
-	Author: Bryan "Tonic" Boardwine
-	
-	Description:
-	Loads the medic out with the default gear.
+	Author: TheTotenkopf
 */
 
 //Gear+Items

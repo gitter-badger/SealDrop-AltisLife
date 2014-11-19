@@ -91,9 +91,9 @@ life_hunger = 100;
 life_battery = 50;
 __CONST__(life_paycheck_period,10); //Five minutes
 life_cash = 0;
-__CONST__(life_impound_car,5000);
+__CONST__(life_impound_car,2500);
 __CONST__(life_impound_boat,1000);
-__CONST__(life_impound_air,10000);
+__CONST__(life_impound_air,7500);
 life_istazed = false;
 life_my_gang = ObjNull;
 life_drugged_cocaine = -1;
@@ -107,18 +107,18 @@ switch (playerSide) do
 {
 	case west: 
 	{
-		life_atmcash = 8500; //Starting Bank Money
-		life_paycheck = 4000; //Paycheck Amount
+		life_atmcash = 10000; //Starting Bank Money
+		life_paycheck = 2000; //Paycheck Amount
 	};
 	case civilian: 
 	{
-		life_atmcash = 8500; //Starting Bank Money
-		life_paycheck = 1000; //Paycheck Amount
+		life_atmcash = 10000; //Starting Bank Money
+		life_paycheck = 850; //Paycheck Amount
 	};
 	
 	case independent: {
-		life_atmcash = 8500;
-		life_paycheck = 3000;
+		life_atmcash = 10000;
+		life_paycheck = 1750;
 	};
 };
 

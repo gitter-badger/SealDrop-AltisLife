@@ -20,5 +20,7 @@ player addItem "ItemCompass";
 player assignItem "ItemCompass";
 player addItem "ItemWatch";
 player assignItem "ItemWatch";
+player addItem "ItemGPS";
+player assignItem "ItemGPS";
 
 [] call life_fnc_saveGear;
