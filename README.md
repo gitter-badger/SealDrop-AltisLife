@@ -3,8 +3,6 @@ SealDrop-AltisLife
 
 Official SealDrop AltisLife
 
-Hier könnt ihr euch meine Mission des ehemals beliebten AltisLife-SealDrop Servers runterladen.
-
 Level Verteilung in der Datenbank:
 
 

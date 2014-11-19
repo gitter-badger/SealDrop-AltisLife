@@ -17,8 +17,5 @@ Um mein Script erfolgreich zu installieren müsst ihr diese Schritt befolgen:
 7.) Jetzt klickt ihr in eurem PhpMyAdmin Fenster auf den Datenbanknamen (linker Bildschirmrand)
 
 8.) Danach circa in der Mitte des Bildschirms auf "Importieren" und wählt die "Datenbanken.sql" aus und dückt auf "OK".
-
-9.) WICHTIG: Danach müsst ihr die Prozedur "SetEconomyPrices" einmal manuell ausführen. Dazu klickt ihr links auf das "+" bei Prozeduren und führt 
-			die Prozedur aus.
-		
+	
 Jetzt nurnoch den Server starten und ihr könnt spielen.
