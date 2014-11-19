@@ -12,6 +12,7 @@ removeBackpack player;
 removeAllItems player;
 removeVest player;
 removeAllWeapons player;
+removeAllAssignedItems player;
 {player removeMagazine _x;} foreach (magazines player);
 RemoveGoggles player;
 
