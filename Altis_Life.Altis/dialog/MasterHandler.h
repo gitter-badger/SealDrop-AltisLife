@@ -32,3 +32,4 @@
 #include "veh_repaint.hpp"
 #include "market.hpp"
 #include "revoke_license.h"
+#include "LicensesDialog.hpp"

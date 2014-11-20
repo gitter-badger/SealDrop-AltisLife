@@ -177,7 +177,7 @@ switch (_code) do
 					if(playerSide == west) then {
 						[vehicle player] call life_fnc_sirenLights;
 					} else {
-						[vehicle player] call life_fnc_medicSirenLights;
+						[vehicle player] call life_fnc_sirenLights;
 					};
 					_handled = true;
 				};
@@ -231,7 +231,7 @@ switch (_code) do
 	//Ö Key
 	case 39:
 	{
-		if(playerSide in [west,east] && vehicle player != player && !life_siren_active && ((driver vehicle player) == player)) then
+		if(playerSide in [west] && vehicle player != player && !life_siren_active && ((driver vehicle player) == player)) then
 		{
 			[] spawn
 			{
