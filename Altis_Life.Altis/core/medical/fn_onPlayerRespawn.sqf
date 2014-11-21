@@ -26,7 +26,6 @@ _unit setVariable["realname",profileName,true]; //Reset the players name.
 _unit addRating 9999999999999999; //Set our rating to a high value, this is for a ARMA engine thing.
 player playMoveNow "amovppnemstpsraswrfldnon";
 
-
 [] call life_fnc_setupActions;
 [[_unit,life_sidechat,playerSide],"TON_fnc_managesc",false,false] spawn life_fnc_MP;
 player enableFatigue (__GETC__(life_enableFatigue));

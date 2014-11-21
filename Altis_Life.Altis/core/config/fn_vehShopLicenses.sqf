@@ -18,6 +18,7 @@ if(_veh == "B_Quadbike_01_F") exitWith {true};
 switch (life_veh_shop select 0) do
 {
 	case "civ_car_1": {_ret = license_civ_driver;};
+	case "kart_shop": {_ret = license_civ_driver;};
 	case "med_shop": {_ret = license_med_air;};
 	case "med_air_1": {_ret = license_med_air;};
 	case "civ_ship_1": {_ret = license_civ_boat;};

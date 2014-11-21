@@ -7,12 +7,12 @@
 */
 private["_target","_revivable","_targetName","_ui","_progressBar","_titleText","_cP","_title"];
 _target = [_this,0,ObjNull,[ObjNull]] call BIS_fnc_param;
-if(isNull _target) exitWith {};
+if(isNull _target) exitWith {}; //DAFUQ?@!%$!R?EFFD?TGSF?HBS?DHBFNFD?YHDGN?D?FJH
 
 _revivable = _target getVariable["Revive",FALSE];
 if(_revivable) exitWith {};
-if(_target getVariable ["Reviving",ObjNull] == player) exitWith {hint "Diese Person wird schon von jemand anderst Wiederbelebt.";};
-if(player distance _target > 2) exitWith {_ui = "osefStatusBar" call BIS_fnc_rscLayer;_ui cutRsc["osefStatusBar","PLAIN"];};; //Not close enough.
+if(_target getVariable ["Reviving",ObjNull] == player) exitWith {hint localize "STR_Medic_AlreadyReviving";};
+if(player distance _target > 5) exitWith {}; //Not close enough.
 
 //Fetch their name so we can shout it.
 _targetName = _target getVariable["name","Unknown"];
@@ -41,32 +41,31 @@ while {true} do
 	_cP = _cP + 0.01;
 	_progressBar progressSetPosition _cP;
 	_titleText ctrlSetText format["%3 (%1%2)...",round(_cP * 100),"%",_title];
-	if(_cP >= 1 OR !alive player) exitWith {_ui = "osefStatusBar" call BIS_fnc_rscLayer;_ui cutRsc["osefStatusBar","PLAIN"];};
+	if(_cP >= 1 OR !alive player) exitWith {};
 	if(life_istazed) exitWith {}; //Tazed
-	if(life_interrupted) exitWith {_ui = "osefStatusBar" call BIS_fnc_rscLayer;_ui cutRsc["osefStatusBar","PLAIN"];};
+	if(life_interrupted) exitWith {};
 	if((player getVariable["restrained",false])) exitWith {};
-	if(player distance _target > 2) exitWith {_badDistance = true;};
-	if(_target getVariable["Revive",FALSE]) exitWith {_ui = "osefStatusBar" call BIS_fnc_rscLayer;_ui cutRsc["osefStatusBar","PLAIN"];};
-	if(_target getVariable["Reviving",ObjNull] != player) exitWith {_ui = "osefStatusBar" call BIS_fnc_rscLayer;_ui cutRsc["osefStatusBar","PLAIN"];};
+	if(player distance _target > 4) exitWith {_badDistance = true;};
+	if(_target getVariable["Revive",FALSE]) exitWith {};
+	if(_target getVariable["Reviving",ObjNull] != player) exitWith {};
 };
 
 //Kill the UI display and check for various states
 5 cutText ["","PLAIN"];
 player playActionNow "stop";
-if(_target getVariable ["Reviving",ObjNull] != player) exitWith {hint "Diese Person wird schon von jemand anderst Wiederbelebt."; _ui = "osefStatusBar" call BIS_fnc_rscLayer;_ui cutRsc["osefStatusBar","PLAIN"];};
+if(_target getVariable ["Reviving",ObjNull] != player) exitWith {hint localize "STR_Medic_AlreadyReviving"};
 _target setVariable["Reviving",NIL,TRUE];
-if(!alive player OR life_istazed) exitWith {life_action_inUse = false; _ui = "osefStatusBar" call BIS_fnc_rscLayer;_ui cutRsc["osefStatusBar","PLAIN"];};
-if(_target getVariable["Revive",FALSE]) exitWith {hint "Diese Person ist entweder Respawnt oder wurde bereits Wiederbelebt."; _ui = "osefStatusBar" call BIS_fnc_rscLayer;_ui cutRsc["osefStatusBar","PLAIN"];};
+if(!alive player OR life_istazed) exitWith {life_action_inUse = false;};
+if(_target getVariable["Revive",FALSE]) exitWith {hint localize "STR_Medic_RevivedRespawned"};
 if((player getVariable["restrained",false])) exitWith {life_action_inUse = false;};
-if(!isNil "_badDistance") exitWith {titleText["You got to far away from the target.","PLAIN"]; life_action_inUse = false; _ui = "osefStatusBar" call BIS_fnc_rscLayer;_ui cutRsc["osefStatusBar","PLAIN"];};
-if(life_interrupted) exitWith {life_interrupted = false; titleText["Aktion Abgrebochen","PLAIN"]; life_action_inUse = false; _ui = "osefStatusBar" call BIS_fnc_rscLayer;_ui cutRsc["osefStatusBar","PLAIN"];};
+if(!isNil "_badDistance") exitWith {titleText[localize "STR_Medic_TooFar","PLAIN"]; life_action_inUse = false;};
+if(life_interrupted) exitWith {life_interrupted = false; titleText[localize "STR_NOTF_ActionCancel","PLAIN"]; life_action_inUse = false;};
 
 life_atmcash = life_atmcash + (call life_revive_fee);
 life_action_inUse = false;
 _target setVariable["Revive",TRUE,TRUE];
 [[profileName],"life_fnc_revived",_target,FALSE] spawn life_fnc_MP;
-titleText[format["Du hast %1 wiederbelebt! Für Deinen Service hast Du %2€ erhalten.",_targetName,[(call life_revive_fee)] call life_fnc_numberText],"PLAIN"];
+titleText[format[localize "STR_Medic_RevivePayReceive",_targetName,[(call life_revive_fee)] call life_fnc_numberText],"PLAIN"];
 
 sleep 0.6;
 player reveal _target;
-_ui = "osefStatusBar" call BIS_fnc_rscLayer;_ui cutRsc["osefStatusBar","PLAIN"];

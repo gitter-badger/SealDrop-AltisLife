@@ -5,7 +5,7 @@
 	Description:
 	THANK YOU JESUS I WAS SAVED!
 */
-private["_medic","_dir","_handle","_oldGear"];
+private["_medic","_dir"];
 _medic = [_this,0,"Unknown Medic",[""]] call BIS_fnc_param;
 _oldGear = [life_corpse] call life_fnc_fetchDeadGear;
 [_oldGear] spawn life_fnc_loadDeadGear;
@@ -24,16 +24,6 @@ if(life_atmcash > (call life_revive_fee)) then {
 } else {
 	life_atmcash = 0;
 };
-
-//Setzt das Gear erneut
-switch(playerSide) do
-{
-	case independent: {
-		_handle = [] spawn life_fnc_resetMedic;
-	};
-	waitUntil {scriptDone _handle};
-};
-
 
 //Bring me back to life.
 player setDir _dir;

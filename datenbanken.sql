@@ -17,26 +17,26 @@ DELIMITER $$
 -- Procedures
 -- Edit arma3 and root to match a user in MySQL
 --
-CREATE DEFINER=`DB_NAME`@`localhost` PROCEDURE `deleteEconomyPrices`()
+CREATE PROCEDURE `deleteEconomyPrices`()
     NO SQL
 TRUNCATE `economy`$$
 
-CREATE DEFINER=`DB_NAME`@`localhost` PROCEDURE `deleteOldGangs`()
+CREATE PROCEDURE `deleteOldGangs`()
 DELETE FROM `gangs` WHERE `active` = 0$$
 
-CREATE DEFINER=`DB_NAME`@`localhost` PROCEDURE `resetLifeVehicles`()
+CREATE PROCEDURE `resetLifeVehicles`()
 UPDATE vehicles SET `active`= 0;$$
 
-CREATE DEFINER=`DB_NAME`@`localhost` PROCEDURE `deleteDeadVehicles`()
+CREATE PROCEDURE `deleteDeadVehicles`()
 DELETE FROM `vehicles` WHERE `alive` = 0;$$
 
-CREATE DEFINER=`DB_NAME`@`localhost` PROCEDURE `deleteOldMessages`()
+CREATE PROCEDURE `deleteOldMessages`()
 TRUNCATE TABLE `messages`$$
 
-CREATE DEFINER=`DB_NAME`@`localhost` PROCEDURE `deleteSelledHouses`()
+CREATE PROCEDURE `deleteSelledHouses`()
 DELETE FROM `houses` WHERE `owned` = 0$$
 
-CREATE DEFINER=`DB_NAME`@`localhost` PROCEDURE `setEconomyPrices`()
+CREATE PROCEDURE `setEconomyPrices`()
     NO SQL
 INSERT INTO `economy` (`numero`, `ressource`, `sellprice`, `buyprice`, `varprice`, `minprice`, `maxprice`, `factor`, `shoptype`) VALUES
 (1, 'apple', 50, 65, 1, 1, 60, '1', 'market'),

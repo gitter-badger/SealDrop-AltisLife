@@ -239,5 +239,16 @@ switch (_shop) do
 			["C_Hatchback_01_sport_F",1250000]];
 		};
 	}; 
+	
+	case "kart_shop":
+	{
+		_return = 
+		[
+			["C_Kart_01_Blu_F",15000],
+			["C_Kart_01_Fuel_F",15000],
+			["C_Kart_01_Red_F",15000],
+			["C_Kart_01_Vrana_F",15000]
+		];
+	};
 };
 _return;
