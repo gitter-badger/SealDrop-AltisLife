@@ -225,7 +225,7 @@ switch (_shop) do
 	
 	case "soldner_1":
 	{
-		if(__GETC__(life_donator) > 2) then
+		if(__GETC__(life_donator) == 3) then
 		{
 			_return set[count _return,
 			["I_MRAP_03_F",2000000]];

@@ -20,7 +20,7 @@ switch (_vehicle) do
 		[
 			[_path + "heli_transport_02_1_ion_co.paa","civ",_path + "heli_transport_02_2_ion_co.paa",_path + "heli_transport_02_3_ion_co.paa"],
 			[_path + "heli_transport_02_1_dahoman_co.paa","civ",_path + "heli_transport_02_2_dahoman_co.paa",_path + "heli_transport_02_3_dahoman_co.paa"],
-			[_path2 + "medic_mowhawk.paa","med","#(argb,8,8,3)color(1,1,1,0.8)","#(argb,8,8,3)color(1,1,1,0.8)"],
+			[_path2 + "medic_mowhawk.jpg","med","#(argb,8,8,3)color(1,1,1,0.8)","#(argb,8,8,3)color(1,1,1,0.8)"],
 			["#(ai,64,64,1)Fresnel(1.3,7)","cop","#(argb,8,8,3)color(1,1,1,0.8)","#(ai,64,64,1)Fresnel(1.3,7)"]
 		];
 	};
@@ -39,8 +39,8 @@ switch (_vehicle) do
 			[_path + "hatchback_01_ext_sport06_co.paa","civ"],
 			["#(ai,64,64,1)Fresnel(1.3,7)","cop"],
 			[_path2 + "police_hatchback.paa","cop"],
-			[_path2 + "civ_hatchback_metallica.paa","civ"],
-			[_path2 + "hatchback_sport_ken_block.paa","civ"]
+			[_path2 + "civ_hatchback_metallica.jpg","civ"],
+			[_path2 + "hatchback_sport_ken_block.jpg","civ"]
 		];
 	};
 		
@@ -58,14 +58,14 @@ switch (_vehicle) do
 			["#(ai,64,64,1)Fresnel(0.3,3)","fed"],
 			[_path + "police_offroad.paa","cop"],
 			["#(argb,8,8,3)color(0.6,0.3,0.01,1)","civ"],
-			[_path + "medic_offroad.paa","med"],
-			[_path + "civ_offroad_rockstargelb.paa","civ"],
-			[_path + "civ_offroad_rockstarlila.paa","civ"],
+			[_path + "medic_offroad.jpg","med"],
+			[_path + "civ_offroad_rockstargelb.jpg","civ"],
+			[_path + "civ_offroad_rockstarlila.jpg","civ"],
 			["#(ai,64,64,1)Fresnel(1.3,7)","cop"],
-			[_path + "civ_offroad_camo.paa","civ"],
-			[_path + "civ_offroad_dodge.paa","civ"],
-			[_path + "civ_offroad_weed.paa","civ"], 
-			[_path + "monsterenergy_off.paa","civ"]
+			[_path + "civ_offroad_camo.jpg","civ"],
+			[_path + "civ_offroad_dodge.jpg","civ"],
+			[_path + "civ_offroad_weed.jpg","civ"], 
+			[_path + "monsterenergy_off.jpg","civ"]
 		];
 	};
 	
@@ -74,7 +74,7 @@ switch (_vehicle) do
 		_path = "skins\car\";
 		_ret =
 		[
-			[_path + "adac_offroad.paa","med"]
+			[_path + "adac_offroad.jpg","med"]
 		];
 	};
 	
@@ -100,21 +100,21 @@ switch (_vehicle) do
 		_path = "skins\car\";
 		_ret =
 		[
-			[_path + "suv_sealdrop.paa","civ"],
+			[_path + "suv_sealdrop.jpg","civ"],
 			[_path + "police_suv.paa","cop"],
 			["\a3\soft_f_gamma\SUV_01\Data\suv_01_ext_03_co.paa","civ"],
 			["\a3\soft_f_gamma\SUV_01\Data\suv_01_ext_04_co.paa","civ"],
 			["#(ai,64,64,1)Fresnel(1.3,7)","cop"],
-			[_path + "medic_suv.paa","med"],
-			[_path + "poly_suv.paa","civ"],
-			[_path + "camo_suv.paa","civ"],
-			[_path + "civ_suv_monster.paa","civ"],
-			[_path + "carbon_suv.paa","cop"],
-			[_path + "carbon_suv1.paa","cop"],
-			[_path + "batman_suv.paa","civ"],
-			[_path + "civ_suv_ferrari.paa","civ"],
-			[_path + "civ_suv_skull.paa","civ"],
-			[_path + "kitty.paa","civ"]
+			[_path + "medic_suv.jpg","med"],
+			[_path + "poly_suv.jpg","civ"],
+			[_path + "camo_suv.jpg","civ"],
+			[_path + "civ_suv_monster.jpg","civ"],
+			[_path + "carbon_suv.jpg","cop"],
+			[_path + "carbon_suv1.jpg","cop"],
+			[_path + "batman_suv.jpg","civ"],
+			[_path + "civ_suv_ferrari.jpg","civ"],
+			[_path + "civ_suv_skull.jpg","civ"],
+			[_path + "kitty.jpg","civ"]
 		];
 	};
 	
@@ -125,7 +125,7 @@ switch (_vehicle) do
 		[
 			["\a3\soft_f_gamma\Van_01\Data\van_01_ext_co.paa","civ"],
 			["\a3\soft_f_gamma\Van_01\Data\van_01_ext_red_co.paa","civ"],
-			[_path + "rtwfront.paa","med",_path + "rtwback.paa"]
+			[_path + "rtwfront.jpg","med",_path + "rtwback.jpg"]
 		];
 	};
 	
@@ -173,8 +173,8 @@ switch (_vehicle) do
 			["\a3\air_f\Heli_Light_01\Data\Skins\heli_light_01_ext_vrana_co.paa","civ"],
 			["\a3\air_f\Heli_Light_01\Data\Skins\heli_light_01_ext_wave_co.paa","civ"],
 			["\a3\air_f\Heli_Light_01\Data\Skins\heli_light_01_ext_digital_co.paa","civ"],
-			[_path + "medic_littlebird.paa","med"], 
-			[_path + "civ_hummingbird_redbull.paa","civ"], 
+			[_path + "medic_littlebird.jpg","med"], 
+			[_path + "civ_hummingbird_redbull.jpg","civ"], 
 			[_path + "kitty_heli.jpg","civ"]
 		];
 	};
@@ -199,8 +199,8 @@ switch (_vehicle) do
 		_ret = 
 		[
 			[_path + "sek_hunter_1.paa","cop",_path + "sek_hunter_2.paa"],
-			[_path + "donator_hunter_front.paa","civ",_path + "donator_hunter_hinten.paa"],
-			[_path + "hunterpol_1.paa","cop",_path + "hunterpol_2.paa"]
+			[_path + "donator_hunter_front.jpg","civ",_path + "donator_hunter_hinten.jpg"],
+			[_path + "hunterpol_1.jpg","cop",_path + "hunterpol_2.jpg"]
 		];
 	};
 	
@@ -211,8 +211,8 @@ switch (_vehicle) do
 		[
 			["\A3\Soft_F_Beta\Truck_02\data\truck_02_kab_co.paa","civ","\a3\soft_f_beta\Truck_02\data\truck_02_kuz_co.paa"],
 			["#(argb,8,8,3)color(0.05,0.05,0.05,1)","fed"],
-			[_path + "civ_zamak_redbull_0.paa","civ",_path + "civ_zamak_redbull_1.paa"],
-			[_path + "truck_02_kab_co.paa","civ",_path + "truck_02_kuz_co.paa"]
+			[_path + "civ_zamak_redbull_0.jpg","civ",_path + "civ_zamak_redbull_1.jpg"],
+			[_path + "truck_02_kab_co.jpg","civ",_path + "truck_02_kuz_co.jpg"]
 		];
 	};
 	
@@ -241,7 +241,7 @@ switch (_vehicle) do
 		_path = "skins\car\";
 		_ret =
 		[
-			[_path + "strider.paa","civ"],
+			[_path + "strider.jpg","civ"],
 			[_path + "strider_sek.paa","cop"]
 		];
 	};
@@ -251,7 +251,7 @@ switch (_vehicle) do
 		_path = "skins\car\";
 		_ret =
 		[
-			[_path + "ifrit_r1.paa","civ",_path + "ifrit_r2.paa"],
+			[_path + "ifrit_r1.jpg","civ",_path + "ifrit_r2.jpg"],
 			["\A3\Soft_F\MRAP_02\data\mrap_02_ext_01_co.paa","civ","\A3\Soft_F\MRAP_02\data\mrap_02_ext_02_co.paa"]
 		];
 	};
@@ -269,8 +269,8 @@ switch (_vehicle) do
 		_path = "skins\car\";
 		_ret =
 		[
-			[_path + "civ_hemtt_devil_0.paa","civ",_path + "civ_hemtt_devil_1.paa"],
-			[_path + "civ_hemtt_kitty_0.paa","civ",_path + "civ_hemtt_kitty_1.paa"]
+			[_path + "civ_hemtt_devil_0.jpg","civ",_path + "civ_hemtt_devil_1.jpg"],
+			[_path + "civ_hemtt_kitty_0.jpg","civ",_path + "civ_hemtt_kitty_1.jpg"]
 		];
 	};
 	case "B_Truck_01_transport_F":
@@ -278,8 +278,8 @@ switch (_vehicle) do
 		_path = "skins\car\";
 		_ret =
 		[
-			[_path + "civ_hemtt_devil_0.paa","civ",_path + "civ_hemtt_devil_1.paa"],
-			[_path + "civ_hemtt_kitty_0.paa","civ",_path + "civ_hemtt_kitty_1.paa"]
+			[_path + "civ_hemtt_devil_0.jpg","civ",_path + "civ_hemtt_devil_1.jpg"],
+			[_path + "civ_hemtt_kitty_0.jpg","civ",_path + "civ_hemtt_kitty_1.jpg"]
 		];
 	};
 	case "B_Truck_01_covered_F":
@@ -287,8 +287,8 @@ switch (_vehicle) do
 		_path = "skins\car\";
 		_ret =
 		[
-			[_path + "civ_hemtt_devil_0.paa","civ",_path + "civ_hemtt_devil_1.paa"],
-			[_path + "civ_hemtt_kitty_0.paa","civ",_path + "civ_hemtt_kitty_1.paa"]
+			[_path + "civ_hemtt_devil_0.jpg","civ",_path + "civ_hemtt_devil_1.jpg"],
+			[_path + "civ_hemtt_kitty_0.jpg","civ",_path + "civ_hemtt_kitty_1.jpg"]
 		];
 	};
 	case "B_Truck_01_ammo_F":
@@ -296,8 +296,8 @@ switch (_vehicle) do
 		_path = "skins\car\";
 		_ret =
 		[
-			[_path + "civ_hemtt_devil_0.paa","civ",_path + "civ_hemtt_devil_1.paa"],
-			[_path + "civ_hemtt_kitty_0.paa","civ",_path + "civ_hemtt_kitty_1.paa"]
+			[_path + "civ_hemtt_devil_0.jpg","civ",_path + "civ_hemtt_devil_1.jpg"],
+			[_path + "civ_hemtt_kitty_0.jpg","civ",_path + "civ_hemtt_kitty_1.jpg"]
 		];
 	};
 };

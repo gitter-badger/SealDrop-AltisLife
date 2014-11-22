@@ -40,7 +40,7 @@ while {true} do
 while {true} do
     {
         waitUntil {uniform player == "U_C_Poor_2"};
-        player setObjectTextureGlobal [0,"skins\human\civ\kitty.paa"];
+        player setObjectTextureGlobal [0,"skins\human\civ\kitty.jpg"];
         waitUntil {uniform player != "U_C_Poor_2"};
     };
 };

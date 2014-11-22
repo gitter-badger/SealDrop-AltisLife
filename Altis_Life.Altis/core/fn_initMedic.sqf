@@ -28,7 +28,7 @@ waitUntil{isNull (findDisplay 38500)}; //Wait for the spawn selection to be done
 while {true} do
     {
         waitUntil {uniform player == "U_B_HeliPilotCoveralls"};
-        player setObjectTextureGlobal [0,"skins\human\medic\adac_uniform.paa"];
+        player setObjectTextureGlobal [0,"skins\human\medic\adac_uniform.jpg"];
         waitUntil {uniform player != "U_B_HeliPilotCoveralls"};
     };
 };
@@ -37,7 +37,7 @@ while {true} do
 while {true} do
     {
         waitUntil {uniform player == "U_O_OfficerUniform_ocamo"};
-        player setObjectTextureGlobal [0,"skins\human\medic\medic_uniform.paa"];
+        player setObjectTextureGlobal [0,"skins\human\medic\medic_uniform.jpg"];
         waitUntil {uniform player != "U_O_OfficerUniform_ocamo"};
     };
 };
@@ -57,7 +57,7 @@ while {true} do
 while {true} do
     {
         waitUntil {backpack player == "B_Kitbag_sgg"};
-        (unitBackpack player) setObjectTextureGlobal [0,"skins\human\medic\medic_backpack.paa"];
+        (unitBackpack player) setObjectTextureGlobal [0,"skins\human\medic\medic_backpack.jpg"];
         waitUntil {backpack player != "B_Kitbag_sgg"};
     };
 };
