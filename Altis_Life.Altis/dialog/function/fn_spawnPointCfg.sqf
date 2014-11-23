@@ -35,6 +35,7 @@ switch (_side) do
 			["civ_spawn_2","Pyrgos","\a3\ui_f\data\map\MapControl\watertower_ca.paa"],
 			["civ_spawn_3","Athira","\a3\ui_f\data\map\MapControl\watertower_ca.paa"],
 			["civ_spawn_4","Sofia","\a3\ui_f\data\map\MapControl\watertower_ca.paa"],
+			["reb_spawn_1","Rebellen HQ","\a3\ui_f\data\map\MapControl\watertower_ca.paa"],
 			["civ_spawn_training","Schießplatz","\a3\ui_f\data\map\MapControl\watertower_ca.paa"]
 		];
 		
