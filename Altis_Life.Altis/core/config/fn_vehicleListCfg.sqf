@@ -210,7 +210,7 @@ switch (_shop) do
 	
 	case "donator_car":
 	{
-		if(__GETC__(life_donator) > 1) then
+		if(__GETC__(life_donator) < 2) then
 		{
 			["B_Quadbike_01_F",500],
 			["C_Offroad_01_F",2500],
