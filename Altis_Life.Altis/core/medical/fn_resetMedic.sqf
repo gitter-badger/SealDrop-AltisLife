@@ -30,11 +30,3 @@ if((__GETC__(life_medicLevel)) == 2) exitWith {
 	player addBackpackGlobal "B_Kitbag_cbr";
 	[] call life_fnc_medicLoadout;
 };
-
-//Nur für den Fall...
-if((__GETC__(life_medicLevel)) == 3) exitWith {
-	player forceAddUniform "U_B_HeliPilotCoveralls";
-	player addHeadgear "H_Cap_marshal";
-	player addBackpackGlobal "B_Kitbag_cbr";
-	[] call life_fnc_medicLoadout;
-};

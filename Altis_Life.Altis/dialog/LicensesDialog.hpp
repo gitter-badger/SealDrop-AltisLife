@@ -78,7 +78,7 @@ class buybutton: Life_RscButtonMenu
 idc = 55127;
 text = "$STR_Global_Buy";
 x = 0.1 + (6.25 / 40) + (1 / 250 / (safezoneW / safezoneH));
-y = 0.77
+y = 0.77;
 w = (6.25 / 40);
 h = (1 / 25);
 onButtonClick = "if( (lbData[55126,lbCurSel (55126)] != """") ) then { [false, false, false, lbData[55126,lbCurSel (55126)]] call life_fnc_buyLicense; closeDialog 0; };";

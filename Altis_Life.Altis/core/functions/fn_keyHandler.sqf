@@ -480,5 +480,11 @@ switch (_code) do
 		closeDialog 0;
 		_handled = false;
 	};
+	
+	case 211: //DELETE key
+	{
+		closeDialog 0;
+		_handled = false;
+	};
 };
 _handled;
