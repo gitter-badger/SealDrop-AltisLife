@@ -2052,15 +2052,15 @@ class Mission
 				};
 				class Item36
 				{
-					position[]={3405.6047,1.9389341,12895.65};
-					azimut=-60.9333;
+					position[]={3427.5864,2.6440887,12903.57};
+					azimut=-107.531;
 					offsetY=0.1;
 					special="NONE";
 					id=109;
 					side="CIV";
 					vehicle="C_man_1";
 					skill=0.60000002;
-					init="this allowDamage false; this enableSimulation false; this addAction[""Fish Market"",life_fnc_virt_menu,""fishmarket""];";
+					init="this allowDamage false; this enableSimulation false; this addAction[""Fisch Markt"",life_fnc_virt_menu,""fishmarket""];";
 				};
 				class Item37
 				{
@@ -48336,11 +48336,12 @@ class Mission
 		};
 		class Item2
 		{
-			position[]={3405.5288,1.934824,12895.742};
+			position[]={3427.4563,2.6400232,12903.645};
 			name="fish_market_1";
 			text="Fisch Markt";
 			type="mil_box";
 			colorName="ColorGreen";
+			angle=-46.597496;
 		};
 		class Item3
 		{
