@@ -33,3 +33,4 @@
 #include "market.hpp"
 #include "revoke_license.h"
 #include "LicensesDialog.hpp"
+#include "craft.hpp"

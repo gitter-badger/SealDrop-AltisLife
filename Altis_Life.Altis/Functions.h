@@ -146,6 +146,7 @@ class Life_Client_Core
 		class takeOrgans {};
 		class sitDown {};
 		class robShops {};
+		class craftAction {};
 	};
 	
 	class Special
@@ -197,6 +198,7 @@ class Life_Client_Core
 		class weaponShopCfg {};
 		class vehicleWeightCfg {};
 		class houseConfig {};
+		class craftCfg {};
 		
 		//Clothing Store Configs
 		class clothing_cop {};
@@ -234,6 +236,8 @@ class Life_Client_Core
 		class newMsg {};
 		class showMsg {};
 		class revokeLicense {};
+		class craft {};
+		class craft_update {};
 	};
 	
 	class Functions

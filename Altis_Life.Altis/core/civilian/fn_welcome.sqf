@@ -27,8 +27,8 @@ switch (playerSide) do
 			format ["<t align='left'>Desyncs: Die meisten Desyncs sind durch die Clients bedingt, bei einer Framerate unter 30 FPS ist der Armaclient überlastet und hat Probleme die Netzwerkkommunikation zu verwalten.</t>"],
 			format ["<t align='left'><t color='#ff1111'>AltisLife befindet sich gegenwärtig in der BETAPHASE. Verluste und Schäden durch RDM,VRDM etc. werden NICHT erstattet!</t>"],
 			format ["<t align='left'>Die Admins wünschen dir viel Spaß auf diesem Server.</t>"],
-			format ["<t align='left' color='#428BCA'>TS3 : SealDrop.de</t>"],
-			format ["<t align='left' color='#428BCA'>Forum : http://sealdrop.de/</t>"]
+			format ["<t align='left' color='#428BCA'>TS3 : TS_IP</t>"],
+			format ["<t align='left' color='#428BCA'>Forum : HOMEPAGE_LINK</t>"]
 		];
 	};
 	case independent:
@@ -40,8 +40,8 @@ switch (playerSide) do
 			format ["<t align='left'>Desyncs: Die meisten Desyncs sind durch die Clients bedingt, bei einer Framerate unter 30 FPS ist der Armaclient überlastet und hat Probleme die Netzwerkkommunikation zu verwalten.</t>"],
 			format ["<t align='left'><t color='#ff1111'>AltisLife befindet sich gegenwärtig in der BETAPHASE. Verluste und Schäden durch RDM,VRDM etc. werden NICHT erstattet!</t>"],
 			format ["<t align='left'>Die Admins wünschen dir viel Spaß auf diesem Server.</t>"],
-			format ["<t align='left' color='#428BCA'>TS3 : SealDrop.de</t>"],
-			format ["<t align='left' color='#428BCA'>Forum : http://sealdrop.de/</t>"]
+			format ["<t align='left' color='#428BCA'>TS3 : TS_IP</t>"],
+			format ["<t align='left' color='#428BCA'>Forum : HOMEPAGE_LINK</t>"]
 		];
 	};
 	case civilian:
@@ -53,8 +53,8 @@ switch (playerSide) do
 			format ["<t align='left'>Desyncs: Die meisten Desyncs sind durch die Clients bedingt, bei einer Framerate unter 30 FPS ist der Armaclient überlastet und hat Probleme die Netzwerkkommunikation zu verwalten.</t>"],
 			format ["<t align='left'><t color='#ff1111'>AltisLife befindet sich gegenwärtig in der BETAPHASE. Verluste und Schäden durch RDM,VRDM etc. werden NICHT erstattet!</t>"],
 			format ["<t align='left'>Die Admins wünschen dir viel Spaß auf diesem Server.</t>"],
-			format ["<t align='left' color='#428BCA'>TS3 : SealDrop.de</t>"],
-			format ["<t align='left' color='#428BCA'>Forum : http://sealdrop.de/</t>"]
+			format ["<t align='left' color='#428BCA'>TS3 : TS_IP</t>"],
+			format ["<t align='left' color='#428BCA'>Forum : HOMEPAGE_LINK</t>"]
 		];
 	};
 };
