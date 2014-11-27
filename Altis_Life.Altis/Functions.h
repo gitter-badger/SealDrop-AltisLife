@@ -371,6 +371,8 @@ class Life_Client_Core
 		class copEnter {};
 		class copOpener {};
 		class radarCam {};
+		class showArrestDialog {};
+		class arrestDialog_Arrest {};
 	};
 	
 	class Gangs

@@ -5,13 +5,15 @@
 	Description:
 	Starts the initial process of jailing.
 */
-private["_bad","_unit"];
+private["_bad","_unit","_time"];
 _unit = [_this,0,ObjNull,[ObjNull]] call BIS_fnc_param;
 hint format["%1", _unit];
 if(isNull _unit) exitWith {}; //Dafuq?
 if(_unit != player) exitWith {}; //Dafuq?
 if(life_is_arrested) exitWith {}; //Dafuq i'm already arrested
+_time = [_this,2,15,[0]] call BIS_fnc_param;
 _bad = [_this,1,false,[false]] call BIS_fnc_param;
+
 player setVariable["restrained",false,true];
 player setVariable["Escorting",false,true];
 player setVariable["transporting",false,true];
@@ -56,5 +58,5 @@ removeAllWeapons player;
 removeUniform player;
 player forceAddUniform "U_C_Scientist";
 
-[[player,_bad],"life_fnc_jailSys",false,false] spawn life_fnc_MP;
+[[player,_bad,_time],"life_fnc_jailSys",false,false] spawn life_fnc_MP;
 [5] call SOCK_fnc_updatePartial;

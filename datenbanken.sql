@@ -129,6 +129,7 @@ CREATE TABLE IF NOT EXISTS `players` (
   `donatorlvl` enum('0','1','2','3') NOT NULL DEFAULT '0',
   `civ_gear` text NOT NULL,
   `blacklist` tinyint(1) NOT NULL DEFAULT '0',
+  `jail_time` int(11) NOT NULL DEFAULT '0',
   PRIMARY KEY (`uid`),
   UNIQUE KEY `playerid` (`playerid`),
   KEY `name` (`name`),
