@@ -3069,7 +3069,7 @@ class Mission
 				class Item3
 				{
 					position[]={11594.553,23.6131,11975.622};
-					azimut=130.17729;
+					azimut=130.177;
 					special="NONE";
 					id=190;
 					side="CIV";
@@ -48321,17 +48321,17 @@ class Mission
 	};
 	class Markers
 	{
-		items=333;
+		items=332;
 		class Item0
 		{
-			position[]={8457.7061,104.59849,25129.725};
+			position[]={8471.8662,106.60769,25129.486};
 			name="respawn_civilian";
 			type="Empty";
 		};
 		class Item1
 		{
-			position[]={8429.6846,109.17121,25129.555};
-			name="Respawn_west";
+			position[]={8433.0449,108.89867,25128.354};
+			name="respawn_west";
 			type="Empty";
 		};
 		class Item2
@@ -50981,17 +50981,11 @@ class Mission
 		};
 		class Item327
 		{
-			position[]={8478.7861,108.0108,25129.545};
-			name="respawn_independent";
-			type="Empty";
-		};
-		class Item328
-		{
 			position[]={14149.633,16.151421,16536.967};
 			name="kart_shop_1";
 			type="Empty";
 		};
-		class Item329
+		class Item328
 		{
 			position[]={14164.552,16.666595,16522.811};
 			name="cart_store";
@@ -50999,13 +50993,13 @@ class Mission
 			type="c_car";
 			colorName="ColorBlue";
 		};
-		class Item330
+		class Item329
 		{
 			position[]={3662.7922,7.3515763,13400.118};
 			name="air_g_11";
 			type="Empty";
 		};
-		class Item331
+		class Item330
 		{
 			position[]={3758.2893,34.359238,12372.453};
 			name="civ_truck_shop1_1_1";
@@ -51014,7 +51008,7 @@ class Mission
 			colorName="ColorBlue";
 			angle=-358.38464;
 		};
-		class Item332
+		class Item331
 		{
 			position[]={3770.627,34.305008,12362.514};
 			name="civ_truck_1";
