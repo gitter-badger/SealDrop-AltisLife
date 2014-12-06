@@ -4,6 +4,7 @@ DB_Async_ExtraLock = false;
 life_server_isReady = false;
 publicVariable "life_server_isReady";
 
+[] execFSM "\life_server\cleanup.fsm";
 [] execVM "\life_server\functions.sqf";
 [] execVM "\life_server\eventhandlers.sqf";
 
@@ -78,8 +79,6 @@ life_gang_list = [];
 publicVariable "life_gang_list";
 life_wanted_list = [];
 client_session_list = [];
-
-//[] execFSM "\life_server\cleanup.fsm";
 
 [] spawn
 {

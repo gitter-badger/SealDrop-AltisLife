@@ -11,7 +11,7 @@ _deleted = false;
 while {true} do
 {
 	private["_veh","_units"];
-	sleep (60 * 60);
+	sleep (5 * 60);
 	{
 		_veh = _x;
 		_vehicleClass = getText(configFile >> "CfgVehicles" >> (typeOf _veh) >> "vehicleClass");
