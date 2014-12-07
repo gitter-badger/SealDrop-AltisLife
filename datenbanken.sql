@@ -33,7 +33,7 @@ DELETE FROM `vehicles` WHERE `alive` = 0;$$
 CREATE PROCEDURE `deleteOldMessages`()
 TRUNCATE TABLE `messages`$$
 
-CREATE PROCEDURE `deleteSelledHouses`()
+CREATE PROCEDURE `deleteOldHouses`()
 DELETE FROM `houses` WHERE `owned` = 0$$
 
 CREATE PROCEDURE `setEconomyPrices`()
