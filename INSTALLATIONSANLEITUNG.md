@@ -1,4 +1,4 @@
-Um mein Script erfolgreich zu installieren müsst ihr diese Schritt befolgen:
+Um mein Script erfolgreich zu installieren müsst ihr folgende Schritt befolgen:
 
 +++SERVER STOPPEN+++
 
