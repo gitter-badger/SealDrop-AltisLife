@@ -39,7 +39,7 @@ switch (_var) do
 	case "life_inv_ironore": {"Eisenerz"};
 	case "life_inv_ironr": {"Eisen Barren"};
 	case "life_inv_copperr": {"Kupfer Barren"};
-	case "life_inv_sand": {"Silber"};
+	case "life_inv_sand": {"Sand"};
 	case "life_inv_salt": {"Salzerz"};
 	case "life_inv_saltr": {"Salz"};
 	case "life_inv_glass": {"Glas"};

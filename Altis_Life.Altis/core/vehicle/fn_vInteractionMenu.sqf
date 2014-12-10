@@ -1,3 +1,4 @@
+#include <macro.h>
 /*
 	File: fn_vInteractionMenu.sqf
 	Author: Bryan "Tonic" Boardwine
@@ -36,10 +37,18 @@ _Btn1 buttonSetAction "[life_vInact_curTarget] spawn life_fnc_repairTruck;";
 
 if("ToolKit" in (items player)) then {_Btn1 ctrlEnable true;} else {_Btn1 ctrlEnable false;};
 
-if(playerSide == independent) then {
+// Einsteigen in DLC Helis/Karts für Zivis
+if ((playerSide == civilian) && typeOf (_curTarget) in ["C_Kart_01_Blu_F","C_Kart_01_Red_F","C_Kart_01_Fuel_F","C_Kart_01_Vrana_F","B_Heli_Transport_03_F","B_Heli_Transport_03_unarmed_F","O_Heli_Transport_04_F","O_Heli_Transport_04_ammo_F","O_Heli_Transport_04_bench_F","O_Heli_Transport_04_box_F","O_Heli_Transport_04_covered_F","O_Heli_Transport_04_fuel_F","O_Heli_Transport_04_medevac_F","O_Heli_Transport_04_repair_F"]) then {
+	_Btn6 ctrlSetText "Einsteigen";
+	_Btn6 buttonSetAction "player moveInDriver life_vInact_curTarget; closeDialog 0;";
+	if(count crew _curTarget == 0 && {canMove _curTarget} && {locked _curTarget == 0}) then {_Btn6 ctrlEnable true;} else {_Btn6 ctrlEnable false};
+};
+
+//Abschleppen für den ADAC
+if((playerSide == independent) && license_med_adac && {speed _curTarget == 0} && _curTarget in life_vehicles) then {
+	_Btn5 ctrlShow true;
 	_Btn5 ctrlSetText "Abschleppen";
 	_Btn5 buttonSetAction "[life_vInact_curTarget] spawn life_fnc_impoundAction;";
-	_Btn4 ctrlShow false;
 };
 
 if(playerSide == west) then {
@@ -90,7 +99,7 @@ if(playerSide == west) then {
 		};
 	};
 	
-	if((side player == civilian) && license_civ_rebel && {speed _curTarget == 0} && _curTarget in life_vehicles) then
+	if((playerSide == civilian) && license_civ_rebel && {speed _curTarget == 0} && _curTarget in life_vehicles) then
 	{
 		_Btn4 ctrlEnable true;
 		_Btn5 ctrlShow false;

@@ -19,10 +19,10 @@ if((__GETC__(life_medicLevel)) < 1) exitWith {
 waitUntil{!isNull (findDisplay 38500)}; //Wait for the spawn selection to be open.
 waitUntil{isNull (findDisplay 38500)}; //Wait for the spawn selection to be done.
 
-//Introcam
+// Introcam START
 [] spawn life_fnc_IntroCam;
 
-//UniformGlobal
+// Uniformen Texturen START
 [] spawn
 {
 while {true} do
@@ -41,8 +41,11 @@ while {true} do
         waitUntil {uniform player != "U_O_OfficerUniform_ocamo"};
     };
 };
+// Uniformen Texturen ENDE
 
-//Backpack Skins
+
+// Backpack Texturen Global START
+// ADAC Backpack Texture
 [] spawn
 {
 while {true} do
@@ -52,6 +55,7 @@ while {true} do
         waitUntil {backpack player != "B_Kitbag_cbr"};
     };
 };
+// Medic Backpack Texture
 [] spawn
 {
 while {true} do
@@ -61,32 +65,18 @@ while {true} do
         waitUntil {backpack player != "B_Kitbag_sgg"};
     };
 };
+// Backpack Skins END
 
-//Medic Gear + Setup
+// Medic Gear + Setup
 if((__GETC__(life_medicLevel)) == 1) exitWith {
-	removeUniform player;
-	removeHeadgear player;
-	RemoveAllWeapons player;
-	RemoveVest player;
-	RemoveGoggles player;
-	RemoveAllItems player;
-	player forceAddUniform "U_O_OfficerUniform_ocamo";
-	player addBackpackGlobal "B_Kitbag_sgg";
+	[] call life_fnc_resetMedic;
 	license_med_air = true;
-	[] call life_fnc_medicLoadout;
 };
 
-//ADAC Gear + Setup
+// ADAC Gear + Setup
 if((__GETC__(life_medicLevel)) == 2) exitWith {
-	removeUniform player;
-	removeHeadgear player;
-	RemoveAllWeapons player;
-	RemoveVest player;
-	RemoveGoggles player;
-	player forceAddUniform "U_B_HeliPilotCoveralls";
-	player addHeadgear "H_Cap_marshal";
-	player addBackpackGlobal "B_Kitbag_cbr";
-	[] call life_fnc_medicLoadout;
+	[] call life_fnc_resetMedic;
+	[] execVM "IgiLoad\IgiLoadInit.sqf";
 	license_med_adac = true;
-	_igiload = execVM "IgiLoad\IgiLoadInit.sqf";
+	license_med_air = true;
 };

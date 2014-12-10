@@ -33,6 +33,7 @@ waitUntil{isNull (findDisplay 38500)}; //Wait for the spawn selection to be done
 [] spawn life_fnc_IntroCam;
 
 //Skins und Backpacks für Cops
+// CopLevel 1
 [] spawn
 {
 while {true} do
@@ -42,6 +43,7 @@ while {true} do
         waitUntil {uniform player != "U_Rangemaster"};
     };
 };
+// CopLevel 2
 [] spawn
 {
 while {true} do
@@ -51,15 +53,7 @@ while {true} do
         waitUntil {uniform player != "U_B_CombatUniform_mcam_vest"};
     };
 };
-[] spawn
-{
-while {true} do
-    {
-        waitUntil {uniform player == "U_B_CombatUniform_mcam"};
-        player setObjectTextureGlobal [0,"skins\human\cop\sek.jpg"];
-        waitUntil {uniform player != "U_B_CombatUniform_mcam"};
-    };
-};
+// CopLevel 3+4
 [] spawn
 {
 while {true} do
@@ -69,6 +63,17 @@ while {true} do
         waitUntil {uniform player != "U_B_SpecopsUniform_sgg"};
 	};
 };
+// CopLevel 5
+[] spawn
+{
+while {true} do
+    {
+        waitUntil {uniform player == "U_B_CombatUniform_mcam"};
+        player setObjectTextureGlobal [0,"skins\human\cop\sek.jpg"];
+        waitUntil {uniform player != "U_B_CombatUniform_mcam"};
+    };
+};
+// CopLevel 6
 [] spawn
 {
 while {true} do
