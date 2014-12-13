@@ -7,7 +7,7 @@ Level Verteilung in der Datenbank:
 
 
 
-// Medic / ADAC:
+// Medic / ADAC
 
 MedicLevel 1 = MEDIC
 
@@ -15,9 +15,23 @@ MedicLevel 2 = ADAC
 
 
 
-// AdminTool / Support Tool:
+// Polizei Ränge
+
+CopLevel 1 = Azubi
+
+CopLevel 2 = Beamter
+
+CopLevel 3 = Kommissar
+
+CopLevel 4 = HauptKomissar
+
+CopLevel 5 = SEK
+
+CopLevel 6 = GSG9
 
 
+
+// AdminTool / Support Tool
 
 AdminLevel 1 = Supporter Tool Ingame
 
@@ -27,7 +41,7 @@ AdminLevel 3 = HeadAdmin Tool Ingame
 
 
 
-// Zivilisten:
+// Zivilisten
 
 
 Donator Ränge:
