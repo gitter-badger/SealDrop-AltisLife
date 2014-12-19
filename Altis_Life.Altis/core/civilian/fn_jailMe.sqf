@@ -82,7 +82,7 @@ switch (true) do
 		life_bail_paid = false;
 		hint localize "STR_Jail_Paid";
 		serv_wanted_remove = [player];
-		player setPos (getMarkerPos "jail_release");
+		player setPos (getMarkerPos "jail_release2");
 		[[getPlayerUID player],"life_fnc_wantedRemove",false,false] spawn life_fnc_MP;
 		[5] call SOCK_fnc_updatePartial;
 	};
