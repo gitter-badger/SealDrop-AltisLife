@@ -1,6 +1,3 @@
-#define GVAR_UINS uiNamespace getVariable
-#define CONST(var1,var2) var1 = compileFinal (if(typeName var2 == "STRING") then {var2} else {str(var2)})
-#define steamid getPlayerUID player
 /*
 	File: fn_initSpy.sqf
 	
@@ -12,20 +9,22 @@
 */
 private["_binConfigPatches","_cfgPatches","_endM"];
 if(isServer && !hasInterface) exitWith {}; //Server doesn't need to know.
+#define __CONST__(var1,var2) var1 = compileFinal (if(typeName var2 == "STRING") then {var2} else {str(var2)})
+#define __GETC__(var) (call var)
 
-CONST(W_O_O_K_I_E_ANTI_ANTI_HAX,"false");
-CONST(W_O_O_K_I_E_FUD_ANTI_ANTI_HAX,"false");
-CONST(E_X_T_A_S_Y_ANTI_ANTI_HAX,"false");
-CONST(E_X_T_A_S_Y_Pro_RE,"false");
-CONST(E_X_T_A_S_Y_Car_RE,"false");
-CONST(DO_NUKE,"false");
-CONST(JxMxE_spunkveh,"false");
-CONST(JxMxE_spunkveh2,"false");
-CONST(JxMxE_spunkair,"false");
-CONST(JJJJ_MMMM___EEEEEEE_LLYYSSTTIICCC_SHIT_RE,"false");
-CONST(JJJJ_MMMM___EEEEEEE_LLYYSSTTIICCC_SHIT_RE_OLD,"false");
-CONST(JJJJ_MMMM___EEEEEEE_SPAWN_VEH,"false");
-CONST(JJJJ_MMMM___EEEEEEE_SPAWN_WEAPON,"false");
+__CONST__(W_O_O_K_I_E_ANTI_ANTI_HAX,"No");
+__CONST__(W_O_O_K_I_E_FUD_ANTI_ANTI_HAX,"No");
+__CONST__(E_X_T_A_S_Y_ANTI_ANTI_HAX,"CopyPasta");
+__CONST__(E_X_T_A_S_Y_Pro_RE,"Iswhat");
+__CONST__(E_X_T_A_S_Y_Car_RE,"Youdo");
+__CONST__(DO_NUKE,"LOL");
+__CONST__(JxMxE_spunkveh,"Blah");
+__CONST__(JxMxE_spunkveh2,"Blah");
+__CONST__(JxMxE_spunkair,"Blah");
+__CONST__(JJJJ_MMMM___EEEEEEE_LLYYSSTTIICCC_SHIT_RE,"No");
+__CONST__(JJJJ_MMMM___EEEEEEE_LLYYSSTTIICCC_SHIT_RE_OLD,"No");
+__CONST__(JJJJ_MMMM___EEEEEEE_SPAWN_VEH,"No");
+__CONST__(JJJJ_MMMM___EEEEEEE_SPAWN_WEAPON,"No");
 
 	
 _patchList = 
@@ -96,17 +95,18 @@ _patchList =
 ];
 
 uiNamespace setVariable["RscDisplayRemoteMissions",displayNull]; //For Spy-Glass..
-uiNamespace setVariable["RscDisplayMultiplayer",displayNull];
+
+_endM = compile PreProcessFileLineNumbers "\a3\functions_f\Misc\fn_endMission.sqf";
 
 _binConfigPatches = configFile >> "CfgPatches";
 for "_i" from 0 to count (_binConfigPatches)-1 do {
 	_patchEntry = _binConfigPatches select _i;
 	if(isClass _patchEntry) then {
 		if(!((configName _patchEntry) in _patchList)) exitWith {
-			[[profileName,steamid,(configName _patchEntry)],"SPY_fnc_cookieJar",false,false] spawn life_fnc_MP;
+			[[profileName,getPlayerUID player,(configName _patchEntry)],"SPY_fnc_cookieJar",false,false] spawn life_fnc_MP;
 			[[profileName,format["Unknown Addon Patch: %1",(configName _patchEntry)]],"SPY_fnc_notifyAdmins",true,false] spawn life_fnc_MP;
 			sleep 0.5;
-			failMission "SpyGlass";
+			["SpyGlass",false,false] call _endM;
 		};
 	};
 };
@@ -117,15 +117,16 @@ private["_children","_allowedChildren"];
 _children = [configFile >> "RscDisplayMPInterrupt" >> "controls",0] call BIS_fnc_returnChildren;
 _allowedChildren = [
 "Title","MissionTitle","DifficultyTitle","PlayersName","ButtonCancel","ButtonSAVE","ButtonSkip","ButtonRespawn","ButtonOptions",
-"ButtonVideo","ButtonAudio","ButtonControls","ButtonGame","ButtonTutorialHints","ButtonAbort","DebugConsole","Feedback","MessageBox"
+"ButtonVideo","ButtonAudio","ButtonControls","ButtonGame","ButtonTutorialHints","ButtonAbort","DebugConsole","Feedback","MessageBox",
+"CBA_CREDITS_CONT_C","CBA_CREDITS_M_P"
 ];
 
 {
 	if(!((configName _x) in _allowedChildren)) exitWith {
-		[[profileName,steamid,"Modified_MPInterrupt"],"SPY_fnc_cookieJar",false,false] spawn life_fnc_MP;
+		[[profileName,getPlayerUID player,"Modified_MPInterrupt"],"SPY_fnc_cookieJar",false,false] spawn life_fnc_MP;
 		[[profileName,"Devcon like executor detected"],"SPY_fnc_notifyAdmins",true,false] spawn life_fnc_MP;
 		sleep 0.5;
-		failMission "SpyGlass";
+		["SpyGlass",false,false] call _endM;
 	};
 } foreach _children;
 
@@ -139,20 +140,13 @@ _allowedChildren = [
 	_onLoad = getText(configFile >> (_x select 0) >> "onLoad");
 	_onUnload = getText(configFile >> (_x select 0) >> "onUnload");
 	if(_onLoad != (_x select 1) OR _onUnload != (_x select 2)) exitWith {
-		[[profileName,steamid,format["Modified_Method_%1",_x select 0]],"SPY_fnc_cookieJar",false,false] call life_fnc_MP;
+		[[profileName,getPlayerUID player,format["Modified_Method_%1",_x select 0]],"SPY_fnc_cookieJar",false,false] call life_fnc_MP;
 		[[profileName,format["Modified Display Method %1 (Memory Edit)",_x select 0]],"SPY_fnc_notifyAdmins",true,false] call life_fnc_MP;
 		sleep 0.5;
-		vehicle player setVelocity[999999999999999999999,0,9999999999999999999999]; //Lets first try to get rid of them by generating a memory leak, go Bohemia for not patching this over a year ago!
-		/* We'll just wait for 3 seconds, if they're still here then that means the above failed but no worries, this will get rid of them. */
-		sleep 3;
-		[] execVM "SpyGlass\endoftheline.sqf";
-		/* But just in case we will wait just once more. Can't be to careful. */
-		sleep 2.5;
-		failMission "SpyGlass";
+		["SpyGlass",false,false] call _endM;
 	};
 }
 foreach [
-	["RscDisplayMainMap","[""onLoad"",_this,""RscDiary"",'GUI'] call compile preprocessfilelinenumbers ""A3\ui_f\scripts\initDisplay.sqf""","[""onUnload"",_this,""RscDiary"",'GUI'] call compile preprocessfilelinenumbers ""A3\ui_f\scripts\initDisplay.sqf"""],
 	["RscDisplayGetReady","[""onLoad"",_this,""RscDiary"",'GUI'] call compile preprocessfilelinenumbers ""A3\ui_f\scripts\initDisplay.sqf""","[""onUnload"",_this,""RscDiary"",'GUI'] call compile preprocessfilelinenumbers ""A3\ui_f\scripts\initDisplay.sqf"""],
 	["RscDisplayInventory","[""onLoad"",_this,""RscDisplayInventory"",'IGUI'] call compile preprocessfilelinenumbers ""A3\ui_f\scripts\initDisplay.sqf""","[""onUnload"",_this,""RscDisplayInventory"",'IGUI'] call compile preprocessfilelinenumbers ""A3\ui_f\scripts\initDisplay.sqf"""],
 	["RscDisplayLoadMission","[""onLoad"",_this,""RscDisplayLoading"",'Loading'] call compile preprocessfilelinenumbers ""A3\ui_f\scripts\initDisplay.sqf""","[""onUnload"",_this,""RscDisplayLoading"",'Loading'] call compile preprocessfilelinenumbers ""A3\ui_f\scripts\initDisplay.sqf"""],
@@ -173,9 +167,25 @@ foreach [
 	["RscDisplayOptionsAudio","[""onLoad"",_this,""RscDisplayOptionsAudio"",'GUI'] call compile preprocessfilelinenumbers ""A3\ui_f\scripts\initDisplay.sqf""","[""onUnload"",_this,""RscDisplayOptionsAudio"",'GUI'] call compile preprocessfilelinenumbers ""A3\ui_f\scripts\initDisplay.sqf"""],
 	["RscDisplayOptionsLayout","[""onLoad"",_this,""RscDisplayOptionsLayout"",'GUI'] call compile preprocessfilelinenumbers ""A3\ui_f\scripts\initDisplay.sqf""","[""onUnload"",_this,""RscDisplayOptionsLayout"",'GUI'] call compile preprocessfilelinenumbers ""A3\ui_f\scripts\initDisplay.sqf"""],
 	["RscDisplayStart","[""onLoad"",_this,""RscDisplayLoading"",'Loading'] call compile preprocessfilelinenumbers ""A3\ui_f\scripts\initDisplay.sqf""","[""onUnload"",_this,""RscDisplayLoading"",'Loading'] call compile preprocessfilelinenumbers ""A3\ui_f\scripts\initDisplay.sqf"""],
+	["RscDisplayMainMap","[""onLoad"",_this,""RscDiary"",'GUI'] call compile preprocessfilelinenumbers ""A3\ui_f\scripts\initDisplay.sqf""","[""onUnload"",_this,""RscDiary"",'GUI'] call compile preprocessfilelinenumbers ""A3\ui_f\scripts\initDisplay.sqf"""],
 	["RscDisplayVehicleMsgBox","[""onLoad"",_this,""RscDisplayVehicleMsgBox"",'GUI'] call compile preprocessfilelinenumbers ""A3\ui_f\scripts\initDisplay.sqf""","[""onUnload"",_this,""RscDisplayVehicleMsgBox"",'GUI'] call compile preprocessfilelinenumbers ""A3\ui_f\scripts\initDisplay.sqf"""]
 ];
 
 [] execVM "SpyGlass\fn_cmdMenuCheck.sqf";
 [] execVM "SpyGlass\fn_variableCheck.sqf";
 [] execVM "SpyGlass\fn_menuCheck.sqf";
+
+//Create a no-recoil hack check.
+[] spawn {
+	waitUntil {(!isNil "life_fnc_moveIn") && !isNull (findDisplay 46)};
+	_endM = compile PreProcessFileLineNumbers "\a3\functions_f\Misc\fn_endMission.sqf";
+	while {true} do {
+		if((unitRecoilCoefficient player) < 1) then {
+			[[profileName,getPlayerUID player,"No_recoil_hack"],"SPY_fnc_cookieJar",false,false] spawn life_fnc_MP;
+			[[profileName,"No recoil hack"],"SPY_fnc_notifyAdmins",true,false] spawn life_fnc_MP;
+			sleep 0.5;
+			["SpyGlass",false,false] call _endM;
+		};
+		sleep 1.5;
+	};
+};
