@@ -44,6 +44,7 @@ class Life_Client_Core
 		class initCop {};
 		class initMedic {};
 		class welcomeNotification {};
+		class skinQuery {};
 	};
 	
 	class Admin
