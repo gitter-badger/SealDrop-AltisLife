@@ -19,22 +19,18 @@ RemoveGoggles player;
 //Medic Gear + Setup
 if((__GETC__(life_medicLevel)) == 1) exitWith {
 	player forceAddUniform "U_O_OfficerUniform_ocamo";
-<<<<<<< HEAD
 	player setObjectTextureGlobal [0,"skins\human\medic\medic_uniform.jpg"];
-=======
->>>>>>> parent of 7a38c39... medic Skins etc...
 	player addBackpackGlobal "B_Kitbag_sgg";
+	hint "Du bist in Dienst Gegangen";
 	[] call life_fnc_medicLoadout;
 };
 
 //ADAC Gear + Setup
 if((__GETC__(life_medicLevel)) == 2) exitWith {
 	player forceAddUniform "U_B_HeliPilotCoveralls";
-<<<<<<< HEAD
 	player setObjectTextureGlobal [0,"skins\human\medic\adac_uniform.jpg"];
-=======
->>>>>>> parent of 7a38c39... medic Skins etc...
 	player addHeadgear "H_Cap_marshal";
 	player addBackpackGlobal "B_Kitbag_cbr";
+	hint "Du bist in Dienst Gegangen";
 	[] call life_fnc_medicLoadout;
 };
