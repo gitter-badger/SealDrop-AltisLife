@@ -167,7 +167,7 @@ CREATE TABLE IF NOT EXISTS `vehicles` (
 
 
 CREATE TABLE IF NOT EXISTS `economy` (
-`numero` int(12) NOT NULL,
+  `numero` int(12) NOT NULL,
   `ressource` varchar(32) NOT NULL,
   `sellprice` int(100) NOT NULL DEFAULT '0',
   `buyprice` int(100) NOT NULL DEFAULT '0',
