@@ -53,7 +53,7 @@ _Btn9 ctrlShow false;
 _Btn10 ctrlShow false;
 
 //Set Robber Button
-_Btn1 ctrlSetText localize "STR_pInAct_rob";
+_Btn1 ctrlSetText "Ausrauben";
 _Btn1 buttonSetAction "[life_pInact_curTarget] call life_fnc_robAction; closeDialog 0;";
 
 //Set Escort Button
