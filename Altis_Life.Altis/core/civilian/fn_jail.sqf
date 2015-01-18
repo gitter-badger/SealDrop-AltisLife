@@ -20,7 +20,7 @@ player setVariable["transporting",false,true];
 
 titleText["You have been arrested, wait your time out. If you attempt to respawn or reconnect your time will increase!","PLAIN"];
 hint "For being arrested you have lost the following licenses if you own them\n\nFirearms License\nRebel License";
-player setPos (getMarkerPos "jail_marker2");
+player setPos (getMarkerPos "jail_release");
 
 if(_bad) then
 {
@@ -29,9 +29,9 @@ if(_bad) then
 };
 
 //Check to make sure they goto check
-if(player distance (getMarkerPos "jail_marker2") > 100) then
+if(player distance (getMarkerPos "jail_release") > 100) then
 {
-	player setPos (getMarkerPos "jail_marker2");
+	player setPos (getMarkerPos "jail_release");
 };
 
 [1] call life_fnc_removeLicenses;

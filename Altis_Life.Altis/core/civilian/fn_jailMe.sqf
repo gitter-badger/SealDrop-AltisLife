@@ -55,7 +55,7 @@ while {true} do
 		
 	};
 	
-	if(player distance (getMarkerPos "jail_marker2") > 180) exitWith
+	if(player distance (getMarkerPos "jail_release") > 180) exitWith
 	{
 		_esc = true;
 	};
@@ -82,7 +82,7 @@ switch (true) do
 		life_bail_paid = false;
 		hint localize "STR_Jail_Paid";
 		serv_wanted_remove = [player];
-		player setPos (getMarkerPos "jail_release2");
+		player setPos (getMarkerPos "jail_release");
 		[[getPlayerUID player],"life_fnc_wantedRemove",false,false] spawn life_fnc_MP;
 		[5] call SOCK_fnc_updatePartial;
 	};

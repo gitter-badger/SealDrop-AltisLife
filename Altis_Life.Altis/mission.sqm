@@ -48688,7 +48688,7 @@ class Mission
 		class Item46
 		{
 			position[]={3369.9785,2.0306127,12964.305};
-			name="jail_release2";
+			name="jail_release";
 			type="Empty";
 			angle=190.785;
 		};
