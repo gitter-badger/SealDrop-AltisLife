@@ -18,7 +18,6 @@ DELIMITER $$
 -- Edit arma3 and root to match a user in MySQL
 --
 CREATE PROCEDURE `deleteEconomyPrices`()
-    NO SQL
 TRUNCATE `economy`$$
 
 CREATE PROCEDURE `deleteOldGangs`()
