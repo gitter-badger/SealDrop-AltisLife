@@ -9,7 +9,7 @@ if(!isDedicated) then { X_Client = true;};
 enableSaving[false,false];
 
 //Exec Scripts and more...
-life_versionInfo = "SealDrop Life RPG";
+life_versionInfo = "Altis Life RPG";
 [] execVM "briefing.sqf"; //Load Briefing
 [] execVM "KRON_Strings.sqf"; //Load the Server Strings
 [] execVM "script\fastrope.sqf"; //Load Fastrope
@@ -18,6 +18,8 @@ life_versionInfo = "SealDrop Life RPG";
 [] execVM "script\teargas.sqf"; //Load Teargas Script for Cops
 [] execVM "script\savezone.sqf"; //Load the Savezones
 [] execVM "script\fn_statusBar.sqf"; //Load the Statusbar
+enableEnvironment true;
+setTerrainGrid 45;
 StartProgress = true;
 
 
