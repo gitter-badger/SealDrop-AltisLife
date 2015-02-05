@@ -78,4 +78,4 @@ Left Windows: Farmen an Feldern<br/>
 Left Windows: Spieler Interaktionsmenü<br/>
 
 
-Entwickler von Altis Life: https://github.com/TAWTonic/Altis-Life
+Entwickler von Altis Life: https://github.com/Itsyuka/Altis-Life
