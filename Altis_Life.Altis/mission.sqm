@@ -48979,7 +48979,7 @@ class Mission
 		class Item81
 		{
 			position[]={23720.299,5.2446556,16218.491};
-			name="jail_marker2";
+			name="jail_marker";
 			type="Empty";
 			angle=60.310501;
 		};
