@@ -25,7 +25,7 @@ player createDiarySubject ["controls","Steuerung"];
 		[
 			"Official Change Log",
 				"
-					Alle Änderungen stehen im Forum: sealdrop.de
+					Alle Änderungen stehen im Forum: HOMEPAGE_URL
 				"
 		]
 	];
@@ -34,7 +34,7 @@ player createDiarySubject ["controls","Steuerung"];
 		[
 			"SealDrop Changelog",
 				"
-					Das Changelog kannst du unter sealdrop.de einsehen.
+					Das Changelog kannst du unter HOMEPAGE_URL einsehen.
 				"
 		]
 	];
@@ -43,7 +43,7 @@ player createDiarySubject ["controls","Steuerung"];
 		[
 			"Exploits", 
 				"
-				Alle Regeln findest du in unserem Forum ! www.sealdrop.de!<br/>
+				Alle Regeln findest du in unserem Forum ! www.HOMEPAGE_URL!<br/>
 				"
 		]
 	];
@@ -52,7 +52,7 @@ player createDiarySubject ["controls","Steuerung"];
 		[
 			"Safe Zones",
 				"
-				Alle Regeln findest du in unserem Forum ! www.sealdrop.de!<br/>
+				Alle Regeln findest du in unserem Forum ! www.HOMEPAGE_URL!<br/>
 				"
 		]
 	];
@@ -62,7 +62,7 @@ player createDiarySubject ["controls","Steuerung"];
 		[
 			"Bannable Offenses", 
 				"
-				Alle Regeln findest du in unserem Forum ! www.sealdrop.de!<br/>
+				Alle Regeln findest du in unserem Forum ! www.HOMEPAGE_URL!<br/>
 				"
 		]
 	];
@@ -71,7 +71,7 @@ player createDiarySubject ["controls","Steuerung"];
 		[
 			"Cop Interaction", 
 				"
-				Alle Regeln findest du in unserem Forum ! www.sealdrop.de!<br/>
+				Alle Regeln findest du in unserem Forum ! www.HOMEPAGE_URL!<br/>
 				"
 		]
 	];
@@ -80,7 +80,7 @@ player createDiarySubject ["controls","Steuerung"];
 		[
 			"Boats", 
 				"
-				Alle Regeln findest du in unserem Forum ! www.sealdrop.de!<br/>
+				Alle Regeln findest du in unserem Forum ! www.HOMEPAGE_URL!<br/>
 				"
 		]
 	];
@@ -89,7 +89,7 @@ player createDiarySubject ["controls","Steuerung"];
 		[
 			"Aviation", 
 				"
-				Alle Regeln findest du in unserem Forum ! www.sealdrop.de!<br/>
+				Alle Regeln findest du in unserem Forum ! www.HOMEPAGE_URL!<br/>
 				"
 		]
 	];
@@ -98,7 +98,7 @@ player createDiarySubject ["controls","Steuerung"];
 		[
 			"Vehicles", 
 				"
-				Alle Regeln findest du in unserem Forum ! www.sealdrop.de!<br/>
+				Alle Regeln findest du in unserem Forum ! www.HOMEPAGE_URL!<br/>
 				"
 		]
 	];
@@ -107,7 +107,7 @@ player createDiarySubject ["controls","Steuerung"];
 		[
 			"Communication Rules", 
 				"
-				Alle Regeln findest du in unserem Forum ! www.sealdrop.de!<br/>
+				Alle Regeln findest du in unserem Forum ! www.HOMEPAGE_URL!<br/>
 				"
 		]
 	];
@@ -116,7 +116,7 @@ player createDiarySubject ["controls","Steuerung"];
 		[
 			"Random Deathmatching (RDM)", 
 				"
-				Alle Regeln findest du in unserem Forum ! www.sealdrop.de!<br/>
+				Alle Regeln findest du in unserem Forum ! www.HOMEPAGE_URL!<br/>
 				"
 		]
 	];
@@ -124,7 +124,7 @@ player createDiarySubject ["controls","Steuerung"];
 		[
 			"New Life Rule", 
 				"
-				Alle Regeln findest du in unserem Forum ! www.sealdrop.de!<br/>
+				Alle Regeln findest du in unserem Forum ! www.HOMEPAGE_URL!<br/>
 				"
 		]
 	];
@@ -133,7 +133,7 @@ player createDiarySubject ["controls","Steuerung"];
 		[
 			"Don't Be A Dick!", 
 				"
-				Alle Regeln findest du in unserem Forum ! www.sealdrop.de!<br/>
+				Alle Regeln findest du in unserem Forum ! www.HOMEPAGE_URL!<br/>
 				"
 		]
 	];
@@ -143,7 +143,7 @@ player createDiarySubject ["controls","Steuerung"];
 		[
 			"Crisis Negotiation",
 				"
-				Alle Regeln findest du in unserem Forum ! www.sealdrop.de!<br/>
+				Alle Regeln findest du in unserem Forum ! www.HOMEPAGE_URL!<br/>
 				"
 		]
 	];
@@ -151,7 +151,7 @@ player createDiarySubject ["controls","Steuerung"];
 		[
 			"The Federal Reserve",
 				"
-				Alle Regeln findest du in unserem Forum ! www.sealdrop.de!<br/>
+				Alle Regeln findest du in unserem Forum ! www.HOMEPAGE_URL!<br/>
 				"
 		]
 	];
@@ -159,7 +159,7 @@ player createDiarySubject ["controls","Steuerung"];
 		[
 			"Aviation",
 				"
-				Alle Regeln findest du in unserem Forum ! www.sealdrop.de!<br/>licopters cannot hover over the city. Cops may only hover over the city if there is an active police operation going on.<br/><br/>
+				Alle Regeln findest du in unserem Forum ! www.HOMEPAGE_URL!<br/>licopters cannot hover over the city. Cops may only hover over the city if there is an active police operation going on.<br/><br/>
 				"
 		]
 	];
@@ -168,7 +168,7 @@ player createDiarySubject ["controls","Steuerung"];
 		[
 			"Illegal Areas", 
 				"
-				Alle Regeln findest du in unserem Forum ! www.sealdrop.de!<br/>
+				Alle Regeln findest du in unserem Forum ! www.HOMEPAGE_URL!<br/>
 				"
 		]
 	];
@@ -177,7 +177,7 @@ player createDiarySubject ["controls","Steuerung"];
 		[
 			"Patrolling", 
 				"
-				Alle Regeln findest du in unserem Forum ! www.sealdrop.de!<br/>
+				Alle Regeln findest du in unserem Forum ! www.HOMEPAGE_URL!<br/>
 				"
 		]
 	];
@@ -186,7 +186,7 @@ player createDiarySubject ["controls","Steuerung"];
 		[
 			"Checkpoints", 
 				"
-				Alle Regeln findest du in unserem Forum ! www.sealdrop.de!<br/>
+				Alle Regeln findest du in unserem Forum ! www.HOMEPAGE_URL!<br/>
 				"
 		]
 	];
@@ -195,7 +195,7 @@ player createDiarySubject ["controls","Steuerung"];
 		[
 			"Fahrzeuge", 
 				"
-				Alle Regeln findest du in unserem Forum ! www.sealdrop.de!<br/>
+				Alle Regeln findest du in unserem Forum ! www.HOMEPAGE_URL!<br/>
 				"
 		]
 	];
@@ -214,7 +214,7 @@ player createDiarySubject ["controls","Steuerung"];
 		[
 			"Zuordnung", 
 				"
-				Alle Regeln findest du in unserem Forum ! www.sealdrop.de! !<br/>
+				Alle Regeln findest du in unserem Forum ! www.HOMEPAGE_URL! !<br/>
 				"
 		]
 	];
@@ -223,7 +223,7 @@ player createDiarySubject ["controls","Steuerung"];
 		[
 			"Gefägnis und Tickets",
 				"
-				Alle Regeln findest du in unserem Forum ! www.sealdrop.de!<br/>
+				Alle Regeln findest du in unserem Forum ! www.HOMEPAGE_URL!<br/>
 				"
 		]
 	];
@@ -244,7 +244,7 @@ player createDiarySubject ["controls","Steuerung"];
 		[
 			"Einsatz von Waffen",
 				"
-				Alle Regeln findest du in unserem Forum ! www.sealdrop.de! !<br/>
+				Alle Regeln findest du in unserem Forum ! www.HOMEPAGE_URL! !<br/>
 				"
 		]
 	];
@@ -253,7 +253,7 @@ player createDiarySubject ["controls","Steuerung"];
 		[
 			"Razzien",
 				"
-				Alle Regeln findest du in unserem Forum ! www.sealdrop.de! !<br/>
+				Alle Regeln findest du in unserem Forum ! www.HOMEPAGE_URL! !<br/>
 				"
 		]
 	];
@@ -278,7 +278,7 @@ player createDiarySubject ["controls","Steuerung"];
 		[
 			"Sonstiges",
 				"
-				Alle Regeln findest du in unserem Forum ! www.sealdrop.de! !<br/>
+				Alle Regeln findest du in unserem Forum ! www.HOMEPAGE_URL! !<br/>
 				"
 		]
 	];
@@ -288,7 +288,7 @@ player createDiarySubject ["controls","Steuerung"];
 			"Teamspeak Regeln",
 				"
 				1. Alle Polizisten müssen sich auf dem TeamSpeak befinden wärend sie als Polizist eingeloggt sind.<br/>
-				2. Alles weitere unter SealDrop.de zu finden<br/><br/>
+				2. Alles weitere unter HOMEPAGE_URL zu finden<br/><br/>
 				"
 		]
 	];
@@ -300,7 +300,7 @@ player createDiarySubject ["controls","Steuerung"];
 		[
 			"Rebellen Regeln",
 				"
-				Alle Regeln findest du in unserem Forum ! www.sealdrop.de! !<br/>
+				Alle Regeln findest du in unserem Forum ! www.HOMEPAGE_URL! !<br/>
 				"
 		]
 	];
@@ -308,7 +308,7 @@ player createDiarySubject ["controls","Steuerung"];
 		[
 			"Gang Regeln",
 				"
-				Alle Regeln findest du in unserem Forum ! www.sealdrop.de! !<br/>
+				Alle Regeln findest du in unserem Forum ! www.HOMEPAGE_URL! !<br/>
 				"
 		]
 	];

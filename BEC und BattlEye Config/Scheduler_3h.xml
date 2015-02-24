@@ -1,8 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <?xml-stylesheet  href="acs.xsl" type="text/xsl"?>
-<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-<!--    Scheduler Creator - Autor: BeavisTheSecond - Version: 1.3       -->
-<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 <Scheduler>
   <!-- ~~~ Serverrestarts ~~~-->
   <!-- *** Restart at 00:00:00 ***-->

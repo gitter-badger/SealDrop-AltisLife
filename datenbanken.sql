@@ -175,7 +175,7 @@ CREATE TABLE IF NOT EXISTS `economy` (
   `maxprice` int(100) NOT NULL,
   `factor` enum('0','1','2','3','4','5','6','7') NOT NULL DEFAULT '0',
   `shoptype` text NOT NULL,
-  PRIMARY KEY (`numero`),
+  PRIMARY KEY (`numero`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=63 ;
 
 

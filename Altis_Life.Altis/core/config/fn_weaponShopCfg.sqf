@@ -282,7 +282,7 @@ switch(_shop) do
 						["30Rnd_9x21_Mag",nil,200],
 						["16Rnd_9x21_Mag",nil,150],
 						["SmokeShellGreen",nil,2500],
-						["muzzle_snds_M","6,5mm Silencer",10000],
+						["muzzle_snds_M",nil,10000],
 						["20Rnd_556x45_UW_mag",nil,125],
 						["30Rnd_45ACP_Mag_SMG_01",nil,500],
 						["20Rnd_762x51_Mag","MK18 Magazin",500],

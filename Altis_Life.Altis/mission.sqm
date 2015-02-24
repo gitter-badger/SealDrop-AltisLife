@@ -2408,7 +2408,7 @@ class Mission
 					side="CIV";
 					vehicle="C_man_1";
 					skill=0.60000002;
-					init="this enableSimulation false; this allowDamage false; this addAction[""Process Silber"",life_fnc_processAction,""sand"",0,false,false,"""",' life_inv_sand > 0 && !life_is_processing']; this addAction[format[""%1 ($%2)"",[""license_civ_sand""] call life_fnc_varToStr,[([""sand""] call life_fnc_licensePrice)] call life_fnc_numberText],life_fnc_buyLicense,""sand"",0,false,false,"""",' !license_civ_sand && playerSide == civilian '];";
+					init="this enableSimulation false; this allowDamage false; this addAction[""Process Sand"",life_fnc_processAction,""sand"",0,false,false,"""",' life_inv_sand > 0 && !life_is_processing']; this addAction[format[""%1 ($%2)"",[""license_civ_sand""] call life_fnc_varToStr,[([""sand""] call life_fnc_licensePrice)] call life_fnc_numberText],life_fnc_buyLicense,""sand"",0,false,false,"""",' !license_civ_sand && playerSide == civilian '];";
 				};
 				class Item67
 				{
@@ -4837,8 +4837,8 @@ class Mission
 				items=1;
 				class Item0
 				{
-					position[]={13907.093,22.342155,18727.385};
-					azimut=-220.55638;
+					position[]={13826.384,19.780001,18570.814};
+					azimut=-282.72003;
 					offsetY=0.1;
 					special="NONE";
 					id=268;
@@ -48461,7 +48461,7 @@ class Mission
 		{
 			position[]={8090.8218,77.531647,22620.234};
 			name="sand_1";
-			text=" Silber Mine";
+			text=" Sand Mine";
 			type="mil_triangle";
 			colorName="Color4_FD_F";
 		};
@@ -49231,7 +49231,7 @@ class Mission
 		{
 			position[]={5379.1855,77.380905,17922.482};
 			name="dimond_1_1";
-			text="Silber Reinigung";
+			text="Sand Reinigung";
 			type="mil_triangle";
 			colorName="Color4_FD_F";
 			angle=-80.305901;
@@ -50528,12 +50528,12 @@ class Mission
 		};
 		class Item273
 		{
-			position[]={13907.194,22.342035,18727.273};
+			position[]={13826.547,19.780001,18570.742};
 			name="gun_store_1_1_1";
 			text="Waffen Laden";
 			type="loc_Bunker";
 			colorName="ColorRed";
-			angle=-237.41446;
+			angle=-299.57813;
 		};
 		class Item274
 		{
