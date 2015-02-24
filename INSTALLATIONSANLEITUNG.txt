@@ -5,7 +5,7 @@
 1) Ordner "Altis_Life.Altis" in den MPMissions des Servers ziehen.
 
 
-1.1) Wenn ihr das AdminTool infiSTAR benutzt, müsst ihr im SpyGlass Ordner der Mission dne fn_menuCheck.sqf leeren.
+1.1) Wenn ihr das AdminTool infiSTAR benutzt, müsst ihr im SpyGlass Ordner der Mission den Inhalt der fn_menuCheck.sqf löschen.
 
 
 2) Ordner "@life_server" in das Hauptverzeichnis des Server ziehen.
