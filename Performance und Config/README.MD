@@ -18,8 +18,6 @@ Basic.cfg = Mit dieser Datei werden die Network Settings Definiert. Jeder Server
 
 bans.txt = Hier sind vordefinierte Bans für Hacker / ScriptKiddys eingetragen. Hierbei wird die Sicherheit des Servers erhöht.</br>
 
-tbb4malloc_bi.dll = Performance Allocator der die Leistung steigert.
-
 
 // INSTALLATION</br>
 
