@@ -150,7 +150,7 @@ _children = [configFile >> "RscDisplayMPInterrupt" >> "controls",0] call BIS_fnc
 _allowedChildren = [
 "Title","MissionTitle","PlayersName","ButtonCancel","ButtonSAVE","ButtonSkip","ButtonRespawn","ButtonOptions",
 "ButtonVideo","ButtonAudio","ButtonControls","ButtonGame","ButtonTutorialHints","ButtonAbort","DebugConsole",
-"Version","TraffLight","Feedback","MessageBox"
+"Version","TraffLight","Feedback","MessageBox","DifficultyTitle","CBA_CREDITS_CONT_C","CBA_CREDITS_M_P"
 ];
 
 {
