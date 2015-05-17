@@ -18,10 +18,7 @@ life_versionInfo = "Altis Life RPG";
 [] execVM "script\teargas.sqf"; //Load Teargas Script for Cops
 [] execVM "script\savezone.sqf"; //Load the Savezones
 [] execVM "script\fn_statusBar.sqf"; //Load the Statusbar
-enableEnvironment true;
-setTerrainGrid 45;
-StartProgress = true;
-
+enableEnvironment false;
 
 //Scheiß Nebel hau ab
 [] spawn {
@@ -31,6 +28,18 @@ StartProgress = true;
 		sleep 590;
 	};
 };
+//Scheiß Regen hau ab
+[] spawn {
+	while{true} do {
+		sleep 10;
+		200 setRain 0;
+		sleep 590;
+	};
+};
+//Performance
+setTerrainGrid 45;
+setViewDistance 1000;
+setObjectViewDistance [800,50];
 
 MAC_fnc_switchMove = {
     private["_object","_anim"];

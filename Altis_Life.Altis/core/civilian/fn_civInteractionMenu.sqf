@@ -44,7 +44,6 @@ _Btn9 = _display displayCtrl Btn9;
 _Btn10 = _display displayCtrl Btn10;
 life_pInact_curTarget = _curTarget;
 
-_Btn4 ctrlShow false;
 _Btn5 ctrlShow false;
 _Btn6 ctrlShow false;
 _Btn7 ctrlShow false;
@@ -68,3 +67,6 @@ if((_curTarget getVariable["Escorting",false])) then {
 //Set PutInCar Button
 _Btn3 ctrlSetText localize "STR_pInAct_PutInCar";
 _Btn3 buttonSetAction "[life_pInact_curTarget] call life_fnc_putInCar; closeDialog 0;";
+//Set Entfesseln Button
+_Btn4 ctrlSetText "Entfesseln";
+_Btn4 buttonSetAction "[life_pInact_curTarget] call life_fnc_unrestrain; closeDialog 0;";
