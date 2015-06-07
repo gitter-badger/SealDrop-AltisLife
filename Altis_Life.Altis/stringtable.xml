@@ -5092,12 +5092,6 @@
 		</Key>
 	</Package>
 	<Package name="Admin_Menu">
-		<Key ID="STR_Admin_Title">
-			<Original>Admin Menü</Original>
-		</Key>
-		<Key ID="STR_Admin_GetID">
-			<Original>Gebe ID</Original>
-		</Key>
 		<Key ID="STR_Admin_Spectate">
 			<Original>Zuschauen</Original>
 		</Key>
@@ -5123,9 +5117,6 @@
 		</Key>
 		<Key ID="STR_SMARTPHONE_RANDOMTITLE">
 			<Original>Nachricht zum lesen auswählen</Original>
-		</Key>
-		<Key ID="STR_Global_Close">
-			<Original>Zurück</Original>
 		</Key>
 		<Key ID="STR_SMARTPHONE_SCHREIBEN">
 			<Original>Schreiben</Original>
