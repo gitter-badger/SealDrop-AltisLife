@@ -66,9 +66,9 @@ class Life_Client_Core
 	class anstrich
 	{
 		file = "core\repaint";
-		class repaintMenu;
-		class repaintColor;
-		class repaintVehicle;		
+		class repaintMenu {};
+		class repaintColor {};
+		class repaintVehicle {};		
 	};
 
 	class economy
