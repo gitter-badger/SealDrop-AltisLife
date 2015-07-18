@@ -34,15 +34,16 @@ life_smartphoneTarget = ObjNull;
 life_action_gather = false;
 life_drink = 0;
 life_fatigue = 0.2; //Set the max fatigue limit (50%)
-life_kw_athira = false; 
-life_kw_kavala = false; 
-life_kw_sofia = false; 
+life_kw_athira = false;
+life_kw_kavala = false;
+life_kw_sofia = false;
 life_kw_kavala = false;
 life_request_timer = false;
 life_markers = false;
 life_sitting = false;
 life_firstSpawn = false;
-
+life_bootVerleihInUse = false;
+life_bootVerleihDone = false;
 
 //Persistent Saving
 __CONST__(life_save_civ,TRUE); //Save weapons for civs?
@@ -97,7 +98,7 @@ __CONST__(life_impound_air,7500);
 life_istazed = false;
 life_my_gang = ObjNull;
 life_drugged_cocaine = -1;
-life_drugged_cocaine_duration = 10; 
+life_drugged_cocaine_duration = 10;
 life_drugged_weed = -1;
 life_drugged_weed_duration = 3;
 
@@ -105,17 +106,17 @@ life_vehicles = [];
 bank_robber = [];
 switch (playerSide) do
 {
-	case west: 
+	case west:
 	{
 		life_atmcash = 10000; //Starting Bank Money
 		life_paycheck = 2000; //Paycheck Amount
 	};
-	case civilian: 
+	case civilian:
 	{
 		life_atmcash = 10000; //Starting Bank Money
 		life_paycheck = 850; //Paycheck Amount
 	};
-	
+
 	case independent: {
 		life_atmcash = 10000;
 		life_paycheck = 1750;
@@ -128,7 +129,7 @@ switch (playerSide) do
 life_vShop_rentalOnly = ["I_MRAP_03_hmg_F"];
 __CONST__(life_vShop_rentalOnly,life_vShop_rentalOnly); //These vehicles can never be bought and only 'rented'. Used as a balancer & money sink. If you want your server to be chaotic then fine.. Remove it..
 
-life_inv_items = 
+life_inv_items =
 [
 	"life_inv_oilu",
 	"life_inv_oilp",
@@ -260,7 +261,7 @@ life_illegal_items = [["heroinu",2500],["heroinp",5000],["cocaine",3000],["cocai
 /*
 	Sell / buy arrays
 */
-sell_array = 
+sell_array =
 [
 	["apple",50],
 	["heroinu",2250],
@@ -308,17 +309,17 @@ sell_array =
 	["morphium",100],
 	["zipties",5],
 	["mauer",0],
-	["bottledshine",3000], 
-	["bottledwhiskey",1500], 
-	["bottledbeer",750], 
-	["moonshine",1000], 
-	["whiskey",1250], 
-	["beerp",550], 
-	["mash",500], 
-	["rye",2000], 
-	["hops",1800], 
-	["yeast",2000], 
-	["cornmeal",200], 
+	["bottledshine",3000],
+	["bottledwhiskey",1500],
+	["bottledbeer",750],
+	["moonshine",1000],
+	["whiskey",1250],
+	["beerp",550],
+	["mash",500],
+	["rye",2000],
+	["hops",1800],
+	["yeast",2000],
+	["cornmeal",200],
 	["bottles",50],
 	["uranium",10000],
 	["kidney",9000],
@@ -326,7 +327,7 @@ sell_array =
 ];
 __CONST__(sell_array,sell_array);
 
-buy_array = 
+buy_array =
 [
 	["apple",65],
 	["rabbit",75],
@@ -361,14 +362,14 @@ buy_array =
 	["storagesmall",125000],
 	["storagebig",250000],
 	["mauer",10],
-	["bottledshine",12000], 
-	["bottledwhiskey",5500], 
-	["bottledbeer",1250], 
-	["moonshine",7500], 
-	["whiskey",5500], 
-	["beerp",5000], 
-	["cornmeal",500], 
-	["mash",2500], 
+	["bottledshine",12000],
+	["bottledwhiskey",5500],
+	["bottledbeer",1250],
+	["moonshine",7500],
+	["whiskey",5500],
+	["beerp",5000],
+	["cornmeal",500],
+	["mash",2500],
 	["bottles",100],
 	["puranium",1000],
 	["ipuranium",9000],
@@ -394,13 +395,13 @@ life_weapon_shop_array =
 	["arifle_MX_Black_F",0],
 	["arifle_MXM_Black_F",0],
 	["arifle_MXC_F",0],
-	["arifle_MX_F",0],	
+	["arifle_MX_F",0],
 	["arifle_MXM_F",0],
 	["SMG_02_F",0],
 	["srifle_LRR_LRPS_F",0],
 	["srifle_EBR_F",0],
 	["arifle_MX_SW_Black_F",0],
-	["arifle_MX_SW_F",0],	
+	["arifle_MX_SW_F",0],
 	["LMG_Zafir_F",0],
 	["srifle_GM6_F",0],
 
@@ -422,9 +423,9 @@ life_weapon_shop_array =
 	["acc_pointer_IR",0],
 	["acc_flashlight",0],
 	["optic_Yorris",0],
-	
+
 	["HandGrenade_Stone",0],
-	
+
 	["Rangefinder",0],
 	["Binocular",0],
 	["ItemGPS",0],
@@ -439,15 +440,15 @@ life_weapon_shop_array =
 	["DemoCharge_Remote_Mag",0],
 	["SLAMDirectionalMine_Wire_Mag",0],
 	["MineDetector",0],
-	
+
 	["5Rnd_127x108_Mag",0],
-	["5Rnd_127x108_APDS_Mag",0],	
-	["150Rnd_762x51_Box",0],	
-	["100Rnd_65x39_caseless_mag",0],	
-	["7Rnd_408_Mag",0],		
+	["5Rnd_127x108_APDS_Mag",0],
+	["150Rnd_762x51_Box",0],
+	["100Rnd_65x39_caseless_mag",0],
+	["7Rnd_408_Mag",0],
 	["20Rnd_762x51_Mag",0],
 	["30Rnd_45ACP_Mag_SMG_01",0],
-	["30Rnd_9x21_Mag",0],	
+	["30Rnd_9x21_Mag",0],
 	["30Rnd_556x45_Stanag",0],
 	["20Rnd_762x51_Mag",0],
 	["30Rnd_65x39_caseless_green",0],

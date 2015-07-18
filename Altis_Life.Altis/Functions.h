@@ -28,6 +28,12 @@ class Life_Client_Core
 		class welcomeNotification {};
 	};
 
+	class MiniGames
+	{
+		file = "core\minigames";
+		class bootVerleih {};
+	};
+
 	class Admin
 	{
 		file = "core\admin";
