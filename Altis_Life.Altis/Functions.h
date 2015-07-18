@@ -13,10 +13,29 @@ class Socket_Reciever
 	};
 };
 
+/*
+class SpyGlass
+{
+	tag = "SPY";
+	class Functions
+	{
+		file = "SpyGlass";
+		class cmdMenuCheck{};
+		class cookieJar{};
+		class menuCheck{};
+		class notifyAdmins{};
+		class observe{};
+		class payLoad{};
+		class variableCheck{};
+		class initSpy {preInit=1;};
+	};
+};
+*/
+
 class Life_Client_Core
 {
 	tag = "life";
-
+	
 	class Master_Directory
 	{
 		file = "core";
@@ -27,6 +46,7 @@ class Life_Client_Core
 		class initMedic {};
 		class welcomeNotification {};
 	};
+<<<<<<< HEAD
 
 	class MiniGames
 	{
@@ -34,6 +54,9 @@ class Life_Client_Core
 		class bootVerleih {};
 	};
 
+=======
+	
+>>>>>>> parent of 710f831... Removed SpyGlass
 	class Admin
 	{
 		file = "core\admin";
@@ -49,13 +72,13 @@ class Life_Client_Core
 		class supportQuery {};
 		class supportInfo {};
 	};
-
+	
 	class anstrich
 	{
 		file = "core\repaint";
 		class repaintMenu {};
 		class repaintColor {};
-		class repaintVehicle {};
+		class repaintVehicle {};		
 	};
 
 	class economy
@@ -66,7 +89,7 @@ class Life_Client_Core
 		class openEconomy {};
 		class virt_updateEconomy {};
 	};
-
+	
 	class Medical_System
 	{
 		file = "core\medical";
@@ -84,7 +107,7 @@ class Life_Client_Core
 		class medicSiren {};
 		class resetMedic {};
 	};
-
+	
 	class Actions
 	{
 		file = "core\actions";
@@ -136,7 +159,7 @@ class Life_Client_Core
 		class robShops {};
 		class craftAction {};
 	};
-
+	
 	class Special
 	{
 		file = "core\special";
@@ -148,7 +171,7 @@ class Life_Client_Core
 		class vehicleWarned {};
 		class vehicleEmpd {};
 	};
-
+	
 	class Housing
 	{
 		file = "core\housing";
@@ -165,7 +188,7 @@ class Life_Client_Core
 		class copHouseOwner {};
 		class lockHouse {};
 	};
-
+	
 	class Config
 	{
 		file = "core\config";
@@ -187,7 +210,7 @@ class Life_Client_Core
 		class vehicleWeightCfg {};
 		class houseConfig {};
 		class craftCfg {};
-
+		
 		//Clothing Store Configs
 		class clothing_cop {};
 		class clothing_bruce {};
@@ -227,7 +250,7 @@ class Life_Client_Core
 		class craft {};
 		class craft_update {};
 	};
-
+	
 	class Functions
 	{
 		file = "core\functions";
@@ -278,7 +301,7 @@ class Life_Client_Core
 		class fatigueReset {};
 		class introCam {};
 	};
-
+	
 	class Network
 	{
 		file = "core\functions\network";
@@ -293,7 +316,7 @@ class Life_Client_Core
 		class setTexture {};
 		class say3D {};
 	};
-
+	
 	class Civilian
 	{
 		file = "core\civilian";
@@ -311,7 +334,7 @@ class Life_Client_Core
 		class civLoadout {};
 		class hasOrgan {};
 	};
-
+	
 	class Vehicle
 	{
 		file = "core\vehicle";
@@ -327,7 +350,7 @@ class Life_Client_Core
 		class deviceMine {};
 		class addVehicle2Chain {};
 	};
-
+	
 	class Cop
 	{
 		file = "core\cop";
@@ -362,7 +385,7 @@ class Life_Client_Core
 		class showArrestDialog {};
 		class arrestDialog_Arrest {};
 	};
-
+	
 	class Gangs
 	{
 		file = "core\gangs";
@@ -380,7 +403,7 @@ class Life_Client_Core
 		class gangDisbanded {};
 		class gangMarkers {};
 	};
-
+	
 	class Shops
 	{
 		file = "core\shops";
@@ -405,7 +428,7 @@ class Life_Client_Core
 		class chopShopSell {};
 		class licenses {};
 	};
-
+	
 	class Items
 	{
 		file = "core\items";
@@ -427,7 +450,7 @@ class Life_Client_Core
 		class useMarihuana {};
 		class weedSmoke {};
 	};
-
+	
 	class Dialog_Controls
 	{
 		file = "dialog\function";
