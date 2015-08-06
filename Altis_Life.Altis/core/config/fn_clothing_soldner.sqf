@@ -1,7 +1,7 @@
 #include <macro.h>
 /*
 	File: fn_clothing_söldner.sqf
-	Author: Alexander Efremidis
+	Author: TheTotenkopf
 	
 	Description:
 	Master config file for Söldner clothing store.
