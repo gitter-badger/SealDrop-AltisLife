@@ -1,7 +1,7 @@
 /*
 	File: fn_civInteractionMenu.sqf
 	Author: Bryan "Tonic" Boardwine
-	
+
 	Description:
 	Replaces the mass addactions for various cop actions towards another player.
 */
@@ -29,7 +29,7 @@ disableSerialization;
 _curTarget = [_this,0,ObjNull,[ObjNull]] call BIS_fnc_param;
 _unit = [_this,0,ObjNull,[ObjNull]] call BIS_fnc_param;
 if(isNull _curTarget) exitWith {closeDialog 0;}; //Bad target
-		
+
 if(!isPlayer _curTarget && side _curTarget == civilian) exitWith {closeDialog 0;}; //Bad side check?
 _display = findDisplay 37400;
 _Btn1 = _display displayCtrl Btn1;
