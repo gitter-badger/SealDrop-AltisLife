@@ -1,13 +1,13 @@
-SealDrop-AltisLife
+SealDrop AltisLife
 ==================
 
-Official SealDrop AltisLife
 
-Level Verteilung in der Datenbank:
+Ranks
+==================
 
 
-
-// Medic / ADAC
+Medic and ADAC Ranks
+==================
 
 MedicLevel 1 = MEDIC
 
@@ -15,7 +15,8 @@ MedicLevel 2 = ADAC
 
 
 
-// Polizei Ränge
+Police Ranks
+==================
 
 CopLevel 1 = Azubi
 
@@ -31,7 +32,8 @@ CopLevel 6 = GSG9
 
 
 
-// AdminTool / Support Tool
+AdminTool and Supporter Tool
+==================
 
 AdminLevel 1 = Supporter Tool Ingame
 
@@ -41,19 +43,19 @@ AdminLevel 3 = HeadAdmin Tool Ingame
 
 
 
-// Zivilisten
+Civilian
+==================
+
+DonatorRank = DonatorShop 1
+
+DonatorRank = DonatorShop 2
+
+DonatorRank = DonatorShop 3 (Söldner)
 
 
-Donator Ränge:
 
-1 = Donator 1
-
-2 = Donator 2
-
-3 = Donator 3 (Söldner)
-
-
-//Steuerung Ingame
+Controls
+==================
 
 Z: Spieler Menü<br/>
 U: Fahrzeuge auf/zuschließen<br/>
@@ -78,4 +80,7 @@ Left Windows: Farmen an Feldern<br/>
 Left Windows: Spieler Interaktionsmenü<br/>
 
 
+
+Founder of AltisLife
+==================
 Entwickler von Altis Life: https://github.com/Itsyuka/Altis-Life
