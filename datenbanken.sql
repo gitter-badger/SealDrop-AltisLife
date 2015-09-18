@@ -1,37 +1,18 @@
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
 
-
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8 */;
-
---
--- Database: `DB_NAME`
--- Default Schema
---
-
 DELIMITER $$
---
--- Procedures
--- Edit arma3 and root to match a user in MySQL
---
 CREATE PROCEDURE `deleteEconomyPrices`()
 TRUNCATE `economy`$$
 
 CREATE PROCEDURE `deleteOldGangs`()
 DELETE FROM `gangs` WHERE `active` = 0$$
-
 CREATE PROCEDURE `resetLifeVehicles`()
 UPDATE vehicles SET `active`= 0;$$
-
 CREATE PROCEDURE `deleteDeadVehicles`()
 DELETE FROM `vehicles` WHERE `alive` = 0;$$
-
 CREATE PROCEDURE `deleteOldMessages`()
 TRUNCATE TABLE `messages`$$
-
 CREATE PROCEDURE `deleteOldHouses`()
 DELETE FROM `houses` WHERE `owned` = 0$$
 
@@ -100,10 +81,7 @@ INSERT INTO `economy` (`numero`, `ressource`, `sellprice`, `buyprice`, `varprice
 (60, 'zipties', 5, 500, 0, 1, 500, '2', 'market'),
 (61, 'puranium', 250, 1000, 0, 1, 1000, '2', 'uranium'),
 (62, 'ipuranium', 3500, 9000, 0, 1, 9000, '2', 'uranium')$$
-
 DELIMITER ;
-
--- --------------------------------------------------------
 
 --
 -- Table structure for table `players`
@@ -303,9 +281,3 @@ CREATE TABLE IF NOT EXISTS `messages` (
   `time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`uid`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=13 ;
-
-
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
-
