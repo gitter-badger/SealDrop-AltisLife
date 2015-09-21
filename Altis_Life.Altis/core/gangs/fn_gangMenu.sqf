@@ -3,7 +3,7 @@
 	Author: Bryan "Tonic" Boardwine
 	
 	Description:
-	31 hours of no sleep screw your description.
+	31 hours of no uiSleep screw your description.
 */
 private["_ownerID","_gangBank","_gangMax","_gangName","_members","_allUnits","_ctrl"];
 disableSerialization;

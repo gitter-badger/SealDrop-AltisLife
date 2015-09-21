@@ -13,7 +13,7 @@ _target = lbData[2902,lbCurSel (2902)];
 _target = call compile format["%1", _target];
 if(isNil "_target") exitwith {};
 if(isNull _target) exitWith {};
-if(_target == player) exitWith {hint "You can not teleport yourself to yourself";};
+if(_target == player) exitWith {hintSilent "You can not teleport yourself to yourself";};
 
 _target setPos (getPos player);
-hint format["You have teleported %1 to your location",_target getVariable["realname",name _target]];
+hintSilent format["You have teleported %1 to your location",_target getVariable["realname",name _target]];

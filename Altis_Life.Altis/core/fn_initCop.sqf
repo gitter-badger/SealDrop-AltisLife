@@ -13,17 +13,15 @@ _end = false;
 if(life_blacklisted) exitWith
 {
 	["Blacklisted",false,true] call BIS_fnc_endMission;
-	sleep 30;
+	uiSleep 30;
 };
 
 if(!(str(player) in ["cop_1111"])) then {
 	if((__GETC__(life_coplevel) == 0) && (__GETC__(life_adminlevel) == 0)) then {
 		["NotWhitelisted",false,true] call BIS_fnc_endMission;
-		sleep 35;
+		uiSleep 35;
 	};
 };
-
-
 player setVariable["rank",(__GETC__(life_coplevel)),true];
 [] call life_fnc_spawnMenu;
 waitUntil{!isNull (findDisplay 38500)}; //Wait for the spawn selection to be open.

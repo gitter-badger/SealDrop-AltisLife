@@ -33,7 +33,7 @@ while{life_drugged_weed == 1 && Alive player && player getVariable ["smoke_weed"
 	};
 	
 	if(_count % 20 == 0) then { life_thirst = life_thirst - 5; [] spawn life_fnc_hudUpdate;};
-	sleep 1;
+	uiSleep 1;
 	_count = _count + 1;
 }; 
 
@@ -51,7 +51,7 @@ _hndl_chrom ppEffectAdjust [0.0,0.0,true];
 _hndl_chrom ppEffectCommit 180;
 
 _tStart = time;
-waitUntil{sleep 5; (!Alive player || (time - _tStart) > 300 || player getVariable ["smoke_weed",false])};
+waitUntil{uiSleep 5; (!Alive player || (time - _tStart) > 300 || player getVariable ["smoke_weed",false])};
 
 if(!(player getVariable ["smoke_weed",false]) || !Alive player) then { player setVariable ["drug_weed", false, true]; life_drugged_weed = -1; };
 

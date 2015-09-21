@@ -737,18 +737,18 @@ if (isnil "IL_Procedures") then
 			if (_mass_info && IL_Mass) then
 			{
 				_text = _text + _msg;
-				hint parseText (_text);
+				hintSilent parseText (_text);
 			}
 			else
 			{
-				Hint Format ["%1", _msg];
+				hintSilent Format ["%1", _msg];
 			};
 		}
 		else
 		{
 			if (_mass_info && IL_Mass) then
 			{
-				hint parseText (_text);
+				hintSilent parseText (_text);
 			};
 		};
 	};
@@ -832,7 +832,7 @@ if (isnil "IL_Procedures") then
 			{
 				Player globalChat Format ["IgiLoad ""%1"". IL_Move_Attach _pos =""%2""", IL_Script_Inst, _pos];
 			};
-			sleep 0.25;
+			uiSleep 0.25;
 		};
 
 		_obj AttachTo [_veh, _to];
@@ -898,18 +898,18 @@ if (isnil "IL_Procedures") then
 		{
 			while {(getPosATL (_this select 0)) select 2 > IL_Para_Drop_Open_ATL} do
 			{
-				sleep 0.2;
+				uiSleep 0.2;
 			};
 		};
 		while {(_v distance _cargo) - _dist < 20} do
 		{
-			sleep 0.2;
+			uiSleep 0.2;
 		};
 		if (IL_Para_Drop_Open_ATL > 0) then
 		{
 			while {(getPosATL _cargo) select 2 > (IL_Para_Drop_Open_ATL + ((velocity _cargo) select 2) * -0.5)} do
 			{
-				sleep 0.2;
+				uiSleep 0.2;
 			};
 		};
 	//	_chute = createVehicle ["NonSteerable_Parachute_F", position _cargo, [], 0, "CAN_COLLIDE"];
@@ -934,7 +934,7 @@ if (isnil "IL_Procedures") then
 		};
 		while {(getPos _cargo) select 2 > 2} do
 		{
-			sleep 0.2;
+			uiSleep 0.2;
 		};
 		detach _cargo;
 		if (IL_Para_Smoke) then
@@ -973,7 +973,7 @@ if (isnil "IL_Procedures") then
 			_cargo setDamage _damage;
 			if (_damage != (getDammage _cargo)) then
 			{
-				sleep 1;
+				uiSleep 1;
 				_cargo setDamage _damage;
 			};
 		};
@@ -1196,7 +1196,7 @@ if (isnil "IL_Procedures") then
 							[_v, "Waiting for periscope."] call IL_Vehicle_Chat;
 							while {_x animationPhase "periscope" < 3} do
 							{
-								sleep 1;
+								uiSleep 1;
 							};
 						};
 
@@ -1291,7 +1291,7 @@ if (isnil "IL_Procedures") then
 							_x setDamage _damage;
 							if (_damage != (getDammage _x)) then
 							{
-								sleep 1;
+								uiSleep 1;
 								_x setDamage _damage;
 							};
 						};
@@ -1504,7 +1504,7 @@ if (isnil "IL_Procedures") then
 						}
 						else
 						{
-							sleep 0.2;
+							uiSleep 0.2;
 							detach _x;
 							_x setVelocity [0, 0, -0.2];
 						};
@@ -1549,14 +1549,14 @@ if (isnil "IL_Procedures") then
 							_x setDamage _damage;
 							if (_damage != (getDammage _x)) then
 							{
-								sleep 1;
+								uiSleep 1;
 								_x setDamage _damage;
 							};
 						};
 						[_v, Format ["""%1"" was unloaded from the ""%2"". Free slots: ""%3"".", getText(configFile >> "cfgVehicles" >> typeOf _x >> "displayName"), getText(configFile >> "cfgVehicles" >> typeOf _v >> "displayName"), _free_slots], true] call IL_Vehicle_Chat;
 						//player addScore IL_Unload_Score;
 						[Player, IL_Unload_Score] call IL_Score;
-						sleep 1;
+						uiSleep 1;
 					};
 				};
 				if (_done) exitWith {};
@@ -1664,10 +1664,10 @@ if (isnil "IL_Procedures") then
 		};
 		
 		_player allowDamage false;
-		sleep 0.2;
+		uiSleep 0.2;
 		unassignVehicle _player;
 		_player action ["EJECT",vehicle _player];
-		sleep 0.5;
+		uiSleep 0.5;
 	 
 		if !(_para) then
 		{
@@ -1690,13 +1690,13 @@ if (isnil "IL_Procedures") then
 			_dist = _v distance _player;
 			while {(_v distance _player) - _dist < 20} do
 			{
-				sleep 0.2;
+				uiSleep 0.2;
 			};
 			if (IL_Para_Jump_Open_ATL > 0) then
 			{
 				while {(getPosATL _player) select 2 > IL_Para_Jump_Open_ATL} do
 				{
-					sleep 0.2;
+					uiSleep 0.2;
 				};
 			};
 			if !(unitBackpack _player isKindOf "B_Parachute") then
@@ -1718,12 +1718,12 @@ if (isnil "IL_Procedures") then
 			// {
 				// while {(getPosATL _backpack) select 2 < 5} do
 				// {
-					// sleep 0.2;
+					// uiSleep 0.2;
 				// };
 				// _backpack AttachTo [_player, [0,0.15,-1.5], "Pelvis"];
 				// while {(getPosATL _backpack) select 2 < 1} do
 				// {
-					// sleep 0.2;
+					// uiSleep 0.2;
 				// };
 				// detach _backpack;
 			// };

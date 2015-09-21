@@ -16,7 +16,7 @@ _markers2 = [];
 _units = [];
 {deleteMarkerLocal _x;} foreach _markers2;
 
-sleep 0.25;
+uiSleep 0.25;
 if(visibleMap) 
 	then 
 	
@@ -42,7 +42,7 @@ private["_markers","_medics"];
 _markers = [];
 _medics = [];
 
-sleep 0.5;
+uiSleep 0.5;
 if(visibleMap) then {
 	{if(side _x == independent) then {_medics set[count _medics,_x];}} foreach playableUnits; //Fetch list of cops / blufor
 
@@ -71,7 +71,7 @@ if(visibleMap) then {
 			};
 		} foreach _markers;
 		if(!visibleMap) exitWith {};
-		sleep 0.02;
+		uiSleep 0.02;
 	};
 
 	{deleteMarkerLocal (_x select 0);} foreach _markers;

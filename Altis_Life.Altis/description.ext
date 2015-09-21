@@ -1,13 +1,27 @@
 author = "Tonic | Edit by SealDrop";
 onLoadName = "٠٠•● S E A L D R O P ●•٠";
-onLoadMission = "• A RPG by SealDrop •";
-joinUnassigned = 1;
-respawn = BASE;
-respawndelay = 1;
+onLoadMission = "AltisLife 3.1.4.8 | SealDrop ScriptPack";
+wreckManagerMode = 1;
+wreckLimit = 0;
+wreckRemovalMinTime = 60;
+wreckRemovalMaxTime = 360;
+corpseManagerMode = 1;
+corpseLimit = 10;
+corpseRemovalMinTime = 1800;
+corpseRemovalMaxTime = 3600;
+scriptedPlayer = 1;
+joinUnassigned = 0;
 disabledAI = true;
-disableChannels[]= {0,1,2};
+allowFunctionsLog = 0;
+disableChannels[]= {2};
 enableDebugConsole = 1;
+forceRotorLibSimulation = 0;
+enableItemsDropping = 0;
 respawnDialog = 0;
+respawn = BASE;
+respawndelay = 15;
+debriefing = 0;
+briefing = 0;
 loadScreen = "logo.jpg";
 
 class Header
@@ -16,13 +30,6 @@ class Header
 	minPlayers = 1;
 	maxPlayers = 115;
 };
-
-wreckLimit = 3;
-wreckRemovalMinTime = 60;
-wreckRemovalMaxTime = 320;
-corpseLimit = 150;
-corpseRemovalMinTime = 999;
-corpseRemovalMaxTime = 9999;
 
 #include "dialog\MasterHandler.h"
 class CfgRemoteExec

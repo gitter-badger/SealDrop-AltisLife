@@ -7,14 +7,14 @@
 private["_house","_door","_title","_titleText","_progressBar","_cpRate","_cP","_uid"];
 _house = [_this,0,ObjNull,[ObjNull]] call BIS_fnc_param;
 if(isNull _house OR !(_house isKindOf "House_F")) exitWith {};
-if(isNil {(_house getVariable "house_owner")}) exitWith {hint localize "STR_House_Raid_NoOwner"};
+if(isNil {(_house getVariable "house_owner")}) exitWith {hintSilent localize "STR_House_Raid_NoOwner"};
 
 _uid = (_house getVariable "house_owner") select 0;
-if(!([_uid] call life_fnc_isUIDActive)) exitWith {hint localize "STR_House_Raid_OwnerOff"};
+if(!([_uid] call life_fnc_isUIDActive)) exitWith {hintSilent localize "STR_House_Raid_OwnerOff"};
 
 _door = [_house] call life_fnc_nearestDoor;
-if(_door == 0) exitWith {hint localize "STR_Cop_NotaDoor"};
-if((_house getVariable[format["bis_disabled_Door_%1",_door],0]) == 0) exitWith {hint localize "STR_House_Raid_DoorUnlocked"};
+if(_door == 0) exitWith {hintSilent localize "STR_Cop_NotaDoor"};
+if((_house getVariable[format["bis_disabled_Door_%1",_door],0]) == 0) exitWith {hintSilent localize "STR_House_Raid_DoorUnlocked"};
 
 life_action_inUse = true;
 
@@ -38,7 +38,7 @@ while {true} do
 		[[player,"AinvPknlMstpSnonWnonDnon_medic_1"],"life_fnc_animSync",true,false] spawn life_fnc_MP;
 		player playMoveNow "AinvPknlMstpSnonWnonDnon_medic_1";
 	};
-	sleep 0.26;
+	uiSleep 0.26;
 	if(isNull _ui) then {
 		5 cutRsc ["life_progress","PLAIN"];
 		_ui = uiNamespace getVariable "life_progress";

@@ -9,7 +9,7 @@ private["_markers","_cops"];
 _markers = [];
 _cops = [];
 
-sleep 0.5;
+uiSleep 0.5;
 if(visibleMap) then {
 	{if(side _x == west) then {_cops pushBack _x;}} foreach playableUnits; //Fetch list of cops / blufor
 	
@@ -38,7 +38,7 @@ if(visibleMap) then {
 			};
 		} foreach _markers;
 		if(!visibleMap) exitWith {};
-		sleep 0.02;
+		uiSleep 0.02;
 	};
 
 	{deleteMarkerLocal (_x select 0);} foreach _markers;

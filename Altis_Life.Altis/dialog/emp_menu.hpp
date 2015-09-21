@@ -42,7 +42,7 @@ class nanoEMPConsole {
 			text = "";
 			sizeEx = 0.035;
 			//colorBackground[] = {0,0,0,0};
-			//onLBSelChanged = "hint format [""%1"",_this select 1];";
+			//onLBSelChanged = "hintSilent format [""%1"",_this select 1];";
 			
 			x = 0.12; y = 0.26;
 			w = 0.30; h = 0.4;

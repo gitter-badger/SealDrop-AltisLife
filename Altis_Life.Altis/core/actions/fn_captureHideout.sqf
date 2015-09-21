@@ -11,7 +11,7 @@ _group = _hideout getVariable ["gangOwner",grpNull];
 
 if(isNil {grpPlayer getVariable "gang_name"}) exitWith {titleText[localize "STR_GNOTF_CreateGang","PLAIN"];};
 if(_group == grpPlayer) exitWith {titleText[localize "STR_GNOTF_Controlled","PLAIN"]};
-if((_hideout getVariable ["inCapture",FALSE])) exitWith {hint localize "STR_GNOTF_Captured";};
+if((_hideout getVariable ["inCapture",FALSE])) exitWith {hintSilent localize "STR_GNOTF_Captured";};
 if(!isNull _group) then {
 	_gangName = _group getVariable ["gang_name",""];
 	_action = [
@@ -46,7 +46,7 @@ while {true} do
 		[[player,"AinvPknlMstpSnonWnonDnon_medic_1"],"life_fnc_animSync",true,false] spawn life_fnc_MP;
 		player playMoveNow "AinvPknlMstpSnonWnonDnon_medic_1";
 	};
-	sleep 0.26;
+	uiSleep 0.26;
 	if(isNull _ui) then {
 		5 cutRsc ["life_progress","PLAIN"];
 		_ui = uiNamespace getVariable "life_progress";

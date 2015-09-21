@@ -16,7 +16,7 @@ disableSerialization;
 //Long boring series of checks
 if(dialog) exitWith {};
 if(_shop == "") exitWith {};
-if(_sideCheck != sideUnknown && {playerSide != _sideCheck}) exitWith {hint localize "STR_Shop_Veh_NotAllowed"};
+if(_sideCheck != sideUnknown && {playerSide != _sideCheck}) exitWith {hintSilent localize "STR_Shop_Veh_NotAllowed"};
 
 if(!createDialog "Life_Vehicle_Shop_v2") exitWith {};
 

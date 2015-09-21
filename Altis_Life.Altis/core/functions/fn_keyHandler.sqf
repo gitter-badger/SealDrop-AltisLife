@@ -17,7 +17,7 @@ _handled = false;
 
 _interactionKey = if(count (actionKeys "User10") == 0) then {219} else {(actionKeys "User10") select 0};
 _mapKey = actionKeys "ShowMap" select 0;
-//hint str _code;
+//hintSilent str _code;
 _interruptionKeys = [17,30,31,32]; //A,S,W,D
 
 //Vault handling...
@@ -200,13 +200,13 @@ switch (_code) do
 	//F Key
 	case 33:
 	{
-		if (vehicle player != player && (typeOf vehicle player) in["C_Offroad_01_repair_F","B_Truck_01_transport_F"]) exitWith {hint "Sirene nicht verfügbar"};
+		if (vehicle player != player && (typeOf vehicle player) in["C_Offroad_01_repair_F","B_Truck_01_transport_F"]) exitWith {hintSilent "Sirene nicht verfügbar"};
 		if(playerSide in [west,independent] && vehicle player != player && !life_siren_active && ((driver vehicle player) == player)) then
 		{
 			[] spawn
 			{
 				life_siren_active = true;
-				sleep 4.5;
+				uiSleep 4.5;
 				life_siren_active = false;
 			};
 			_veh = vehicle player;
@@ -237,7 +237,7 @@ switch (_code) do
 			[] spawn
 			{
 				life_siren_active = true;
-				sleep 7;
+				uiSleep 7;
 				life_siren_active = false;
 			};
 			_veh = vehicle player;
@@ -265,15 +265,15 @@ switch (_code) do
 	{
 		if(_shift) then {_handled = true;};
 		if(playerSide in [west,independent]) exitWith {};
-		if !(license_civ_rebel) exitWith { hint "Du brauchst eine Rebellen-Lizenz um Personen festzunehmen."; };
+		if !(license_civ_rebel) exitWith { hintSilent "You need a rebel license !"; };
 		if(_shift && playerSide == civilian && !isNull cursorTarget && cursorTarget isKindOf "Man" && (isPlayer cursorTarget) && (side cursorTarget in [civilian,east]) && alive cursorTarget && cursorTarget distance player < 3.5 && !(cursorTarget getVariable "Escorting") && !(cursorTarget getVariable "restrained") && speed cursorTarget < 1) then
 		{
 			if([false,"zipties",1] call life_fnc_handleInv) then
 			{
 				[] call life_fnc_restrainAction;
-				hint "Du hast ihn Festgenommen ! Mit dem Interaktionsmenü kannst zu weiter fortfahren.";
+				hintSilent "You have cuffed him! ";
 			} else {
-				hint "Du hast keine Kabelbinder";
+				hintSilent "You don't have zipties";
 			};
 		};
 	};
@@ -291,16 +291,16 @@ switch (_code) do
 			if(_veh isKindOf "House_F" && playerSide == civilian) then {
 				if(_veh in life_vehicles && player distance _veh < 8) then {
 					_door = [_veh] call life_fnc_nearestDoor;
-					if(_door == 0) exitWith {hint "Du befindest dich nicht neben einer Tür"};
+					if(_door == 0) exitWith {hintSilent "You're not near a door"};
 					_locked = _veh getVariable [format["bis_disabled_Door_%1",_door],0];
 					if(_locked == 0) then {
 						_veh setVariable[format["bis_disabled_Door_%1",_door],1,true];
 						_veh animate [format["door_%1_rot",_door],0];
-						systemChat "Du hast die Tür abgesperrt.";
+						systemChat "The door has been locked";
 					} else {
 						_veh setVariable[format["bis_disabled_Door_%1",_door],0,true];
 						_veh animate [format["door_%1_rot",_door],1];
-						systemChat "Du hast die Tür aufgesperrt.";
+						systemChat "The door has been opened";
 					};
 				};
 			} else {
@@ -312,7 +312,7 @@ switch (_code) do
 						} else {
 							[[_veh,0],"life_fnc_lockVehicle",_veh,false] spawn life_fnc_MP;
 						};
-						systemChat "Du hast Dein Fahrzeug aufgeschlossen.";
+						systemChat "You have unlocked the vehicle";
 						[[_veh],"life_fnc_LockCarSound",nil,true] spawn life_fnc_MP;
 					} else {
 						if(local _veh) then {
@@ -320,7 +320,7 @@ switch (_code) do
 						} else {
 							[[_veh,2],"life_fnc_lockVehicle",_veh,false] spawn life_fnc_MP;
 						};	
-						systemChat "Du hast Dein Fahrzeug abgeschlossen.";
+						systemChat "You have locked the vehicle";
 						[[_veh],"life_fnc_UnLockCarSound",nil,true] spawn life_fnc_MP;
 					};
 				};
@@ -408,10 +408,10 @@ switch (_code) do
 	//Ü Nagelbänder
 	case 26:
 	{	
-		if(vehicle player != player) exitWith {hint "Du kannst nicht in einem Fahrzeug Nagelbänder auslegen.."};
+		if(vehicle player != player) exitWith {hintSilent "You're in a vehicle!"};
 		if(playerSide == west) then {
 		
-		if(!isNull life_spikestrip) exitWith {hint "Du hast bereits ein Nagelband gelegt"};
+		if(!isNull life_spikestrip) exitWith {hintSilent "You have placed a SpikeStrip"};
 		if(([false,"spikeStrip",1] call life_fnc_handleInv)) then
 		{
 			[] spawn life_fnc_spikeStrip;
@@ -422,79 +422,79 @@ switch (_code) do
 	
 	case 59: // F1
 	{
-		if(__GETC__(life_adminlevel) > 0) exitWith {hint "AdminLogin erfolgreich"};
+		if(__GETC__(life_adminlevel) > 0) exitWith {hintSilent "AdminLogin successfull"};
 		closeDialog 0;
-		hintc "Diese Taste wurde vom System blockiert";
+		hintc "This button got blocked from the server";
 		_handled = false;
 	};
 
 	case 60: // F2
 	{
-		if(__GETC__(life_adminlevel) > 0) exitWith {hint "AdminLogin erfolgreich"};
+		if(__GETC__(life_adminlevel) > 0) exitWith {hintSilent "AdminLogin successfull"};
 		closeDialog 0;
-		hintc "Diese Taste wurde vom System blockiert";
+		hintc "This button got blocked from the server";
 		_handled = false;
 	};
 			
 	case 61: // F3
 	{
-		if(__GETC__(life_adminlevel) > 0) exitWith {hint "AdminLogin erfolgreich"};
+		if(__GETC__(life_adminlevel) > 0) exitWith {hintSilent "AdminLogin successfull"};
 		closeDialog 0;
 		_handled = false;
 	};
 
 	case 62: // F4 
 	{
-		if(__GETC__(life_adminlevel) > 0) exitWith {hint "AdminLogin erfolgreich"};
+		if(__GETC__(life_adminlevel) > 0) exitWith {hintSilent "AdminLogin successfull"};
 		closeDialog 0;
 		_handled = false;
 	};
 
 	case 63: // F5
 	{
-		if(__GETC__(life_adminlevel) > 0) exitWith {hint "AdminLogin erfolgreich"};
+		if(__GETC__(life_adminlevel) > 0) exitWith {hintSilent "AdminLogin successfull"};
 		closeDialog 0;
 		_handled = false;
 	};
 
 	case 64: //F6 key 
 	{
-		if(__GETC__(life_adminlevel) > 0) exitWith {hint "AdminLogin erfolgreich"};
+		if(__GETC__(life_adminlevel) > 0) exitWith {hintSilent "AdminLogin successfull"};
 		closeDialog 0;
 		_handled = false;
 	};
 
 	case 65: // F7 Key
 	{
-		if(__GETC__(life_adminlevel) > 0) exitWith {hint "AdminLogin erfolgreich"};
+		if(__GETC__(life_adminlevel) > 0) exitWith {hintSilent "AdminLogin successfull"};
 		closeDialog 0;
 		_handled = false;
 	};
 
 	case 66: //F8 key 
 	{
-		if(__GETC__(life_adminlevel) > 0) exitWith {hint "AdminLogin erfolgreich"};
+		if(__GETC__(life_adminlevel) > 0) exitWith {hintSilent "AdminLogin successfull"};
 		closeDialog 0;
 		_handled = false;
 	};
 	
 	case 67: //F9 key 
 	{
-		if(__GETC__(life_adminlevel) > 0) exitWith {hint "AdminLogin erfolgreich"};
+		if(__GETC__(life_adminlevel) > 0) exitWith {hintSilent "AdminLogin successfull"};
 		closeDialog 0;
 		_handled = false;
 	};
 
 	case 68: //10 key 
 	{
-		if(__GETC__(life_adminlevel) > 0) exitWith {hint "AdminLogin erfolgreich"};
+		if(__GETC__(life_adminlevel) > 0) exitWith {hintSilent "AdminLogin successfull"};
 		closeDialog 0;
 		_handled = false;
 	};
 	
 	case 211: //DELETE key
 	{
-		if(__GETC__(life_adminlevel) > 0) exitWith {hint "AdminLogin erfolgreich"};
+		if(__GETC__(life_adminlevel) > 0) exitWith {hintSilent "AdminLogin successfull"};
 		closeDialog 0;
 		_handled = false;
 	};

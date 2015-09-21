@@ -8,13 +8,13 @@
 private["_unit"];
 disableSerialization;
 
-if((lbCurSel 2632) == -1) exitWith {hint localize "STR_GNOTF_SelectPerson"};
+if((lbCurSel 2632) == -1) exitWith {hintSilent localize "STR_GNOTF_SelectPerson"};
 _unit = call compile format["%1",getSelData(2632)];
 if(isNull _unit) exitWith {}; //Bad unit?
-if(_unit == player) exitWith {hint localize "STR_GNOTF_InviteSelf"};
-if(!isNil {(group _unit) getVariable "gang_name"}) exitWith {hint "This player is already in a gang"}; //Added
+if(_unit == player) exitWith {hintSilent localize "STR_GNOTF_InviteSelf"};
+if(!isNil {(group _unit) getVariable "gang_name"}) exitWith {hintSilent "This player is already in a gang"}; //Added
 
-if(count(grpPlayer getVariable ["gang_members",8]) == (grpPlayer getVariable ["gang_maxMembers",8])) exitWith {hint localize "STR_GNOTF_MaxSlot"};
+if(count(grpPlayer getVariable ["gang_members",8]) == (grpPlayer getVariable ["gang_maxMembers",8])) exitWith {hintSilent localize "STR_GNOTF_MaxSlot"};
 
 _action = [
 	format[localize "STR_GNOTF_InvitePlayerMSG",_unit getVariable ["realname",name _unit]],
@@ -28,7 +28,7 @@ if(_action) then {
 	_members = grpPlayer getVariable "gang_members";
 	_members pushBack getPlayerUID _unit;
 	grpPlayer setVariable["gang_members",_members,true];
-	hint format[localize "STR_GNOTF_InviteSent",_unit getVariable["realname",name _unit]];
+	hintSilent format[localize "STR_GNOTF_InviteSent",_unit getVariable["realname",name _unit]];
 } else {
-	hint localize "STR_GNOTF_InviteCancel";
+	hintSilent localize "STR_GNOTF_InviteCancel";
 };

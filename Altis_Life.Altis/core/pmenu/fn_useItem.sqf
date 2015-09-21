@@ -7,7 +7,7 @@
 */
 private["_item"];
 disableSerialization;
-if((lbCurSel 2005) == -1) exitWith {hint "You need to select an item first!";};
+if((lbCurSel 2005) == -1) exitWith {hintSilent "You need to select an item first!";};
 _item = lbData[2005,(lbCurSel 2005)];
 
 switch (true) do
@@ -28,7 +28,7 @@ switch (true) do
 	
 	case (_item == "painkillers"):
 	{
-		if(vehicle player != player) exitWith {hint "Du kannst dich nicht in einem Fahrzeug heilen..."};
+		if(vehicle player != player) exitWith {hintSilent "Du kannst dich nicht in einem Fahrzeug heilen..."};
 		if(([false,_item,1] call life_fnc_handleInv)) then
 		{
 			player setDamage 0;
@@ -36,14 +36,14 @@ switch (true) do
 			player allowDamage true;
 			player enableSimulation true;
 			closeDialog 0;
-			hint "Die Schmerzmittel haben gewirkt! Du hast nun wieder volles Leben."
+			hintSilent "Die Schmerzmittel haben gewirkt! Du hast nun wieder volles Leben."
 		};
 	};
 	
 	case (_item == "morphium"):
 	{
-		if(playerSide in [west,independent]) exitWith {hint "Du bist im Dienst !"};
-		if(vehicle player != player) exitWith {hint "Du kannst dich nicht in einem Fahrzeug heilen..."};
+		if(playerSide in [west,independent]) exitWith {hintSilent "Du bist im Dienst !"};
+		if(vehicle player != player) exitWith {hintSilent "Du kannst dich nicht in einem Fahrzeug heilen..."};
 		if(([false,_item,1]call life_fnc_handleInv)) then
 		{
 			player setFatigue 1;
@@ -77,7 +77,7 @@ switch (true) do
 		if(([false,_item,1] call life_fnc_handleInv)) then
 		{
 			life_battery = 100;
-			hint "Deine Battery ist nun auf 100%.";
+			hintSilent "Deine Battery ist nun auf 100%.";
 		};
 	};
 	
@@ -100,7 +100,7 @@ switch (true) do
 	
 	case (_item == "spikeStrip"):
 	{
-		if(!isNull life_spikestrip) exitWith {hint "Du hast bereits ein Nagelband in der Hand."};
+		if(!isNull life_spikestrip) exitWith {hintSilent "Du hast bereits ein Nagelband in der Hand."};
 		if(([false,_item,1] call life_fnc_handleInv)) then
 		{
 			[] spawn life_fnc_spikeStrip;
@@ -109,7 +109,7 @@ switch (true) do
 	
 	case (_item == "mauer"):
 	{
-		if(!isNull life_mauer) exitWith {hint "Du stellst schon eine Mauer!"};
+		if(!isNull life_mauer) exitWith {hintSilent "Du stellst schon eine Mauer!"};
 		if(([false,_item,1] call life_fnc_handleInv)) then
 		{
 			[] spawn life_fnc_mauer;
@@ -118,7 +118,7 @@ switch (true) do
 	
 	case (_item == "fuelF"):
 	{
-		if(vehicle player != player) exitWith {hint "Du befindest Dich in einem Fahrzeug"};
+		if(vehicle player != player) exitWith {hintSilent "Du befindest Dich in einem Fahrzeug"};
 		[] spawn life_fnc_jerryRefuel;
 	};
 	
@@ -139,8 +139,8 @@ switch (true) do
 	
 	case (_item =="bottledwhiskey"):
 	{
-		if(playerSide in [west,independent]) exitWith {hint localize "STR_MISC_WestIndNoNo";};
-		if((player getVariable ["inDrink",FALSE])) exitWith {hint localize "STR_MISC_AlreadyDrinking";};
+		if(playerSide in [west,independent]) exitWith {hintSilent localize "STR_MISC_WestIndNoNo";};
+		if((player getVariable ["inDrink",FALSE])) exitWith {hintSilent localize "STR_MISC_AlreadyDrinking";};
 		if(([false,_item,1] call life_fnc_handleInv)) then
 		{
 			if(isNil "life_drink") then {life_drink = 0;};
@@ -152,8 +152,8 @@ switch (true) do
 	
 	case (_item =="bottledshine"):
 	{
-		if(playerSide in [west,independent]) exitWith {hint localize "STR_MISC_WestIndNoNo";};
-		if((player getVariable ["inDrink",FALSE])) exitWith {hint localize "STR_MISC_AlreadyDrinking";};
+		if(playerSide in [west,independent]) exitWith {hintSilent localize "STR_MISC_WestIndNoNo";};
+		if((player getVariable ["inDrink",FALSE])) exitWith {hintSilent localize "STR_MISC_AlreadyDrinking";};
 		if(([false,_item,1] call life_fnc_handleInv)) then
 		{
 			if(isNil "life_drink") then {life_drink = 0;};
@@ -166,8 +166,8 @@ switch (true) do
 	case (_item =="bottledbeer"):
 	{
 		
-		if(playerSide in [west,independent]) exitWith {hint localize "STR_MISC_WestIndNoNo";};
-		if((player getVariable ["inDrink",FALSE])) exitWith {hint localize "STR_MISC_AlreadyDrinking";};
+		if(playerSide in [west,independent]) exitWith {hintSilent localize "STR_MISC_WestIndNoNo";};
+		if((player getVariable ["inDrink",FALSE])) exitWith {hintSilent localize "STR_MISC_AlreadyDrinking";};
 		if(([false,_item,1] call life_fnc_handleInv)) then
 		{
 			if(isNil "life_drink") then {life_drink = 0;};
@@ -179,7 +179,7 @@ switch (true) do
 	
 	case (_item == "methp"):
 	{
-		if(playerSide in [west,independent]) exitWith {hint "Keine Drogen im Dienst !"};
+		if(playerSide in [west,independent]) exitWith {hintSilent "Keine Drogen im Dienst !"};
 		if(([false,_item,1] call life_fnc_handleInv)) then
 		{
 			[] spawn life_fnc_useMarihuana;
@@ -188,7 +188,7 @@ switch (true) do
 	
 	case (_item == "heroinp"):
 	{
-		if(playerSide in [west,independent]) exitWith {hint "Keine Drogen im Dienst !"};
+		if(playerSide in [west,independent]) exitWith {hintSilent "Keine Drogen im Dienst !"};
 		if(([false,_item,1] call life_fnc_handleInv)) then
 		{
 			[] spawn life_fnc_useHeroin;
@@ -197,7 +197,7 @@ switch (true) do
 	
 	case (_item == "cocainep"):
 	{
-		if(playerSide in [west,independent]) exitWith {hint "Keine Drogen im Dienst !"};
+		if(playerSide in [west,independent]) exitWith {hintSilent "Keine Drogen im Dienst !"};
 		if(([false,_item,1] call life_fnc_handleInv)) then
 		{
 			[] spawn life_fnc_useKokain;
@@ -225,7 +225,7 @@ switch (true) do
 	
 	default
 	{
-		hint "Du kannst diesen Gegenstand nicht benutzen.";
+		hintSilent "Du kannst diesen Gegenstand nicht benutzen.";
 	};
 };
 	

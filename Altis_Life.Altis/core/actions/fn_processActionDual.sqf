@@ -11,7 +11,7 @@ _type = [_this,3,"",[""]] call BIS_fnc_param;
 _speed = "medium";
 //Error check
 if(isNull _vendor OR _type == "" OR (player distance _vendor > 10)) exitWith {};
-if ((_type == "uranium2") && (life_inv_puranium == 0)) exitWith {hint "Sie haben kein Produkt um das Uran zu lösen.";};
+if ((_type == "uranium2") && (life_inv_puranium == 0)) exitWith {hintSilent "Sie haben kein Produkt um das Uran zu lösen.";};
 
 //unprocessed item,processed item, cost if no license,Text to display (I.e Processing (percent) ..."
 _itemInfo = switch (_type) do
@@ -65,14 +65,14 @@ if(_hasLicense) then
 
     while{true} do
     {
-        sleep 0.25;
+        uiSleep 0.25;
         _cP = _cP + 0.01;
         _progress progressSetPosition _cP;
         _pgText ctrlSetText format["%3 (%1%2)...",round(_cP * 100),"%",_upp];
         if(_cP >= 1) exitWith {};
         if(player distance _vendor > 10) exitWith {};
     };
-    if(player distance _vendor > 10) exitWith {hint "Du mussst mindesten 10 Meter daneben stehen."; 5 cutText ["","PLAIN"]; life_is_processing = false;};
+    if(player distance _vendor > 10) exitWith {hintSilent "Du mussst mindesten 10 Meter daneben stehen."; 5 cutText ["","PLAIN"]; life_is_processing = false;};
     if(!([false,_oldItem1,_oldVal] call life_fnc_handleInv)) exitWith {5 cutText ["","PLAIN"]; life_is_processing = false;};
     if(!([false,_oldItem2,_oldVal] call life_fnc_handleInv)) exitWith {5 cutText ["","PLAIN"]; life_is_processing = false;};
     if(!([true,_newItem,_oldVal] call life_fnc_handleInv)) exitWith {5 cutText ["","PLAIN"]; [true,_oldItem1,_oldVal] call life_fnc_handleInv; [true,_oldItem2,_oldVal] call life_fnc_handleInv; life_is_processing = false;};
@@ -83,19 +83,19 @@ if(_hasLicense) then
     else
 {
 
-    if(life_cash < _cost) exitWith {hint format["Du benötigst $%1 für eine Lizenz",[_cost] call life_fnc_numberText]; 5 cutText ["","PLAIN"]; life_is_processing = false;};
+    if(life_cash < _cost) exitWith {hintSilent format["Du benötigst $%1 für eine Lizenz",[_cost] call life_fnc_numberText]; 5 cutText ["","PLAIN"]; life_is_processing = false;};
     
     while{true} do
     {
-        sleep 0.5;
+        uiSleep 0.5;
         _cP = _cP + 0.01;
         _progress progressSetPosition _cP;
         _pgText ctrlSetText format["%3 (%1%2)...",round(_cP * 100),"%",_upp];
         if(_cP >= 1) exitWith {};
         if(player distance _vendor > 10) exitWith {};
     };
-    if(player distance _vendor > 10) exitWith {hint "Du mussst mindesten 10 Meter daneben stehen."; 5 cutText ["","PLAIN"]; life_is_processing = false;};
-    if(life_cash < _cost) exitWith {hint format["Du benötigst $%1 für eine Lizenz",[_cost] call life_fnc_numberText]; 5 cutText ["","PLAIN"]; life_is_processing = false;};
+    if(player distance _vendor > 10) exitWith {hintSilent "Du mussst mindesten 10 Meter daneben stehen."; 5 cutText ["","PLAIN"]; life_is_processing = false;};
+    if(life_cash < _cost) exitWith {hintSilent format["Du benötigst $%1 für eine Lizenz",[_cost] call life_fnc_numberText]; 5 cutText ["","PLAIN"]; life_is_processing = false;};
     if(!([false,_oldItem1,_oldVal] call life_fnc_handleInv)) exitWith {5 cutText ["","PLAIN"]; life_is_processing = false;};
     if(!([false,_oldItem2,_oldVal] call life_fnc_handleInv)) exitWith {5 cutText ["","PLAIN"]; life_is_processing = false;};
     if(!([true,_newItem,_oldVal] call life_fnc_handleInv)) exitWith {5 cutText ["","PLAIN"]; [true,_oldItem1,_oldVal] call life_fnc_handleInv; [true,_oldItem2,_oldVal] call life_fnc_handleInv; life_is_processing = false;};

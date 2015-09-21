@@ -21,17 +21,17 @@ switch (true) do
 	default {_mine = "";};
 };
 //Mine check
-if(_mine == "") exitWith {hint "You are not near a mine!"};
-if(vehicle player != player) exitWith {hint "You can't mine from inside a car!";};
+if(_mine == "") exitWith {hintSilent "You are not near a mine!"};
+if(vehicle player != player) exitWith {hintSilent "You can't mine from inside a car!";};
 
 _diff = [_mine,_val,life_carryWeight,life_maxWeight] call life_fnc_calWeightDiff;
-if(_diff == 0) exitWith {hint "Your inventory is full."};
+if(_diff == 0) exitWith {hintSilent "Your inventory is full."};
 life_action_inUse = true;
 for "_i" from 0 to (floor random 5) do
 {
 	player playMove "AinvPercMstpSnonWnonDnon_Putdown_AmovPercMstpSnonWnonDnon";
 	waitUntil{animationState player != "AinvPercMstpSnonWnonDnon_Putdown_AmovPercMstpSnonWnonDnon";};
-	sleep 2.5;
+	uiSleep 2.5;
 };
 
 if(([true,_mine,_diff] call life_fnc_handleInv)) then

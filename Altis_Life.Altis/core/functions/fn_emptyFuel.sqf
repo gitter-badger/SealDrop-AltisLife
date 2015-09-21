@@ -19,5 +19,5 @@ while{true} do
 		};
 		_vehicleToFuel setFuel ((fuel _vehicleToFuel)-_fuelConsumption);
 	};
-	sleep 2;
+	uiSleep 2;
 };

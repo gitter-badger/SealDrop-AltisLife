@@ -52,7 +52,7 @@ if(_hasLicense) then
     titleText["Dieser Rohstoff ist schwer zu behandeln ! Sie sollten sich Schützen !","PLAIN"];
     while{true} do
     {
-        sleep 0.05;
+        uiSleep 0.05;
         _cP = _cP + 0.01;
         _progress progressSetPosition _cP;
         _pgText ctrlSetText format["%3 (%1%2)...",round(_cP * 100),"%",_upp];
@@ -60,7 +60,7 @@ if(_hasLicense) then
         if(player distance _vendor > 10) exitWith {};
     };
 
-    if(player distance _vendor > 10) exitWith {hint "Du musst mindestens 10 Meter daneben stehen."; 5 cutText ["","PLAIN"]; life_is_processing = false;};
+    if(player distance _vendor > 10) exitWith {hintSilent "Du musst mindestens 10 Meter daneben stehen."; 5 cutText ["","PLAIN"]; life_is_processing = false;};
     if(!([false,_oldItem,_oldVal] call life_fnc_handleInv)) exitWith {5 cutText ["","PLAIN"]; life_is_processing = false;};
     if(!([true,_newItem,_oldVal] call life_fnc_handleInv)) exitWith {5 cutText ["","PLAIN"]; [true,_oldItem,_oldVal] call life_fnc_handleInv; life_is_processing = false;};
     5 cutText ["","PLAIN"];
@@ -73,6 +73,6 @@ if(_hasLicense) then
     else
 {
 
-    hint "Du benötigst eine Lizenz dafür! Oder willst du Sterben ?";
+    hintSilent "Du benötigst eine Lizenz dafür! Oder willst du Sterben ?";
     life_is_processing = false;
 };    

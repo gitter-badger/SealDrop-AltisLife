@@ -1,4 +1,4 @@
-if(!(player getVariable["restrained",TRUE])) exitWith {hint "Du bist gefesselt"};
+if(!(player getVariable["restrained",TRUE])) exitWith {hintSilent "Du bist gefesselt"};
 
 #define MAX_SPEED_WHILE_FASTROPING 15
 #define MAX_SPEED_ROPES_AVAIL 30
@@ -62,7 +62,7 @@ zlt_fnc_tossropes = {
 		_i = _i +1;
 	} foreach zlt_rope_helidata;
 	
-	sleep random 0.3;
+	uiSleep random 0.3;
 	if ( count (_heli getvariable ["zlt_ropes",[]]) != 0 ) exitwith { zlt_mutexAction = false; };
 	_heli animateDoor ['door_R', 1];
 	_heli animateDoor ['door_L', 1];
@@ -78,7 +78,7 @@ zlt_fnc_tossropes = {
 		private ["_heli","_ropes"];
 		_heli = _this;
 		while {alive _heli and count (_heli getvariable ["zlt_ropes", []]) != 0 and abs (speed _heli) < MAX_SPEED_ROPES_AVAIL } do {
-			sleep 0.3;
+			uiSleep 0.3;
 		};
 		_ropes = (_heli getvariable ["zlt_ropes", []]);
 		{deletevehicle _x} foreach _ropes;
@@ -108,16 +108,16 @@ zlt_fnc_fastropeaiunits = {
 
 		[_heli, _grunits] spawn {
 			private ["_units","_heli"];
-			sleep random 0.5;
+			uiSleep random 0.5;
 			_units = _this select 1;
 			_heli = (_this select 0);
 			_units = _units - [player];
 			_units = _units - [driver _heli];
 			{if (!alive _x or isplayer _x or vehicle _x != _heli) then {_units = _units - [_x];}; } foreach _units;
 						
-			{ sleep (0.5 + random 0.7); _x spawn zlt_fnc_fastropeUnit; } foreach _units;
-			waituntil {sleep 0.5; { (getpos _x select 2) < 1 } count _units == count _units; };
-			sleep 10;
+			{ uiSleep (0.5 + random 0.7); _x spawn zlt_fnc_fastropeUnit; } foreach _units;
+			waituntil {uiSleep 0.5; { (getpos _x select 2) < 1 } count _units == count _units; };
+			uiSleep 10;
 			(driver _heli) doFollow (leader group (driver _heli ));
 			(driver _heli) setBehaviour "Aware"; 
 			(driver _heli) setCombatMode "White"; 
@@ -130,7 +130,7 @@ zlt_fnc_fastropeaiunits = {
 zlt_fnc_fastrope = {
 	diag_log ["fastrope", _this];
 	zlt_mutexAction = true;
-	sleep random 0.3;
+	uiSleep random 0.3;
 	if (player == leader group player) then {
 		[vehicle player, units group player] call zlt_fnc_fastropeaiunits;
 	};
@@ -159,7 +159,7 @@ zlt_fnc_fastropeUnit = {
 	while {alive _unit and (getpos _unit select 2) > 1 and (abs (speed _heli)) < MAX_SPEED_WHILE_FASTROPING  and _zc > -24} do {
 		_unit attachTo [_rope, [0,0,_zc]];
 		_zc = _zc - _zdelta;
-		sleep 0.1;
+		uiSleep 0.1;
 	};
 	_unit switchmove "";
 	detach _unit;

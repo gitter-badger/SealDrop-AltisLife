@@ -14,10 +14,10 @@ closeDialog 0;
 _baseprice = 20000;  //Price for repaint
 _vehicleData = _veh getVariable["vehicle_info_owners",[]];
 _vehOwner = (_vehicleData select 0) select 0;
-if(life_cash < _basePrice) exitWith {hint "You don't have enough cash, to pay me";_ui = "osefStatusBar" call BIS_fnc_rscLayer;_ui cutRsc["osefStatusBar","PLAIN"];};
+if(life_cash < _basePrice) exitWith {hintSilent "You don't have enough cash, to pay me";_ui = "osefStatusBar" call BIS_fnc_rscLayer;_ui cutRsc["osefStatusBar","PLAIN"];};
 
-if(isNil {_vehicleData}) exitWith {hint "Cheated car?.";_ui = "osefStatusBar" call BIS_fnc_rscLayer;_ui cutRsc["osefStatusBar","PLAIN"];};
-if ((getPlayerUID player) != _vehOwner) exitWith {hint "You aren't the owner!";_ui = "osefStatusBar" call BIS_fnc_rscLayer;_ui cutRsc["osefStatusBar","PLAIN"];};
+if(isNil {_vehicleData}) exitWith {hintSilent "Cheated car?.";_ui = "osefStatusBar" call BIS_fnc_rscLayer;_ui cutRsc["osefStatusBar","PLAIN"];};
+if ((getPlayerUID player) != _vehOwner) exitWith {hintSilent "You aren't the owner!";_ui = "osefStatusBar" call BIS_fnc_rscLayer;_ui cutRsc["osefStatusBar","PLAIN"];};
 		life_action_inUse = true;
 		_displayName = getText(configFile >> "CfgVehicles" >> (typeOf _veh) >> "displayName");
 		_upp = format["Lackiere %1",_displayName];
@@ -37,7 +37,7 @@ if ((getPlayerUID player) != _vehOwner) exitWith {hint "You aren't the owner!";_
 				[[player,"AinvPknlMstpSnonWnonDnon_medic_1"],"life_fnc_animSync",true,false] spawn life_fnc_MP;
 				player playMoveNow "AinvPknlMstpSnonWnonDnon_medic_1";
 			};						
-			sleep 0.29;
+			uiSleep 0.29;
 			player say3D "spraycan";
 			//[player,"spraycan"] call life_fnc_globalSound; //Just if you have global sounds!
 
@@ -65,6 +65,6 @@ if ((getPlayerUID player) != _vehOwner) exitWith {hint "You aren't the owner!";_
 		
 		[] call SOCK_fnc_updateRequest; //Sync silently because it's obviously silently..
 	
-		//hint format["Vehicle: %1 || New Color: %2 || Owner: %3",_veh,_color_index,_vehicledata]; //Deactivated, wrong states there :-(		
+		//hintSilent format["Vehicle: %1 || New Color: %2 || Owner: %3",_veh,_color_index,_vehicledata]; //Deactivated, wrong states there :-(		
 };
 _ui = "osefStatusBar" call BIS_fnc_rscLayer;_ui cutRsc["osefStatusBar","PLAIN"];

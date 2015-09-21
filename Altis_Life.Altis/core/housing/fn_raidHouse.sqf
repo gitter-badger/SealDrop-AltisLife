@@ -8,12 +8,12 @@
 private["_house","_uid","_cpRate","_cP","_title","_titleText","_ui","_houseInv","_houseInvData","_houseInvVal"];
 _house = [_this,0,ObjNull,[ObjNull]] call BIS_fnc_param;
 if(isNull _house OR !(_house isKindOf "House_F")) exitWith {};
-if(isNil {(_house getVariable "house_owner")}) exitWith {hint localize "STR_House_Raid_NoOwner"};
+if(isNil {(_house getVariable "house_owner")}) exitWith {hintSilent localize "STR_House_Raid_NoOwner"};
 
 _uid = (_house getVariable "house_owner") select 0;
-if(!([_uid] call life_fnc_isUIDActive)) exitWith {hint localize "STR_House_Raid_OwnerOff"};
+if(!([_uid] call life_fnc_isUIDActive)) exitWith {hintSilent localize "STR_House_Raid_OwnerOff"};
 _houseInv = _house getVariable ["Trunk",[[],0]];
-if(_houseInv isEqualTo [[],0]) exitWith {hint localize "STR_House_Raid_Nothing"};
+if(_houseInv isEqualTo [[],0]) exitWith {hintSilent localize "STR_House_Raid_Nothing"};
 life_action_inUse = true;
 
 //Setup the progress bar
@@ -30,7 +30,7 @@ _cpRate = 0.0075;
 
 while {true} do
 {
-	sleep 0.26;
+	uiSleep 0.26;
 	if(isNull _ui) then {
 		5 cutRsc ["life_progress","PLAIN"];
 		_ui = uiNamespace getVariable "life_progress";
@@ -73,5 +73,5 @@ if(_value > 0) then {
 	_house setVariable["Trunk",[_houseInvData,_houseInvVal],true];
 	[[_house],"TON_fnc_updateHouseTrunk",false,false] spawn life_fnc_MP;
 } else {
-	hint localize "STR_House_Raid_NoIllegal";
+	hintSilent localize "STR_House_Raid_NoIllegal";
 };

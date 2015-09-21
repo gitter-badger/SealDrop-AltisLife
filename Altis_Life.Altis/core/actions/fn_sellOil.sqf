@@ -11,7 +11,7 @@ private["_val"];
 
 _val = life_inv_oilp;
 
-if(life_inv_oilp < 10) exitWith { hint "Du benötigst mindestens 10 Liter Euro Diesel";};
+if(life_inv_oilp < 10) exitWith { hintSilent "Du benötigst mindestens 10 Liter Euro Diesel";};
 if(([false,"oilp",_val] call life_fnc_handleInv)) then
 {
 	titleText[format["Du hast erfolgreich 10 Liter Euro-Diesel in Benzinkanister umgefüllt"],"PLAIN"];

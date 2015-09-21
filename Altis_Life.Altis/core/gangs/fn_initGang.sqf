@@ -10,7 +10,7 @@ if(playerSide != civilian) exitWith {}; //What in the hell?
 if(count life_gangData == 0) exitWith {}; //Dafuq?
 
 _wait = round(random(8));
-sleep _wait;
+uiSleep _wait;
 
 //Loop through to make sure there is not a group already created with the gang.
 _exitLoop = false;

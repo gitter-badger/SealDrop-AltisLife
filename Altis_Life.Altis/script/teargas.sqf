@@ -25,7 +25,7 @@ playerNearGas=false;
 		playerNearGas=false;
 		};
 	
-	sleep 3;
+	uiSleep 3;
 	};	
 };
 
@@ -55,6 +55,6 @@ playerNearGas=false;
 		 5 fadeSound 0.1; // fades the sound to 10% in 5 seconds
 		};
 
-	sleep 1;
+	uiSleep 1;
 	};
 };

@@ -11,10 +11,10 @@ _uid = getPlayerUID player;
 
 if(isNull _house) exitWith {};
 if(!(_house isKindOf "House_F")) exitWith {};
-if((_house getVariable["house_owned",false])) exitWith {hint "This house is already owned even though you shouldn't be seeing this hint..."};
-if(!isNil {(_house getVariable "house_sold")}) exitWith {hint localize "STR_House_Sell_Process"};
-if(!license_civ_home) exitWith {hint localize "STR_House_License"};
-if(count life_houses >= (__GETC__(life_houseLimit))) exitWith {hint format[localize "STR_House_Max_House",__GETC__(life_houseLimit)]};
+if((_house getVariable["house_owned",false])) exitWith {hintSilent "This house is already owned even though you shouldn't be seeing this hintSilent..."};
+if(!isNil {(_house getVariable "house_sold")}) exitWith {hintSilent localize "STR_House_Sell_Process"};
+if(!license_civ_home) exitWith {hintSilent localize "STR_House_License"};
+if(count life_houses >= (__GETC__(life_houseLimit))) exitWith {hintSilent format[localize "STR_House_Max_House",__GETC__(life_houseLimit)]};
 closeDialog 0;
 
 _houseCfg = [(typeOf _house)] call life_fnc_houseConfig;
@@ -27,7 +27,7 @@ _action = [
 ] call BIS_fnc_guiMessage;
 
 if(_action) then {
-	if(life_atmcash < (_houseCfg select 0)) exitWith {hint format [localize "STR_House_NotEnough"]};
+	if(life_atmcash < (_houseCfg select 0)) exitWith {hintSilent format [localize "STR_House_NotEnough"]};
 	[[_uid,_house],"TON_fnc_addHouse",false,false] spawn life_fnc_MP;
 	_house setVariable["house_owner",[_uid,profileName],true];
 	_house setVariable["locked",true,true];

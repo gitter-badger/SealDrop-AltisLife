@@ -12,7 +12,7 @@ if(isNull _vehicle) exitWith {};
 if(!((_vehicle isKindOf "Air") OR (_vehicle isKindOf "Ship") OR (_vehicle isKindOf "LandVehicle"))) exitWith {};
 
 _vehicleInfo = _vehicle getVariable ["Trunk",[]];
-if(count _vehicleInfo == 0) exitWith {hint localize "STR_Cop_VehEmpty"};
+if(count _vehicleInfo == 0) exitWith {hintSilent localize "STR_Cop_VehEmpty"};
 
 _value = 0;
 {
@@ -38,5 +38,5 @@ if(_value > 0) then
 }
 	else
 {
-	hint localize "STR_Cop_NoIllegalVeh";
+	hintSilent localize "STR_Cop_NoIllegalVeh";
 };

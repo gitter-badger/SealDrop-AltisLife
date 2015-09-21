@@ -14,37 +14,37 @@ switch (_state) do
 	case 10:
 	{
 		license_civ_driver = false;
-		hint localize "STR_Civ_RevokeLicense_Driver";
+		hintSilent localize "STR_Civ_RevokeLicense_Driver";
 	};
 	// Truck License
 	case 11:
 	{
 		license_civ_truck = false;
-		hint localize "STR_Civ_RevokeLicense_Truck";
+		hintSilent localize "STR_Civ_RevokeLicense_Truck";
 	};
 	// Pilot License
 	case 12:
 	{
 		license_civ_air = false;
-		hint localize "STR_Civ_RevokeLicense_Pilot";
+		hintSilent localize "STR_Civ_RevokeLicense_Pilot";
 	};
 	// Boating License
 	case 13:
 	{
 		license_civ_boat = false;
-		hint localize "STR_Civ_RevokeLicense_Boating";
+		hintSilent localize "STR_Civ_RevokeLicense_Boating";
 	};
 	// Diving License
 	case 14:
 	{
 		license_civ_dive = false;
-		hint localize "STR_Civ_RevokeLicense_Diving";
+		hintSilent localize "STR_Civ_RevokeLicense_Diving";
 	};
 	// Taxi License
 	case 15:
 	{
 		license_civ_driver = false;
-		hint localize "STR_Civ_RevokeLicense_Taxi";
+		hintSilent localize "STR_Civ_RevokeLicense_Taxi";
 	};
 	// All Motor Vehicle
 	case 16:
@@ -55,12 +55,12 @@ switch (_state) do
 		license_civ_boat = false;
 		license_civ_air = false;
 		license_civ_dive = false;
-		hint localize "STR_Civ_RevokeLicense_AllMotor";
+		hintSilent localize "STR_Civ_RevokeLicense_AllMotor";
 	};
 	// Firearms License
 	case 17:
 	{
 		license_civ_gun = false;
-		hint localize "STR_Civ_RevokeLicense_Firearm";
+		hintSilent localize "STR_Civ_RevokeLicense_Firearm";
 	};
 };

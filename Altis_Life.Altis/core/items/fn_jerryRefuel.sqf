@@ -8,9 +8,9 @@
 private["_vehicle","_displayName","_upp","_ui","_progress","_pgText","_cP","_previousState"];
 _vehicle = cursorTarget;
 life_interrupted = false;
-if(isNull _vehicle) exitWith {hint "You need to look at the vehicle you want to refuel!"};
+if(isNull _vehicle) exitWith {hintSilent "You need to look at the vehicle you want to refuel!"};
 if(!(_vehicle isKindOF "LandVehicle") && !(_vehicle isKindOf "Air") && !(_vehicle isKindOf "Ship")) exitWith {};
-if(player distance _vehicle > 7.5) exitWith {hint "You need to be closer to the vehicle!"};
+if(player distance _vehicle > 7.5) exitWith {hintSilent "You need to be closer to the vehicle!"};
 
 if(!([false,"fuelF",1] call life_fnc_handleInv)) exitWith {};
 life_action_inUse = true;
@@ -33,7 +33,7 @@ while{true} do
 		[[player,"AinvPknlMstpSnonWnonDnon_medic_1"],"life_fnc_animSync",true,false] spawn life_fnc_MP;
 		player playMoveNow "AinvPknlMstpSnonWnonDnon_medic_1";
 	};
-	sleep 0.2;
+	uiSleep 0.2;
 	if(isNull _ui) then {
 		5 cutRsc ["life_progress","PLAIN"];
 		_ui = uiNamespace getVariable "life_progress";

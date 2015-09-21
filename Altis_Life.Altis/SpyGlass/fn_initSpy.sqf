@@ -114,7 +114,7 @@ for "_i" from 0 to count (_binConfigPatches)-1 do {
 			[[profileName,steamid,(configName _patchEntry)],"SPY_fnc_cookieJar",false,false] spawn life_fnc_MP;
 			[[profileName,format["Unknown Addon Patch: %1",(configName _patchEntry)]],"SPY_fnc_notifyAdmins",true,false] spawn life_fnc_MP;
 			[[SPY,[(format["Unknown Addon Patch: %1",(configName _patchEntry)])],profileName,steamid],"TON_fnc_logIt",false,false] call life_fnc_MP;
-			sleep 0.5;
+			uiSleep 0.5;
 			failMission "SpyGlass";
 		};
 	};
@@ -135,7 +135,7 @@ _allowedChildren = [
 		[[profileName,steamid,"Modified_MPInterrupt"],"SPY_fnc_cookieJar",false,false] spawn life_fnc_MP;
 		[[profileName,"Devcon like executor detected"],"SPY_fnc_notifyAdmins",true,false] spawn life_fnc_MP;
 		[[SPY,["Devcon like executor detected"],profileName,steamid],"TON_fnc_logIt",false,false] call life_fnc_MP;
-		sleep 0.5;
+		uiSleep 0.5;
 		failMission "SpyGlass";
 	};
 } foreach _children;
@@ -153,11 +153,11 @@ _allowedChildren = [
 		[[profileName,steamid,format["Modified_Method_%1",_x select 0]],"SPY_fnc_cookieJar",false,false] call life_fnc_MP;
 		[[profileName,format["Modified Display Method %1 (Memory Edit)",_x select 0]],"SPY_fnc_notifyAdmins",true,false] call life_fnc_MP;
 		[[SPY,[(format["Modified Display Method %1 (Memory Edit)",_x select 0])],profileName,steamid],"TON_fnc_logIt",false,false] call life_fnc_MP;
-		sleep 0.5;
+		uiSleep 0.5;
 		vehicle player setVelocity[1e10,1e14,1e18]; //It's a surprise.
-		sleep 3;
+		uiSleep 3;
 		preProcessFile "SpyGlass\endoftheline.sqf";
-		sleep 2.5;
+		uiSleep 2.5;
 		failMission "SpyGlass";
 	};
 }
@@ -191,11 +191,11 @@ if(getText(configFile >> "CfgFunctions" >> "init") != "A3\functions_f\initFuncti
 	[[profileName,steamid,"Modified_Functions_Init"],"SPY_fnc_cookieJar",false,false] call life_fnc_MP;
 	[[profileName,"Modified_Functions_Init"],"SPY_fnc_notifyAdmins",true,false] call life_fnc_MP;
 	[[SPY,["Modified_Functions_Init"],profileName,steamid],"TON_fnc_logIt",false,false] call life_fnc_MP;
-	sleep 0.5;
+	uiSleep 0.5;
 	vehicle player setVelocity[1e10,1e14,1e18]; //It's a surprise.
-	sleep 3;
+	uiSleep 3;
 	preProcessFile "SpyGlass\endoftheline.sqf";
-	sleep 2.5;
+	uiSleep 2.5;
 	failMission "SpyGlass";
 };
 

@@ -11,7 +11,7 @@ _dialog = findDisplay 666; //find the craft dialog/window
 _inv = _dialog displayCtrl 669; //find the listbox of items can be created
 _mats = _dialog displayCtrl 672;
 _struct = "";
-if((lbCurSel 669) == -1) exitWith {hint localize "STR_ISTR_SelectItemFirst";};
+if((lbCurSel 669) == -1) exitWith {hintSilent localize "STR_ISTR_SelectItemFirst";};
 _item = lbData[669,(lbCurSel 669)];
 
 

@@ -93,7 +93,7 @@ class life_admin_menu {
 		class Teleport : Life_RscButtonMenu {
 			idc = -1;
 			text = "$STR_Admin_Teleport";
-			onButtonClick = "closeDialog 0; [] call life_fnc_adminTeleport; hint 'Select where you would like to teleport';";
+			onButtonClick = "closeDialog 0; [] call life_fnc_adminTeleport; hintSilent 'Select where you would like to teleport';";
 			x = 0.42 + (6.25 / 40) + (1 / 250 / (safezoneW / safezoneH));
 			y = 0.88 - (1 / 25);
 			w = (6.25 / 40);

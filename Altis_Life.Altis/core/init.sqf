@@ -102,7 +102,7 @@ life_fnc_moveIn = compileFinal
 // Get rid of the damn Fog, fast fix
 [] spawn {
 	while {true} do {
-		sleep 600;
+		uiSleep 600;
 		60 setFog 0;
 	};
 };

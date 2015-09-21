@@ -12,7 +12,7 @@ _numberOfDoors = getNumber(configFile >> "CfgVehicles" >> (typeOf _house) >> "nu
 if(_numberOfDoors == -1 OR _numberOfDoors == 0) exitWith {}; //MEH
 
 titleText [localize "STR_House_LockingUp","PLAIN"];
-sleep 3;
+uiSleep 3;
 
 for "_i" from 1 to _numberOfDoors do {
 	_house animate[format["door_%1_rot",_i],0];

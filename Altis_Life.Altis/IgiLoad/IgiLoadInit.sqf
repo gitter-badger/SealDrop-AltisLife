@@ -8,12 +8,12 @@ IL_EV_Count = 0;
 IL_Veh_Array = [];
 
 cutText ["Abschleppseile werden vorbereitet...","PLAIN",2];
-sleep (random 30);
+uiSleep (random 30);
 
 _null = [Player] execVM "IgiLoad\IgiLoad.sqf";
 waitUntil {scriptDone _null};
 
-sleep (random (IL_Check_Veh_Max - IL_Check_Veh_Min));
+uiSleep (random (IL_Check_Veh_Max - IL_Check_Veh_Min));
 
 {
 	if ((typeOf _x) in (IL_Supported_Vehicles_All)) then
@@ -28,7 +28,7 @@ cutText ["Alle Seile und Karabiner sind eingepackt.","PLAIN",2];
 
 while {true} do 
 {
-	sleep (IL_Check_Veh_Min + (random (IL_Check_Veh_Max - IL_Check_Veh_Min)));
+	uiSleep (IL_Check_Veh_Min + (random (IL_Check_Veh_Max - IL_Check_Veh_Min)));
 	
 	//Delete vehicles from "IL_Veh_Array" if not in "vehicles"
 	{

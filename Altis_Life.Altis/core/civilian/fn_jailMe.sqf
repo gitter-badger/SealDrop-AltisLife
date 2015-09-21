@@ -26,15 +26,15 @@ if(_time <= 0) then { _time = time + (15 * 60); hintC "Please Report to Admin: J
 	life_bail_amount = life_bail_amount * 5;
 	if(_this select 0) then
 	{
-		//sleep (10 * 60);
+		//uiSleep (10 * 60);
 		//50% of time
-		sleep ( (_this select 1) * 0.5 );
+		uiSleep ( (_this select 1) * 0.5 );
 	}
 		else
 	{
-		//sleep (5 * 60);
+		//uiSleep (5 * 60);
 		//20% of time
-		sleep ( (_this select 1) * 0.2 );
+		uiSleep ( (_this select 1) * 0.2 );
 	};
 	life_canpay_bail = nil;
 };
@@ -65,12 +65,12 @@ while {true} do
 		_bail = true;
 	};
 	
-	if((round(_time - time)) < 1) exitWith {hint ""};
+	if((round(_time - time)) < 1) exitWith {hintSilent ""};
 	if(!alive player && ((round(_time - time)) > 0)) exitWith
 	{
 	
 	};
-	sleep 1;
+	uiSleep 1;
 };
 
 
@@ -80,7 +80,7 @@ switch (true) do
 	{
 		life_is_arrested = false;
 		life_bail_paid = false;
-		hint localize "STR_Jail_Paid";
+		hintSilent localize "STR_Jail_Paid";
 		serv_wanted_remove = [player];
 		player setPos (getMarkerPos "jail_release");
 		[[getPlayerUID player],"life_fnc_wantedRemove",false,false] spawn life_fnc_MP;
@@ -90,7 +90,7 @@ switch (true) do
 	case (_esc) :
 	{
 		life_is_arrested = false;
-		hint localize "STR_Jail_EscapeSelf";
+		hintSilent localize "STR_Jail_EscapeSelf";
 		[[0,format["%1 has escaped from jail!",profileName]],"life_fnc_broadcast",nil,false] spawn life_fnc_MP;
 		[[getPlayerUID player,profileName,"901"],"life_fnc_wantedAdd",false,false] spawn life_fnc_MP;
 		[5] call SOCK_fnc_updatePartial;
@@ -99,7 +99,7 @@ switch (true) do
 	case (alive player && !_esc && !_bail) :
 	{
 		life_is_arrested = false;
-		hint localize "STR_Jail_Released";
+		hintSilent localize "STR_Jail_Released";
 		[[getPlayerUID player],"life_fnc_wantedRemove",false,false] spawn life_fnc_MP;
 		player setPos (getMarkerPos "jail_release");
 		[5] call SOCK_fnc_updatePartial;

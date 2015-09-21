@@ -7,7 +7,7 @@
 */
 private["_bad","_unit","_time"];
 _unit = [_this,0,ObjNull,[ObjNull]] call BIS_fnc_param;
-hint format["%1", _unit];
+hintSilent format["%1", _unit];
 if(isNull _unit) exitWith {}; //Dafuq?
 if(_unit != player) exitWith {}; //Dafuq?
 if(life_is_arrested) exitWith {}; //Dafuq i'm already arrested
@@ -19,13 +19,13 @@ player setVariable["Escorting",false,true];
 player setVariable["transporting",false,true];
 
 titleText["You have been arrested, wait your time out. If you attempt to respawn or reconnect your time will increase!","PLAIN"];
-hint "For being arrested you have lost the following licenses if you own them\n\nFirearms License\nRebel License";
+hintSilent "For being arrested you have lost the following licenses if you own them\n\nFirearms License\nRebel License";
 player setPos (getMarkerPos "jail_marker");
 
 if(_bad) then
 {
 	waitUntil {alive player};
-	sleep 1;
+	uiSleep 1;
 };
 
 //Check to make sure they goto check

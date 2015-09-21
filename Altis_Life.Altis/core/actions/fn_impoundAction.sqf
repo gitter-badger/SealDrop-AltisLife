@@ -29,7 +29,7 @@ if((_vehicle isKindOf "Car") || (_vehicle isKindOf "Air") || (_vehicle isKindOf 
 	_cP = 0.01;
 	while{true} do
 	{
-		sleep 0.09;
+		uiSleep 0.09;
 		_cP = _cP + 0.01;
 		_progress progressSetPosition _cP;
 		_pgText ctrlSetText format["%3 (%1%2)...",round(_cP * 100),"%",_upp];
@@ -39,11 +39,11 @@ if((_vehicle isKindOf "Car") || (_vehicle isKindOf "Air") || (_vehicle isKindOf 
 	};
 	5 cutText ["","PLAIN"];
 	
-	if(player distance _vehicle > 10) exitWith {hint localize "STR_NOTF_ImpoundingCancelled"; life_action_inUse = false;};
+	if(player distance _vehicle > 10) exitWith {hintSilent localize "STR_NOTF_ImpoundingCancelled"; life_action_inUse = false;};
 	if(!alive player) exitWith {life_action_inUse = false;};
 	//_time = _vehicle getVariable "time";
-	//if(isNil {_time}) exitWith {deleteVehicle _vehicle; hint "This vehicle was hacked in"};
-	//if((time - _time)  < 120) exitWith {hint "This is a freshly spawned vehicle, you have no right impounding it."};
+	//if(isNil {_time}) exitWith {deleteVehicle _vehicle; hintSilent "This vehicle was hacked in"};
+	//if((time - _time)  < 120) exitWith {hintSilent "This is a freshly spawned vehicle, you have no right impounding it."};
 	if((count crew _vehicle) == 0) then
 	{
 		if(!((_vehicle isKindOf "Car") || (_vehicle isKindOf "Air") || (_vehicle isKindOf "Ship"))) exitWith {life_action_inUse = false;};
@@ -58,13 +58,13 @@ if((_vehicle isKindOf "Car") || (_vehicle isKindOf "Air") || (_vehicle isKindOf 
 		life_impound_inuse = true;
 		[[_vehicle,true,player],"TON_fnc_vehicleStore",false,false] spawn life_fnc_MP;
 		waitUntil {!life_impound_inuse};
-		hint format[localize "STR_NOTF_Impounded",_type,_price];
+		hintSilent format[localize "STR_NOTF_Impounded",_type,_price];
 		[[0,"STR_NOTF_HasImpounded",true,[profileName,(_vehicleData select 0) select 1,_vehicleName]],"life_fnc_broadcast",true,false] spawn life_fnc_MP;
 		life_atmcash = life_atmcash + _price;
 	}
 		else
 	{
-		hint localize "STR_NOTF_ImpoundingCancelled";
+		hintSilent localize "STR_NOTF_ImpoundingCancelled";
 	};
 };
 life_action_inUse = false;

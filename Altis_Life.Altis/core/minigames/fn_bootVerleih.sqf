@@ -28,7 +28,7 @@ _verleihAction = [format["Möchtest du ein Boot für %1 Minuten ausleihen ? Dies
 if(_verleihAction) then {
   hintSilent "Der Kauf war erfolgreich dein Boot wird nun Bereitgestelt!";
   life_bootVerleihInUse = true;
-  sleep 2;
+  uiSleep 2;
   // Start Boat spawn
   life_cash = life_cash - _price;
   _vehicle = createVehicle [_className, (getMarkerPos _spawnPoint), [], 0, "NONE"];
@@ -57,10 +57,10 @@ if(_verleihAction) then {
   // The time is over..
   if(life_bootVerleihDone) then {
     _vPlayer allowDamage false; // Temp no damage
-    sleep 0.2;
+    uiSleep 0.2;
     deleteVehicle _vPlayer;
     _player setPos (getMarkerPos "bootVerleihTimeOver");
-    sleep 1;
+    uiSleep 1;
     _player allowDamage true; // Can take damage
     _player setDamage 0; // Just for case
     hintSilent "Wir hoffen du hattest Spaß mit deinem Boot! Wir freuen uns auf deinen nächsten Besuch!";

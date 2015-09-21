@@ -16,7 +16,7 @@ for "_i" from 0 to 180 do
 		"chromAberration" ppEffectEnable true;
 		"chromAberration" ppEffectAdjust [0.01,0.01,true];
 		"chromAberration" ppEffectCommit 1;
-		sleep 3;
+		uiSleep 3;
 
 		};
 		

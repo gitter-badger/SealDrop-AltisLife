@@ -14,7 +14,7 @@ if(count (_nearby) > 1) then
 	_name = getText(configFile >> "CfgVehicles" >> (typeOf _vehicle) >> "displayName");
 	titleText[format["Servicing %1 don't move...",_name],"PLAIN"];
 	titleFadeOut 12;
-	sleep 10;
+	uiSleep 10;
 	if((vehicle player) distance _vehicle > 10) exitWith {titleText["You failed to refuel/repair that vehicle because you are farther then 10m from it","PLAIN"];};
 	titleText[format["You have refueled/repaired %1",_name],"PLAIN"];
 	if(!local _vehicle) then

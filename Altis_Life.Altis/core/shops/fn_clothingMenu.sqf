@@ -11,11 +11,11 @@ createDialog "Life_Clothing";
 disableSerialization;
 
 //Cop / Civ Pre Check
-if((_this select 3) in ["bruce","dive","reb","soldner"] && playerSide != civilian) exitWith {hint "You need to be a civilian to use this store!"; closeDialog 0;};
-if((_this select 3) == "reb" && !license_civ_rebel) exitWith {hint "You don't have rebel training yet!"; closeDialog 0;};
-if((_this select 3) in ["cop"] && playerSide != west) exitWith {hint "You need to be a cop to use this store!"; closeDialog 0;};
-if((_this select 3) in ["medic"] && !license_med_air && playerSide != independent) exitWith {hint "Du benötigst eine MedicLizenz und musst Sanitäter sein!"; closeDialog 0;};
-if((_this select 3) in ["dive"] && !license_civ_dive) exitWith { hint "You need a Diving license to use this shop!"; closeDialog 0;};
+if((_this select 3) in ["bruce","dive","reb","soldner"] && playerSide != civilian) exitWith {hintSilent "You need to be a civilian to use this store!"; closeDialog 0;};
+if((_this select 3) == "reb" && !license_civ_rebel) exitWith {hintSilent "You don't have rebel training yet!"; closeDialog 0;};
+if((_this select 3) in ["cop"] && playerSide != west) exitWith {hintSilent "You need to be a cop to use this store!"; closeDialog 0;};
+if((_this select 3) in ["medic"] && !license_med_air && playerSide != independent) exitWith {hintSilent "Du benötigst eine MedicLizenz und musst Sanitäter sein!"; closeDialog 0;};
+if((_this select 3) in ["dive"] && !license_civ_dive) exitWith { hintSilent "You need a Diving license to use this shop!"; closeDialog 0;};
 
 life_clothing_store = _this select 3;
 
@@ -23,7 +23,7 @@ life_clothing_store = _this select 3;
 _var = [life_clothing_store,0] call life_fnc_licenseType;
 if(_var select 0 != "") then
 {
-	if(!(missionNamespace getVariable (_var select 0))) exitWith {hint format["You need a %1 to buy from this shop!",[_var select 0] call life_fnc_varToStr]; closeDialog 0;};
+	if(!(missionNamespace getVariable (_var select 0))) exitWith {hintSilent format["You need a %1 to buy from this shop!",[_var select 0] call life_fnc_varToStr]; closeDialog 0;};
 };
 
 //initialize camera view

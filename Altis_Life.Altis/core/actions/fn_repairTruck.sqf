@@ -32,7 +32,7 @@ if((_veh isKindOf "Car") OR (_veh isKindOf "Ship") OR (_veh isKindOf "Air")) the
 				[[player,"AinvPknlMstpSnonWnonDnon_medic4"],"life_fnc_animSync",true,false] spawn life_fnc_MP;
 				player playMoveNow "AinvPknlMstpSnonWnonDnon_medic4";
 			};
-			sleep 0.27;
+			uiSleep 0.27;
 			_cP = _cP + 0.01;
 			_progress progressSetPosition _cP;
 			_pgText ctrlSetText format["%3 (%1%2)...",round(_cP * 100),"%",_upp];

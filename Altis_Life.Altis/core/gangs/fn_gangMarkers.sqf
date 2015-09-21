@@ -7,7 +7,7 @@ private["_markers","_units"];
 _markers = [];
 _units = [];
 
-sleep 0.5;
+uiSleep 0.5;
 if(visibleMap) then {
 	{
 		if((side _x == civilian) && (player != _x)) then {
@@ -40,7 +40,7 @@ if(visibleMap) then {
 			};
 		} foreach _markers;
 		if(!visibleMap) exitWith {};
-		sleep 0.02;
+		uiSleep 0.02;
 	};
 
 	{deleteMarkerLocal (_x select 0);} foreach _markers;

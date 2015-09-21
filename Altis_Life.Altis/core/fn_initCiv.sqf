@@ -25,7 +25,6 @@ if(life_is_arrested) then
 };
 player addRating 9999999;
 
-//Skins für Zivis
 [] spawn
 {
 while {true} do
@@ -35,17 +34,6 @@ while {true} do
         waitUntil {uniform player != "U_C_Poloshirt_stripped"};
     };
 };
-[] spawn
-{
-while {true} do
-    {
-        waitUntil {uniform player == "U_C_Poor_2"};
-        player setObjectTextureGlobal [0,"skins\human\civ\kitty.jpg"];
-        waitUntil {uniform player != "U_C_Poor_2"};
-    };
-};
-//Ende für Zivi Skins
-
 
 //Introcam
 [] spawn life_fnc_IntroCam;

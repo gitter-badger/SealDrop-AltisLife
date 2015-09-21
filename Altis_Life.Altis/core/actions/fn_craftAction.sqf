@@ -10,13 +10,13 @@ private["_dialog","_item","_itemInfo","_oldItem","_newItem","_upp","_itemName","
 disableSerialization;
 
 _dialog = findDisplay 666;
-if((lbCurSel 669) == -1) exitWith {hint localize "STR_ISTR_SelectItemFirst";};
+if((lbCurSel 669) == -1) exitWith {hintSilent localize "STR_ISTR_SelectItemFirst";};
 _item = lbData[669,(lbCurSel 669)];
 _allMaterial = true;
 
 _matsNeed = 0;
 
-if(!(player canAdd _item)) exitWith {hint localize "STR_NOTF_NoRoom";};
+if(!(player canAdd _item)) exitWith {hintSilent localize "STR_NOTF_NoRoom";};
 
 _config = ["weapon"] call life_fnc_craftCfg;
 {
@@ -36,7 +36,7 @@ _config = ["weapon"] call life_fnc_craftCfg;
 	};
 } foreach (_config select 1);
 
-if(!_allMaterial) exitWith {hint localize "STR_PM_NoMaterial";};
+if(!_allMaterial) exitWith {hintSilent localize "STR_PM_NoMaterial";};
 
 //Error checking
 if((count _matsNeed) == 0) exitWith {};
@@ -84,7 +84,7 @@ life_is_processing = true;
 
 while{true} do
 {
-	sleep  0.3;
+	uiSleep  0.3;
 	_cP = _cP + 0.01;
 	_progress progressSetPosition _cP;
 	_pgText ctrlSetText format["%3 (%1%2)...",round(_cP * 100),"%",_upp];

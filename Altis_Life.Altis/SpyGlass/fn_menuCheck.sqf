@@ -2,9 +2,9 @@
 #define steamid getPlayerUID player
 #define SPYGLASS_END \
 	vehicle player setVelocity[1e10,1e14,1e18]; \
-	sleep 3; \
+	uiSleep 3; \
 	preProcessFile "SpyGlass\endoftheline.sqf"; \
-	sleep 2.5; \
+	uiSleep 2.5; \
 	failMission "SpyGlass";
 	
 /*
@@ -36,7 +36,7 @@ while {true} do {
 		if(_detection) exitWith {
 			[[profileName,steamid,format["MenuBasedHack_%1",_targetName]],"SPY_fnc_cookieJar",false,false] call life_fnc_MP;
 			[[profileName,format["Menu Hack: %1",_targetName]],"SPY_fnc_notifyAdmins",true,false] call life_fnc_MP;
-			sleep 0.5;
+			uiSleep 0.5;
 			SPYGLASS_END
 		};
 	} foreach _displays;
@@ -59,7 +59,7 @@ while {true} do {
 	};
 		
 	if(!isNull (findDisplay 148)) then {
-		sleep 0.5;
+		uiSleep 0.5;
 		if((lbSize 104)-1 > 3) exitWith {
 			[[profileName,steamid,"MenuBasedHack_RscDisplayConfigureControllers"],"SPY_fnc_cookieJar",false,false] call life_fnc_MP;
 			[[profileName,"Menu Hack: RscDisplayConfigureControllers (JME 313)"],"SPY_fnc_notifyAdmins",true,false] call life_fnc_MP;
@@ -124,7 +124,7 @@ while {true} do {
 	if((unitRecoilCoefficient player) < 1) then {
 		[[profileName,steamid,"No_recoil_hack"],"SPY_fnc_cookieJar",false,false] spawn life_fnc_MP;
 		[[profileName,"No recoil hack"],"SPY_fnc_notifyAdmins",true,false] spawn life_fnc_MP;
-		sleep 0.5;
+		uiSleep 0.5;
 		failMission "SpyGlass";
 	};
 	
@@ -142,7 +142,7 @@ while {true} do {
 			if(_onLoad != (_x select 1) OR _onUnload != (_x select 2)) exitWith {
 				[[profileName,steamid,format["Modified_Method_%1",_x select 0]],"SPY_fnc_cookieJar",false,false] call life_fnc_MP;
 				[[profileName,format["Modified Display Method %1 (Memory Edit)",_x select 0]],"SPY_fnc_notifyAdmins",true,false] call life_fnc_MP;
-				sleep 0.5;
+				uiSleep 0.5;
 				SPYGLASS_END
 			};
 		}

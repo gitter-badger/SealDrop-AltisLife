@@ -7,11 +7,11 @@
 private["_vehicle","_resourceZones","_zone","_weight","_item","_vInv","_itemIndex"];
 _vehicle = [_this,0,ObjNull,[ObjNull]] call BIS_fnc_param;
 if(isNull _vehicle) exitWith {}; //Null was passed?
-if(!isNil {_vehicle getVariable "mining"}) exitWith {hint localize "STR_NOTF_DeviceIsMining";}; //Mining is already in process..
+if(!isNil {_vehicle getVariable "mining"}) exitWith {hintSilent localize "STR_NOTF_DeviceIsMining";}; //Mining is already in process..
 closeDialog 0; //Close the interaction menu.
 life_action_inUse = true; //Lock out the interaction menu for a bit..
 _weight = [_vehicle] call life_fnc_vehicleWeight;
-if((_weight select 1) >= (_weight select 0)) exitWith {hint localize "STR_NOTF_DeviceFull"; life_action_inUse = false;};
+if((_weight select 1) >= (_weight select 0)) exitWith {hintSilent localize "STR_NOTF_DeviceFull"; life_action_inUse = false;};
 _resourceZones = ["apple_1","apple_2","apple_3","apple_4","peaches_1","peaches_2","peaches_3","peaches_4","heroin_1","cocaine_1","weed_1","lead_1","iron_1","salt_1","sand_1","diamond_1","oil_1","oil_2","rock_1","rye_1","hops_1","yeast_1"];
 _zone = "";
 
@@ -21,7 +21,7 @@ _zone = "";
 } foreach _resourceZones;
 
 if(_zone == "") exitWith {
-	hint localize "STR_NOTF_notNearResource";
+	hintSilent localize "STR_NOTF_notNearResource";
 	life_action_inUse = false;
 };
 
@@ -42,7 +42,7 @@ _item = switch(true) do {
 	default {""};
 };
 
-if(_item == "") exitWith {hint "Bad Resource?"; life_action_inUse = false;};
+if(_item == "") exitWith {hintSilent "Bad Resource?"; life_action_inUse = false;};
 _vehicle setVariable ["mining",true,true]; //Lock the device
 [_vehicle,"life_fnc_soundDevice",true,false] spawn life_fnc_MP; //Broadcast the 'mining' sound of the device for nearby units.
 
@@ -58,7 +58,7 @@ while {true} do {
 	waitUntil {
 		if(isEngineOn _vehicle) exitWith {titleText[localize "STR_NOTF_MiningStopped","PLAIN"]; true};
 		if(round(_time - time) < 1) exitWith {true};
-		sleep 0.2;
+		uiSleep 0.2;
 		false
 	};
 	if(isEngineOn _vehicle) exitWith {titleText[localize "STR_NOTF_MiningStopped","PLAIN"];};
@@ -92,7 +92,7 @@ while {true} do {
 	_weight = [_vehicle] call life_fnc_vehicleWeight;
 	_sum = [_item,15,_weight select 1,_weight select 0] call life_fnc_calWeightDiff; //Get a sum base of the remaining weight.. 
 	if(_sum < 1) exitWith {titleText[localize "STR_NOTF_DeviceFull","PLAIN"];};
-	sleep 2;
+	uiSleep 2;
 };
 
 _vehicle setVariable["mining",nil,true];
