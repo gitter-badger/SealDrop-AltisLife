@@ -5,6 +5,7 @@ DELIMITER $$
 CREATE PROCEDURE `deleteEconomyPrices`()
 TRUNCATE `economy`$$
 
+
 CREATE PROCEDURE `deleteOldGangs`()
 DELETE FROM `gangs` WHERE `active` = 0$$
 CREATE PROCEDURE `resetLifeVehicles`()
