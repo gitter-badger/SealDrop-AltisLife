@@ -8,7 +8,7 @@
 private["_itemList","_index","_config","_priceTag"];
 _index = [_this,1,-1,[0]] call BIS_fnc_param;
 _shop = uiNamespace getVariable ["Weapon_Shop",""];
-if(_index == -1 OR _shop == "") exitWith {systemChat "Bad Data Filter"; closeDialog 0;}; //Bad data passing.
+if(_index == -1 OR _shop == "") exitWith {closeDialog 0;}; //Bad data passing.
 
 uiNamespace setVariable["Weapon_Shop_Filter",_index];
 //Setup List Control & Purge it.
