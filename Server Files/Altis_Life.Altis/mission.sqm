@@ -40646,7 +40646,7 @@ class Mission
 			vehicle="Land_ClutterCutter_small_F";
 			leader=1;
 			skill=0.60000002;
-			init="delh = [0,0,0] nearestObject 1120919; delh hideObject true;";
+			init="delh = [3692.49,13158.3,-0.0462074] nearestObject 1120919; delh hideObject true;";
 		};
 		class Item3516
 		{
