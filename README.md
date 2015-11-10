@@ -9,4 +9,4 @@ Here you can find all usefull informations about AltisLife. [Visit the wiki](htt
 You can find the installation steps here: [Installation Guide](https://github.com/DeadP4xel/SealDrop-AltisLife/wiki)
 
 ###Creator of AltisLife
-[Tonic / Itsyuka](https://github.com/Itsyuka/Altis-Life)
+[Tonic](https://github.com/TAWTonic)
