@@ -1,5 +1,5 @@
 /* 
-	Author: TheTotenkopf für SealDrop.de
+	Author: DeadP4xel für SealDrop.de
 */
 
 while {true} do {

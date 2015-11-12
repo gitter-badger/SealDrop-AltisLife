@@ -1,6 +1,6 @@
 #include <macro.h>
 /*
-	Author: TheTotenkopf
+	Author: DeadP4xel
 	
 	Description: Löscht alles für den Respawn und setzt alles neu
 */

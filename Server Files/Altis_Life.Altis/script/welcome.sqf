@@ -1,6 +1,6 @@
 /*
 	File: welcome.sqf
-	Author: TheTotenkopf
+	Author: DeadP4xel
 	Date: 26.6.2014
 */
 
@@ -18,7 +18,7 @@ _role1names = ["S E A L D R O P"];
 _role2 = "Server Owner";
 _role2names = ["ADMIN_NAMEN"];
 _role3 = "Map Edit by";
-_role3names = ["TheTotenkopf"];
+_role3names = ["DeadP4xel"];
 _role4 = "Official TeamSpeak";
 _role4names = ["TS_NAME"];
 _role8 = "Official Forum";

@@ -1,6 +1,6 @@
 /*
 	File: fn_medicLoadout.sqf
-	Author: TheTotenkopf
+	Author: DeadP4xel
 */
 
 //Gear+Items

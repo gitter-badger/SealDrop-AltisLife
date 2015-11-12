@@ -1,6 +1,6 @@
 /*
   File: fn_bootVerleih.sqf
-  Author: TheTotenkopf for SealDrop
+  Author: DeadP4xel for SealDrop
 
   Description:
   Titel :]

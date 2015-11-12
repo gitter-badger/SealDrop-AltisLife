@@ -1,6 +1,6 @@
 /*
 	File: IntroCam
-	Author: TheTotenkopf (for SealDrop.de)
+	Author: DeadP4xel (for SealDrop.de)
 */
 private ["_camera", "_camDistance","_randCamX","_randCamY","_camTime"];
 _camDistance = 1000;

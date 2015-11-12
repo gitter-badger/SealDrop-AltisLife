@@ -1,7 +1,7 @@
 #include <macro.h> 
 /*
 	File: fn_welcome.sqf
-	Author: TheTotenkopf (SealDrop.de)
+	Author: DeadP4xel (SealDrop.de)
 	
 	Description:
 	Erstellt ein schönen Regel Screen

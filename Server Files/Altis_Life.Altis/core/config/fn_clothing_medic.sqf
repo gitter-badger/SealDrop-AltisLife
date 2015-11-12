@@ -1,7 +1,7 @@
 #include <macro.h>
 /*
 	File: fn_clothing_medic.sqf
-	Author: TheTotenkopf
+	Author: DeadP4xel
 	Description:
 	Configfile for the Medic Store
 */
