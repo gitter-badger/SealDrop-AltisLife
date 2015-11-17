@@ -14,6 +14,7 @@ if(!life_firstSpawn) then {
 	_camTime = 10;
 };
 //intro move
+playSound ["welcome",false];
 showCinemaBorder true;
 camUseNVG false;
 
