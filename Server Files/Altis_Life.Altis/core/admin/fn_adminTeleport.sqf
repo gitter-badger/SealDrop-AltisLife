@@ -6,7 +6,7 @@
 	Description:
 	Teleport to chosen position.
 */
-if((call life_adminlevel) < 2) exitWith {hintSilent "Du bist noch kein Staff..."};
+if((call life_adminlevel) < 2) exitWith {hintSilent "You are not a admin!"};
 
 //Add Map
 player addItem "ItemMap";
